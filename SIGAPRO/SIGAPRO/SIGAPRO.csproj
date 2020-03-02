@@ -1,0 +1,491 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCD27E97-1A54-4116-A858-2EA934749DED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIGAPRO</RootNamespace>
+    <AssemblyName>SIGAPRO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44383</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Vistas\assets\css\material-dashboard.css" />
+    <Content Include="Vistas\assets\css\material-dashboard.min.css" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-grid.css" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-reboot.css" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap.css" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap-grid.css" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap-reboot.css" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap.css" />
+    <Content Include="Vistas\assets\demo\demo.css" />
+    <Content Include="Vistas\assets\demo\demo.js" />
+    <Content Include="Vistas\assets\img\apple-icon.png" />
+    <Content Include="Vistas\assets\img\bg-pricing.jpg" />
+    <Content Include="Vistas\assets\img\bg3.jpg" />
+    <Content Include="Vistas\assets\img\bg9.jpg" />
+    <Content Include="Vistas\assets\img\card-1.jpeg" />
+    <Content Include="Vistas\assets\img\card-1.jpg" />
+    <Content Include="Vistas\assets\img\card-2.jpeg" />
+    <Content Include="Vistas\assets\img\card-2.jpg" />
+    <Content Include="Vistas\assets\img\card-3.jpeg" />
+    <Content Include="Vistas\assets\img\card-3.jpg" />
+    <Content Include="Vistas\assets\img\clint-mckoy.jpg" />
+    <Content Include="Vistas\assets\img\default-avatar.png" />
+    <Content Include="Vistas\assets\img\faces\avatar.jpg" />
+    <Content Include="Vistas\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="Vistas\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="Vistas\assets\img\faces\marc.jpg" />
+    <Content Include="Vistas\assets\img\faces\Negritos.jpg" />
+    <Content Include="Vistas\assets\img\faces\Negritos2.jpg" />
+    <Content Include="Vistas\assets\img\favicon.png" />
+    <Content Include="Vistas\assets\img\flags\AU.png" />
+    <Content Include="Vistas\assets\img\flags\BR.png" />
+    <Content Include="Vistas\assets\img\flags\DE.png" />
+    <Content Include="Vistas\assets\img\flags\GB.png" />
+    <Content Include="Vistas\assets\img\flags\RO.png" />
+    <Content Include="Vistas\assets\img\flags\US.png" />
+    <Content Include="Vistas\assets\img\header-doc.jpg" />
+    <Content Include="Vistas\assets\img\image_placeholder.jpg" />
+    <Content Include="Vistas\assets\img\lock.jpg" />
+    <Content Include="Vistas\assets\img\login.jpg" />
+    <Content Include="Vistas\assets\img\mask.png" />
+    <Content Include="Vistas\assets\img\new_logo.png" />
+    <Content Include="Vistas\assets\img\placeholder.jpg" />
+    <Content Include="Vistas\assets\img\product1.jpg" />
+    <Content Include="Vistas\assets\img\product2.jpg" />
+    <Content Include="Vistas\assets\img\product3.jpg" />
+    <Content Include="Vistas\assets\img\register.jpg" />
+    <Content Include="Vistas\assets\img\sidebar-1.jpg" />
+    <Content Include="Vistas\assets\img\sidebar-2.jpg" />
+    <Content Include="Vistas\assets\img\sidebar-3.jpg" />
+    <Content Include="Vistas\assets\img\sidebar-4.jpg" />
+    <Content Include="Vistas\assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="Vistas\assets\js\core\jquery.min.js" />
+    <Content Include="Vistas\assets\js\core\popper.min.js" />
+    <Content Include="Vistas\assets\js\material-dashboard.js" />
+    <Content Include="Vistas\assets\js\material-dashboard.min.js" />
+    <Content Include="Vistas\assets\js\plugins\arrive.min.js" />
+    <Content Include="Vistas\assets\js\plugins\bootstrap-datetimepicker.min.js" />
+    <Content Include="Vistas\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="Vistas\assets\js\plugins\bootstrap-selectpicker.js" />
+    <Content Include="Vistas\assets\js\plugins\bootstrap-tagsinput.js" />
+    <Content Include="Vistas\assets\js\plugins\chartist.min.js" />
+    <Content Include="Vistas\assets\js\plugins\fullcalendar.min.js" />
+    <Content Include="Vistas\assets\js\plugins\jasny-bootstrap.min.js" />
+    <Content Include="Vistas\assets\js\plugins\jquery-jvectormap.js" />
+    <Content Include="Vistas\assets\js\plugins\jquery.bootstrap-wizard.js" />
+    <Content Include="Vistas\assets\js\plugins\jquery.dataTables.min.js" />
+    <Content Include="Vistas\assets\js\plugins\jquery.tagsinput.js" />
+    <Content Include="Vistas\assets\js\plugins\jquery.validate.min.js" />
+    <Content Include="Vistas\assets\js\plugins\moment.min.js" />
+    <Content Include="Vistas\assets\js\plugins\nouislider.min.js" />
+    <Content Include="Vistas\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
+    <Content Include="Vistas\docs\documentation.html" />
+    <Content Include="Vistas\examples\calendar.html" />
+    <Content Include="Vistas\examples\charts.html" />
+    <Content Include="Vistas\examples\components\buttons.html" />
+    <Content Include="Vistas\examples\components\grid.html" />
+    <Content Include="Vistas\examples\components\icons.html" />
+    <Content Include="Vistas\examples\components\notifications.html" />
+    <Content Include="Vistas\examples\components\panels.html" />
+    <Content Include="Vistas\examples\components\sweet-alert.html" />
+    <Content Include="Vistas\examples\components\typography.html" />
+    <Content Include="Vistas\examples\dashboard.html" />
+    <Content Include="Vistas\examples\forms\extended.html" />
+    <Content Include="Vistas\examples\forms\regular.html" />
+    <Content Include="Vistas\examples\forms\validation.html" />
+    <Content Include="Vistas\examples\forms\wizard.html" />
+    <Content Include="Vistas\examples\maps\fullscreen.html" />
+    <Content Include="Vistas\examples\maps\google.html" />
+    <Content Include="Vistas\examples\maps\vector.html" />
+    <Content Include="Vistas\examples\pages\error.html" />
+    <Content Include="Vistas\examples\pages\lock.html" />
+    <Content Include="Vistas\examples\pages\login.html" />
+    <Content Include="Vistas\examples\pages\pricing.html" />
+    <Content Include="Vistas\examples\pages\register.html" />
+    <Content Include="Vistas\examples\pages\rtl.html" />
+    <Content Include="Vistas\examples\pages\timeline.html" />
+    <Content Include="Vistas\examples\pages\user.html" />
+    <Content Include="Vistas\examples\tables\datatables.net.html" />
+    <Content Include="Vistas\examples\tables\extended.html" />
+    <Content Include="Vistas\examples\tables\regular.html" />
+    <Content Include="Vistas\examples\widgets.html" />
+    <Content Include="Vistas\gulpfile.js" />
+    <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Prueba.aspx" />
+    <Content Include="Vistas\Prueba2.aspx" />
+    <Content Include="Vistas\Prueba3.aspx" />
+    <Content Include="Vistas\template.html" />
+    <Content Include="Vistas\Inicio.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MasterPrincipal.Master.cs">
+      <DependentUpon>MasterPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\MasterPrincipal.Master.designer.cs">
+      <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Prueba.aspx.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Prueba.aspx.designer.cs">
+      <DependentUpon>Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Prueba2.aspx.cs">
+      <DependentUpon>Prueba2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Prueba2.aspx.designer.cs">
+      <DependentUpon>Prueba2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Prueba3.aspx.cs">
+      <DependentUpon>Prueba3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Prueba3.aspx.designer.cs">
+      <DependentUpon>Prueba3.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Vistas\MasterPrincipal.Master" />
+    <Content Include="Vistas\.DS_Store" />
+    <Content Include="Vistas\assets\css\material-dashboard.css.map" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-grid.css.map" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-reboot.css.map" />
+    <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap.css.map" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap-grid.css.map" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap-reboot.css.map" />
+    <Content Include="Vistas\assets\css\partials\kit\core\bootstrap\scss\bootstrap.css.map" />
+    <Content Include="Vistas\assets\js\material-dashboard.js.map" />
+    <Content Include="Vistas\assets\scss\material-dashboard.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_alert.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_badge.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_button-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_card.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_carousel.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_close.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_code.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_functions.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_grid.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_images.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_input-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_list-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_media.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_mixins.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_modal.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_nav.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_navbar.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_pagination.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_popover.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_print.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_progress.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_reboot.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_root.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_tables.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_transitions.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_type.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_utilities.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\bootstrap\scss\_variables.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-background.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-blog.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-collapse.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-contact.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-form-horizontal.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-plain-extend.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-plain.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-pricing.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-product.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-profile.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-rotate.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-signup.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-stats.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\cards\_card-testimonials.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_alert.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_animations.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_breakpoints.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_chartist.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_drawer.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_layout.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_navbar-colors.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_navs.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_sidebar-color.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_social-buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_transparency.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_type.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_utilities.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_variables.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_animate.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_chartist.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_datatables.net.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_fullcalendar.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_jquery.jvectormap.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_perfect-scrollbar.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-bootstrap-select.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-datetime-picker.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-fileupload.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-flexisel.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-nouislider.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_plugin-tagsinput.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_sweetalert2.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\plugins\_wizard-card.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_body.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_bootstrap-material-design.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_brand.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_card.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_code.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_colors-map.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_colors.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_custom-forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_drawer.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_dropdown.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_layout.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_list-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_menu.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_modals.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_nav.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_shadow.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_snackbar.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_spacing.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_state.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_tables.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_tooltip.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\variables\_type.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_alerts.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_badges.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_checkboxes.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_core-bootstrap.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_example-pages.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_footers-extend.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_footers.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_forms-extend.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_headers.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_images.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_info-areas.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_input-group.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_misc-extend.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_mixins.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_modal.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_pages.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_pagination.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_pills.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_popover.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_popups.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_progress.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_radios.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_responsive.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_ripples.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_rtl.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_tabs.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_timeline.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_togglebutton.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_tooltip.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_type.scss" />
+    <Content Include="Vistas\assets\scss\material-dashboard\_variables.scss" />
+    <Content Include="Vistas\CHANGELOG.md" />
+    <Content Include="Vistas\package.json" />
+    <Content Include="Vistas\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SIGAPRO.NEGOCIO\SIGAPRO.NEGOCIO.csproj">
+      <Project>{c563caa1-2538-4558-bf23-8cf9cc0b38ed}</Project>
+      <Name>SIGAPRO.NEGOCIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62678</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44383/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

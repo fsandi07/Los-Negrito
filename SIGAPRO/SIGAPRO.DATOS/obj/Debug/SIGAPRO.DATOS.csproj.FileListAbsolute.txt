@@ -1,0 +1,5 @@
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\bin\Debug\SIGAPRO.DATOS.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\bin\Debug\SIGAPRO.DATOS.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.csprojAssemblyReference.cache
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.pdb
