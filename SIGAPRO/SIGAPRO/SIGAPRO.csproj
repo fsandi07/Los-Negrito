@@ -171,9 +171,6 @@
     <Content Include="Vistas\examples\widgets.html" />
     <Content Include="Vistas\gulpfile.js" />
     <Content Include="Vistas\Login.aspx" />
-    <Content Include="Vistas\Prueba.aspx" />
-    <Content Include="Vistas\Prueba2.aspx" />
-    <Content Include="Vistas\Prueba3.aspx" />
     <Content Include="Vistas\template.html" />
     <Content Include="Vistas\Inicio.aspx" />
     <Content Include="Web.config" />
@@ -200,27 +197,6 @@
     </Compile>
     <Compile Include="Vistas\MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Prueba.aspx.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Prueba.aspx.designer.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Prueba2.aspx.cs">
-      <DependentUpon>Prueba2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Prueba2.aspx.designer.cs">
-      <DependentUpon>Prueba2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Prueba3.aspx.cs">
-      <DependentUpon>Prueba3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Prueba3.aspx.designer.cs">
-      <DependentUpon>Prueba3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
