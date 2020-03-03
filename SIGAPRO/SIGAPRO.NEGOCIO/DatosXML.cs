@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace SIGAPRO.NEGOCIO
 {
-    public class XML
+    public class DatosXML
     {
         private byte[] xml;
         private int opc;
         // contructor con parametros.
-        public XML(byte[] xml,int opc)
+        public DatosXML(byte[] xml,int opc)
         {
             this.Xml = xml;
             this.Opc = opc;
         }
         //contructor sin parametros
-        public XML()
+        public DatosXML()
         {
             this.Opc = 0;
         }

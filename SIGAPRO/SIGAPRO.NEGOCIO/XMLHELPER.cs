@@ -14,9 +14,9 @@ namespace SIGAPRO.NEGOCIO
         Datos cnGeneral = null;
         DataTable tblDatos = null;
         // llama a mi clase cliente donde tengo mis constructores, set and get 
-        XML OBJxml = null;
+        DatosXML OBJxml = null;
 
-        public XMLHELPER(XML parObjxml)
+        public XMLHELPER(DatosXML parObjxml)
         {
             OBJxml = parObjxml;
         }

@@ -139,6 +139,7 @@
     <Content Include="Vistas\assets\js\plugins\nouislider.min.js" />
     <Content Include="Vistas\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
+    <Content Include="Vistas\Datos_del_XML.aspx" />
     <Content Include="Vistas\docs\documentation.html" />
     <Content Include="Vistas\examples\calendar.html" />
     <Content Include="Vistas\examples\charts.html" />
@@ -169,14 +170,45 @@
     <Content Include="Vistas\examples\tables\extended.html" />
     <Content Include="Vistas\examples\tables\regular.html" />
     <Content Include="Vistas\examples\widgets.html" />
+    <Content Include="Vistas\Extracion_de_XML.aspx" />
     <Content Include="Vistas\gulpfile.js" />
+    <Content Include="Vistas\jquery\jquery.js" />
+    <Content Include="Vistas\jquery\jquery.min.js" />
+    <Content Include="Vistas\jquery\jquery.slim.js" />
+    <Content Include="Vistas\jquery\jquery.slim.min.js" />
+    <Content Include="Vistas\js\demo\chart-area-demo.js" />
+    <Content Include="Vistas\js\demo\chart-bar-demo.js" />
+    <Content Include="Vistas\js\demo\chart-pie-demo.js" />
+    <Content Include="Vistas\js\demo\datatables-demo.js" />
+    <Content Include="Vistas\js\sb-admin-2.js" />
+    <Content Include="Vistas\js\sb-admin-2.min.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\sweetalert\sweetalert2.all.js" />
+    <Content Include="Vistas\sweetalert\sweetalert2.all.min.js" />
+    <Content Include="Vistas\sweetalert\sweetalert2.css" />
+    <Content Include="Vistas\sweetalert\sweetalert2.js" />
+    <Content Include="Vistas\sweetalert\sweetalert2.min.css" />
+    <Content Include="Vistas\sweetalert\sweetalert2.min.js" />
     <Content Include="Vistas\template.html" />
     <Content Include="Vistas\Inicio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Datos_del_XML.aspx.cs">
+      <DependentUpon>Datos_del_XML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Datos_del_XML.aspx.designer.cs">
+      <DependentUpon>Datos_del_XML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Extracion_de_XML.aspx.cs">
+      <DependentUpon>Extracion_de_XML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Extracion_de_XML.aspx.designer.cs">
+      <DependentUpon>Extracion_de_XML.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -412,6 +444,8 @@
     <Content Include="Vistas\CHANGELOG.md" />
     <Content Include="Vistas\package.json" />
     <Content Include="Vistas\README.md" />
+    <Content Include="Vistas\jquery\jquery.min.map" />
+    <Content Include="Vistas\jquery\jquery.slim.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

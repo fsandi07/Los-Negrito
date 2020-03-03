@@ -3,3 +3,9 @@ C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\b
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.csprojAssemblyReference.cache
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.dll
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.pdb
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\bin\Debug\SIGAPRO.DATOS.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\bin\Debug\SIGAPRO.DATOS.pdb
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.DATOS\obj\Debug\SIGAPRO.DATOS.pdb
