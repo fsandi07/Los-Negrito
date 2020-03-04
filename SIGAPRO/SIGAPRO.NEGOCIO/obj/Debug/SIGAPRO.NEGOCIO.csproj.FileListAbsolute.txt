@@ -15,3 +15,11 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csprojAssemblyReference.cache
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb

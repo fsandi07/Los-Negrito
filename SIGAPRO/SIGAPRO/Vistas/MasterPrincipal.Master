@@ -83,13 +83,13 @@
                             <div class="collapse" id="pagesExamples">
                                 <ul class="nav">
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Prueba2.aspx">
+                                        <a class="nav-link" href="Extracion_de_XML.aspx">
                                             <span class="sidebar-mini">P </span>
-                                            <span class="sidebar-normal">Prueba2 </span>
+                                            <span class="sidebar-normal">Extracción de XML </span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="examples/pages/rtl.html">
+                                        <a class="nav-link" href="">
                                             <span class="sidebar-mini">RS </span>
                                             <span class="sidebar-normal">RTL Support </span>
                                         </a>
