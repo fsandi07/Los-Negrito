@@ -27,7 +27,7 @@ namespace SIGAPRO.Vistas
                 if (!File_XML_Extraccion.HasFile)
 
                 {
-                    this.Label2.Text = "Debe cargar un archivo XML para continuar";
+                    //this.Label2.Text = "Debe cargar un archivo XML para continuar";
                 }
                 else {
                     this.datos_Del_XML = new DatosXML();
