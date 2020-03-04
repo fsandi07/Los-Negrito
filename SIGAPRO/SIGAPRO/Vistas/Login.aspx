@@ -7,6 +7,7 @@
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Login
@@ -19,6 +20,11 @@
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
+    
+       <%-- links para las alertas --%>
+     <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css"/>
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>
 </head>
 
 <body class="off-canvas-sidebar" background-image="assets/img/faces/Negritos.jpg">
@@ -74,76 +80,20 @@
                   <div class="card-body ">
                     <div class="form-group">
                       <label for="exampleEmails" class="bmd-label-floating"> Nombre de Usuario *</label>                      
-                        <asp:TextBox ID="TxtUsuario" runat="server" class="form-control" required="true"></asp:TextBox>
+                        <asp:TextBox ID="Txt_Usuario" runat="server" class="form-control" required="true"></asp:TextBox>
                     </div>
                     <div class="form-group">
                       <label for="examplePasswords" class="bmd-label-floating"> Password *</label>                     
-                        <asp:TextBox ID="Txtclave" runat="server" class="form-control" required="true" type="password"></asp:TextBox>
+                        <asp:TextBox ID="Txt_clave" runat="server" class="form-control" required="true" type="password"></asp:TextBox>
                     </div>
-                    <div class="category form-category">* Required fields</div>
+                    <div class="category form-category">* Datos Requeridos</div>
                   </div>
                   <div class="card-footer ml-auto mr-auto">
-                    <button type="submit" class="btn btn-rose">Login</button>
+               <asp:Button ID="btn_ingresar" class="btn btn-rose" runat="server" Text="Ingresar" OnClick="btn_ingresar_Click" />
                   </div>
                 </div>
               </form>
             </div>
-         <%-- <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-            <form class="form" method="" action="">
-              <div class="card card-login card-hidden">
-                <div class="card-header card-header-rose text-center">
-                  <h4 class="card-title">Login</h4>
-                  <div class="social-line">
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-facebook-square"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-google-plus"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="card-body ">
-                  <p class="card-description text-center">Or Be Classical</p>
-                  <span class="bmd-form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">face</i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="First Name...">
-                    </div>
-                  </span>
-                  <span class="bmd-form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">email</i>
-                        </span>
-                      </div>
-                      <input type="email" class="form-control" placeholder="Email...">
-                    </div>
-                  </span>
-                  <span class="bmd-form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">lock_outline</i>
-                        </span>
-                      </div>
-                      <input type="password" class="form-control" placeholder="Password...">
-                    </div>
-                  </span>
-                </div>
-                <div class="card-footer justify-content-center">
-                  <a href="#pablo" class="btn btn-rose btn-link btn-lg">Lets Go</a>
-                </div>
-              </div>
-            </form>
-          </div>--%>
         </div>
       </div>
       <footer class="footer">
@@ -171,10 +121,35 @@
             <script>
                 document.write(new Date().getFullYear())
             </script>, Hecho  por
-            <a href="http://diessa.tk/" target="_blank">equipo Diessa</a> por una mejor web.
+            <a href="http://diessa.tk/" target="_blank">Equipo Diessa</a> por una mejor web.
           </div>
         </div>
       </footer>
+    </div> 
+      <div>
+              <%-- mensaje de error --%>
+         <script type="text/javascript">
+
+             function mensajeError() {
+                 swal.fire({
+                     title: '¡Error!',
+                     text: "¡El Nickname o la Contraseña son Incorrectos por favor Verifique!",
+                     type: 'error',
+                     showConfirmButton: false,
+                     allowOutsideClick: false,
+                     timer: 4000,
+                 })
+
+             }
+            </script>
+
+           <!-- Bootstrap core JavaScript-->
+  <script src="jquery/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script> 
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -192,6 +167,12 @@
   <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="assets/demo/demo.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script> 
   <script>
       $(document).ready(function () {
           $().ready(function () {
@@ -372,6 +353,8 @@
           }, 700);
       });
   </script>
+
+
 </body>
 
 </html>

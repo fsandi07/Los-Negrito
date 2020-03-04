@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SIGAPRO.Vistas
-{
-
-
-    public partial class Login
-    {
-
+namespace SIGAPRO.Vistas {
+    
+    
+    public partial class Login {
+        
         /// <summary>
         /// Control LoginValidation.
         /// </summary>
@@ -22,23 +20,32 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm LoginValidation;
-
+        
         /// <summary>
-        /// Control TxtUsuario.
+        /// Control Txt_Usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtUsuario;
-
+        protected global::System.Web.UI.WebControls.TextBox Txt_Usuario;
+        
         /// <summary>
-        /// Control Txtclave.
+        /// Control Txt_clave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txtclave;
+        protected global::System.Web.UI.WebControls.TextBox Txt_clave;
+        
+        /// <summary>
+        /// Control btn_ingresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_ingresar;
     }
 }
