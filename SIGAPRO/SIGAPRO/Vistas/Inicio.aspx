@@ -7,193 +7,100 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <br />   
-   <%-- <div class="row">
-              <div class="col-md-4">
-                <div class="card card-chart">
-                  <div class="card-header card-header-rose">
-                    <div id="roundedLineChart" class="ct-chart"></div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Rounded Line Chart</h4>
-                    <p class="card-category">Line Chart</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card card-chart">
-                  <div class="card-header card-header-warning">
-                    <div id="straightLinesChart" class="ct-chart"></div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Straight Lines Chart</h4>
-                    <p class="card-category">Line Chart with Points</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card card-chart">
-                  <div class="card-header card-header-info">
-                    <div id="simpleBarChart" class="ct-chart"></div>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title ">Simple Bar Chart</h4>
-                    <p class="card-category">Bar Chart</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-header card-header-icon card-header-info">
-                    <div class="card-icon">
-                      <i class="material-icons">timeline</i>
-                    </div>
-                    <h4 class="card-title">Coloured Line Chart
-                      <small> - Rounded</small>
-                    </h4>
-                  </div>
-                  <div class="card-body">
-                    <div id="colouredRoundedLineChart" class="ct-chart"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-header card-header-icon card-header-rose">
-                    <div class="card-icon">
-                      <i class="material-icons">insert_chart</i>
-                    </div>
-                    <h4 class="card-title">Multiple Bars Chart
-                      <small>- Bar Chart</small>
-                    </h4>
-                  </div>
-                  <div class="card-body">
-                    <div id="multipleBarsChart" class="ct-chart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>--%>
-    <div class="col-md-12">
-              <div class="card ">
-                <div class="card-header card-header-rose card-header-text">
-                  <div class="card-text">
-                    <h4 class="card-title">Resultado de Extraccion de Datos</h4>
-                  </div>
-                </div>
-                <div class="card-body ">
-                  <form method="get" action="/" class="form-horizontal">
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">With help</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <input type="text" class="form-control">
-                          <span class="bmd-help">A block of help text that breaks onto a new line.</span>
-                        </div>
+   <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+              <div class="page-categories">
+                <h3 class="title text-center">Inicio Subcategorias</h3>
+                <br />
+                <ul class="nav nav-pills nav-pills-warning nav-pills-icons justify-content-center" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#link7" role="tablist">
+                      <i class="material-icons">info</i> Descripción del Sistema
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#link8" role="tablist">
+                      <i class="material-icons">location_on</i> Extracción de XML
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
+                      <i class="material-icons">gavel</i> Revisión de Estadisticas
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#link10" role="tablist">
+                      <i class="material-icons">help_outline</i> Recursos Humanos
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content tab-space tab-subcategories">
+                  <div class="tab-pane" id="link7">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title">Descriptción de este Sistema</h4>
+                        <p class="card-category">
+                          More information here
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        Sistema SIGEPRO tiene como finalidad ayudar a las empresas en sus controles de gastos de Producción.
+                        <br>
+                        <br> Con un Mayor control de la extracción de los XML generados por facturas y control del RRHH.
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <input type="password" class="form-control">
-                        </div>
+                  </div>
+                  <div class="tab-pane active" id="link8">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title">Location of the product</h4>
+                        <p class="card-category">
+                          More information here
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
+                        <br>
+                        <br> Dramatically maintain clicks-and-mortar solutions without functional solutions.
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">Placeholder</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="placeholder">
-                        </div>
+                  </div>
+                  <div class="tab-pane" id="link9">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title">Legal info of the product</h4>
+                        <p class="card-category">
+                          More information here
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+                        <br>
+                        <br>Dynamically innovate resource-leveling customer service for state of the art customer service.
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">Disabled</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <input type="text" class="form-control" value="Disabled input here.." disabled>
-                        </div>
+                  </div>
+                  <div class="tab-pane" id="link10">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4 class="card-title">Help center</h4>
+                        <p class="card-category">
+                          More information here
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        From the seamless transition of glass and metal to the streamlined profile, every detail was carefully considered to enhance your experience. So while its display is larger, the phone feels just right.
+                        <br>
+                        <br> Another Text. The first thing you notice when you hold the phone is how great it feels in your hand. The cover glass curves down around the sides to meet the anodized aluminum enclosure in a remarkable, simplified design.
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">Static control</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <p class="form-control-static">hello@creative-tim.com</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label label-checkbox">Checkboxes and radios</label>
-                      <div class="col-sm-10 checkbox-radios">
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> First Checkbox
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> Second Checkbox
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> First Radio
-                            <span class="circle">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Second Radio
-                            <span class="circle">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label label-checkbox">Inline checkboxes</label>
-                      <div class="col-sm-10 checkbox-radios">
-                        <div class="form-check form-check-inline">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> a
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> b
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value=""> c
-                            <span class="form-check-sign">
-                              <span class="check"></span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+   
 
      <script src="bower_components/chartist/dist/chartist.min.js"></script>
     <script>

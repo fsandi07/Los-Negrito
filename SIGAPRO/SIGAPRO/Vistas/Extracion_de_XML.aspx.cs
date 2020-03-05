@@ -36,18 +36,12 @@ namespace SIGAPRO.Vistas
                     this.XMLHELPER = new XMLHELPER(datos_Del_XML);
                     this.XMLHELPER.enviarxml();
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeEspera", "mensajeEspera('" + "" + "');", true);
-
                 }
             }
             catch (Exception)
             {
-
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
-
-
-
-
         }
     }
 }
