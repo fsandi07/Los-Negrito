@@ -73,7 +73,7 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-                                <i class="material-icons">image</i>
+                                <i class="material-icons">library_books</i>
                                 <p>
                                     Modulo de XML
                
@@ -248,9 +248,9 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#tablesExamples">
-                                <i class="material-icons">grid_on</i>
+                                <i class="material-icons">settings</i>
                                 <p>
-                                    Tables
+                                    Mantenimiento
                
                                     <b class="caret"></b>
                                 </p>
@@ -258,23 +258,17 @@
                             <div class="collapse" id="tablesExamples">
                                 <ul class="nav">
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/tables/regular.html">
-                                            <span class="sidebar-mini">RT </span>
-                                            <span class="sidebar-normal">Regular Tables </span>
+                                        <a class="nav-link" href="Agregar_usuarios.aspx">
+                                            <span class="sidebar-mini">IU </span>
+                                            <span class="sidebar-normal">Ingresar Usuarios</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/tables/extended.html">
-                                            <span class="sidebar-mini">ET </span>
-                                            <span class="sidebar-normal">Extended Tables </span>
+                                        <a class="nav-link" href="Ver_Usuarios.aspx">
+                                            <span class="sidebar-mini">CU </span>
+                                            <span class="sidebar-normal">Consultar Usuarios </span>
                                         </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/tables/datatables.net.html">
-                                            <span class="sidebar-mini">DT </span>
-                                            <span class="sidebar-normal">DataTables.net </span>
-                                        </a>
-                                    </li>
+                                    </li>                                   
                                 </ul>
                             </div>
                         </li>

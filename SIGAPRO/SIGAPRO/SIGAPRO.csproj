@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Vistas\Agregar_usuarios.aspx" />
     <Content Include="Vistas\assets\css\material-dashboard.css" />
     <Content Include="Vistas\assets\css\material-dashboard.min.css" />
@@ -192,6 +197,7 @@
     <Content Include="Vistas\sweetalert\sweetalert2.min.js" />
     <Content Include="Vistas\template.html" />
     <Content Include="Vistas\Inicio.aspx" />
+    <Content Include="Vistas\Ver_Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +243,13 @@
     </Compile>
     <Compile Include="Vistas\MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ver_Usuarios.aspx.cs">
+      <DependentUpon>Ver_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ver_Usuarios.aspx.designer.cs">
+      <DependentUpon>Ver_Usuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -454,6 +467,8 @@
     <Content Include="Vistas\README.md" />
     <Content Include="Vistas\jquery\jquery.min.map" />
     <Content Include="Vistas\jquery\jquery.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -461,7 +476,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SIGAPRO.NEGOCIO\SIGAPRO.NEGOCIO.csproj">
       <Project>{c563caa1-2538-4558-bf23-8cf9cc0b38ed}</Project>

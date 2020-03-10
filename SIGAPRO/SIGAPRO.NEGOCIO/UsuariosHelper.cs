@@ -132,6 +132,26 @@ namespace SIGAPRO.NEGOCIO
             }
         }
 
+        public DataTable Listar_Usuarios()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
+                SqlParameter[] parParameter = new SqlParameter[1];
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJusuarios.Opc;
+               
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario_los_negritos");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
 
 
     }
