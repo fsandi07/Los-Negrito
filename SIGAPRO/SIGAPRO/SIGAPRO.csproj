@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Vistas\Agregar_usuarios.aspx" />
     <Content Include="Vistas\assets\css\material-dashboard.css" />
     <Content Include="Vistas\assets\css\material-dashboard.min.css" />
     <Content Include="Vistas\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-grid.css" />
@@ -195,6 +196,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Agregar_usuarios.aspx.cs">
+      <DependentUpon>Agregar_usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Agregar_usuarios.aspx.designer.cs">
+      <DependentUpon>Agregar_usuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Datos_del_XML.aspx.cs">
       <DependentUpon>Datos_del_XML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
