@@ -22,7 +22,7 @@ namespace SIGAPRO.Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listarUsuarios();
+            //listarUsuarios();
         }
 
         private void listarUsuarios()

@@ -23,3 +23,4 @@ C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIG
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CoreCompileInputs.cache
