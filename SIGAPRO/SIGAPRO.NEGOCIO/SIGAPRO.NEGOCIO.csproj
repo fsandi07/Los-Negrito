@@ -45,6 +45,8 @@
     <Compile Include="Empleados_Helper.cs" />
     <Compile Include="Pagos_empleados.cs" />
     <Compile Include="Pago_empleado_Helper.cs" />
+    <Compile Include="Partidas.cs" />
+    <Compile Include="Partida_Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatosXML.cs" />
     <Compile Include="Usuarios.cs" />

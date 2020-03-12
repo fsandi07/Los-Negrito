@@ -88,7 +88,7 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[10].SqlDbType = SqlDbType.DateTime;
                 parParameter[10].SqlValue = OBJempleados.Fecha_inicio_empleado;              
 
-                cnGeneral.EjecutarSP(parParameter, "SPEmpleados_los_negritos");
+                cnGeneral.EjecutarSP(parParameter, "SP_los_negritos_empleado");
             }
             catch (Exception ex)
             {

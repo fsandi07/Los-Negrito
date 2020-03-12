@@ -50,7 +50,7 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[3].SqlValue = OBJPagos_empleados.Prestamo;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@banco";
+                parParameter[4].ParameterName = "@banco_pago";
                 parParameter[4].SqlDbType = SqlDbType.VarChar;
                 parParameter[4].Size = 40;
                 parParameter[4].SqlValue = OBJPagos_empleados.Banco;
@@ -160,7 +160,7 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[24].SqlValue = OBJPagos_empleados.Boleta_entregada;
 
 
-                cnGeneral.EjecutarSP(parParameter, "SPpago_empleados_los_negritos");
+                cnGeneral.EjecutarSP(parParameter, "SP_los_negritos_boletas_pago");
             }
             catch (Exception ex)
             {
