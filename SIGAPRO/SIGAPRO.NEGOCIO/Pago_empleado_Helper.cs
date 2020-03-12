@@ -41,14 +41,12 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[2] = new SqlParameter();
                 parParameter[2].ParameterName = "@salario_quincenal";
-                parParameter[2].SqlDbType = SqlDbType.Float;
-                parParameter[2].Size = 30;
+                parParameter[2].SqlDbType = SqlDbType.Money;
                 parParameter[2].SqlValue = OBJPagos_empleados.Salario_quincenal;
 
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@prestamo";
-                parParameter[3].SqlDbType = SqlDbType.Float;
-                parParameter[3].Size = 50;
+                parParameter[3].SqlDbType = SqlDbType.Money;
                 parParameter[3].SqlValue = OBJPagos_empleados.Prestamo;
 
                 parParameter[4] = new SqlParameter();
@@ -81,20 +79,17 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[9] = new SqlParameter();
                 parParameter[9].ParameterName = "@perdido_dias_sin_goce";
-                parParameter[9].SqlDbType = SqlDbType.Float;
-                parParameter[9].Size = 30;
+                parParameter[9].SqlDbType = SqlDbType.Money;
                 parParameter[9].SqlValue = OBJPagos_empleados.Perdido_dias_sin_goce;
 
                 parParameter[10] = new SqlParameter();
                 parParameter[10].ParameterName = "@comision_productividad";
-                parParameter[10].SqlDbType = SqlDbType.Float;
-                parParameter[10].Size = 30;
+                parParameter[10].SqlDbType = SqlDbType.Money;
                 parParameter[10].SqlValue = OBJPagos_empleados.Comision_productividad;
 
                 parParameter[11] = new SqlParameter();
                 parParameter[11].ParameterName = "@ganado_feriados";
-                parParameter[11].SqlDbType = SqlDbType.Float;
-                parParameter[11].Size = 30;
+                parParameter[11].SqlDbType = SqlDbType.Money;
                 parParameter[11].SqlValue = OBJPagos_empleados.Ganado_feriados;
 
                 parParameter[12] = new SqlParameter();
@@ -104,8 +99,7 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[13] = new SqlParameter();
                 parParameter[13].ParameterName = "@ganado_extras";
-                parParameter[13].SqlDbType = SqlDbType.Float;
-                parParameter[13].Size = 30;
+                parParameter[13].SqlDbType = SqlDbType.Money;
                 parParameter[13].SqlValue = OBJPagos_empleados.Ganado_extras;
 
                 parParameter[14] = new SqlParameter();
@@ -115,26 +109,22 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[15] = new SqlParameter();
                 parParameter[15].ParameterName = "@salario_neto";
-                parParameter[15].SqlDbType = SqlDbType.Float;
-                parParameter[15].Size = 30;
+                parParameter[15].SqlDbType = SqlDbType.Money;
                 parParameter[15].SqlValue = OBJPagos_empleados.Salario_neto;
 
                 parParameter[16] = new SqlParameter();
                 parParameter[16].ParameterName = "@caja_seguro";
-                parParameter[16].SqlDbType = SqlDbType.Float;
-                parParameter[16].Size = 30;
+                parParameter[16].SqlDbType = SqlDbType.Money;
                 parParameter[16].SqlValue = OBJPagos_empleados.Caja_seguro;
 
                 parParameter[17] = new SqlParameter();
                 parParameter[17].ParameterName = "@impuesto_renta";
-                parParameter[17].SqlDbType = SqlDbType.Float;
-                parParameter[17].Size = 30;
+                parParameter[17].SqlDbType = SqlDbType.Money;
                 parParameter[17].SqlValue = OBJPagos_empleados.Impuesto_renta;
 
                 parParameter[18] = new SqlParameter();
                 parParameter[18].ParameterName = "@otras_deducciones";
-                parParameter[18].SqlDbType = SqlDbType.Float;
-                parParameter[18].Size = 30;
+                parParameter[18].SqlDbType = SqlDbType.Money;
                 parParameter[18].SqlValue = OBJPagos_empleados.Otras_deducciones;
 
                 parParameter[19] = new SqlParameter();
@@ -145,25 +135,22 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[20] = new SqlParameter();
                 parParameter[20].ParameterName = "@total_deducciones";
-                parParameter[20].SqlDbType = SqlDbType.Float;
-                parParameter[20].Size = 30;
+                parParameter[20].SqlDbType = SqlDbType.Money;
                 parParameter[20].SqlValue = OBJPagos_empleados.Total_deducciones;
 
                 parParameter[21] = new SqlParameter();
                 parParameter[21].ParameterName = "@total_depositado";
-                parParameter[21].SqlDbType = SqlDbType.Float;
-                parParameter[21].Size = 30;
+                parParameter[21].SqlDbType = SqlDbType.Money;
                 parParameter[21].SqlValue = OBJPagos_empleados.Total_depositado;
 
                 parParameter[22] = new SqlParameter();
                 parParameter[22].ParameterName = "@total_anterior";
-                parParameter[22].SqlDbType = SqlDbType.Float;
-                parParameter[22].Size = 30;
+                parParameter[22].SqlDbType = SqlDbType.Money;
                 parParameter[22].SqlValue = OBJPagos_empleados.Total_anterior;
 
                 parParameter[23] = new SqlParameter();
                 parParameter[23].ParameterName = "@saldo";
-                parParameter[23].SqlDbType = SqlDbType.Float;
+                parParameter[23].SqlDbType = SqlDbType.Money;
                 parParameter[23].Size = 30;
                 parParameter[23].SqlValue = OBJPagos_empleados.Saldo;
 

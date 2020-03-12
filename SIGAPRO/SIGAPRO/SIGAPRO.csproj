@@ -114,6 +114,8 @@
     <Content Include="Vistas\assets\img\lock.jpg" />
     <Content Include="Vistas\assets\img\login.jpg" />
     <Content Include="Vistas\assets\img\mask.png" />
+    <Content Include="Vistas\assets\img\Negritos.jpg" />
+    <Content Include="Vistas\assets\img\Negritos2.jpg" />
     <Content Include="Vistas\assets\img\new_logo.png" />
     <Content Include="Vistas\assets\img\placeholder.jpg" />
     <Content Include="Vistas\assets\img\product1.jpg" />
@@ -146,6 +148,8 @@
     <Content Include="Vistas\assets\js\plugins\nouislider.min.js" />
     <Content Include="Vistas\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
+    <Content Include="Vistas\Consultar_Empleado.aspx" />
+    <Content Include="Vistas\Consultar_Pagos_Empleados.aspx" />
     <Content Include="Vistas\Datos_del_XML.aspx" />
     <Content Include="Vistas\docs\documentation.html" />
     <Content Include="Vistas\examples\calendar.html" />
@@ -190,6 +194,8 @@
     <Content Include="Vistas\js\sb-admin-2.js" />
     <Content Include="Vistas\js\sb-admin-2.min.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Registro_Empleados.aspx" />
+    <Content Include="Vistas\Registro_pagos.aspx" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.js" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.min.js" />
     <Content Include="Vistas\sweetalert\sweetalert2.css" />
@@ -209,6 +215,20 @@
     </Compile>
     <Compile Include="Vistas\Agregar_usuarios.aspx.designer.cs">
       <DependentUpon>Agregar_usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultar_Empleado.aspx.cs">
+      <DependentUpon>Consultar_Empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultar_Empleado.aspx.designer.cs">
+      <DependentUpon>Consultar_Empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultar_Pagos_Empleados.aspx.cs">
+      <DependentUpon>Consultar_Pagos_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultar_Pagos_Empleados.aspx.designer.cs">
+      <DependentUpon>Consultar_Pagos_Empleados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Datos_del_XML.aspx.cs">
       <DependentUpon>Datos_del_XML.aspx</DependentUpon>
@@ -244,6 +264,20 @@
     </Compile>
     <Compile Include="Vistas\MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Registro_Empleados.aspx.cs">
+      <DependentUpon>Registro_Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Registro_Empleados.aspx.designer.cs">
+      <DependentUpon>Registro_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Registro_pagos.aspx.cs">
+      <DependentUpon>Registro_pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Registro_pagos.aspx.designer.cs">
+      <DependentUpon>Registro_pagos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Ver_Usuarios.aspx.cs">
       <DependentUpon>Ver_Usuarios.aspx</DependentUpon>

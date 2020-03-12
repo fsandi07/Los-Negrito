@@ -27,7 +27,7 @@
 <body class="" >
     <form id="form1" runat="server">
         <div class="wrapper ">
-            <div class="sidebar" data-color="purple" data-background-color="black" style="background-image: url('assets/img/sidebar-4.jpg')" >
+            <div class="sidebar" data-color="purple" data-background-color="black" style="background-image: url('assets/img/bg9.jpg')" >
                       
                 <div class="sidebar-wrapper">
                     <div class="user">
@@ -211,39 +211,39 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#formsExamples">
-                                <i class="material-icons">content_paste</i>
+                                <i class="material-icons">group</i>
                                 <p>
-                                    Forms
+                                   Recurso Humano
                
                                     <b class="caret"></b>
                                 </p>
                             </a>
                             <div class="collapse" id="formsExamples">
                                 <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/forms/regular.html">
-                                            <span class="sidebar-mini">RF </span>
-                                            <span class="sidebar-normal">Regular Forms </span>
+                                      <li class="nav-item ">
+                                        <a class="nav-link" href="Registro_Empleados.aspx">
+                                            <span class="sidebar-mini">IE </span>
+                                            <span class="sidebar-normal">Ingresar Colaborador </span>
+                                        </a>
+                                    </li> 
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Consultar_Empleado.aspx">
+                                            <span class="sidebar-mini">CE </span>
+                                            <span class="sidebar-normal">Consultar Colaborador </span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/forms/extended.html">
+                                        <a class="nav-link" href="Registro_pagos.aspx">
                                             <span class="sidebar-mini">EF </span>
-                                            <span class="sidebar-normal">Extended Forms </span>
+                                            <span class="sidebar-normal">Registar Pago Colaborador </span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/forms/validation.html">
+                                        <a class="nav-link" href="Consultar_Pagos_Empleados.aspx">
                                             <span class="sidebar-mini">VF </span>
-                                            <span class="sidebar-normal">Validation Forms </span>
+                                            <span class="sidebar-normal">Consulta Pago Colaborador</span>
                                         </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="../examples/forms/wizard.html">
-                                            <span class="sidebar-mini">W </span>
-                                            <span class="sidebar-normal">Wizard </span>
-                                        </a>
-                                    </li>
+                                    </li>                                    
                                 </ul>
                             </div>
                         </li>
@@ -269,7 +269,7 @@
                                             <span class="sidebar-mini">CU </span>
                                             <span class="sidebar-normal">Consultar Usuarios </span>
                                         </a>
-                                    </li>                                   
+                                    </li>                                    
                                 </ul>
                             </div>
                         </li>
@@ -386,11 +386,32 @@
                         </div>
                     </div>
                 </nav>
-                <br />  
-                   <div class="tim-typo">
-                    <h2>
-                        <span class="tim-note"></span>Coorporación los Negritos S.A.</h2>
+                <br /> 
+                <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="assets/img/faces/Negritos.jpg" />
+                  </a>
+                </div> 
+                <div class="card-body">
+                  <h2 class="card-title text-warning">Coorporación Avícola los Negritos</h2>               
+                  <p class="card-description">
+                   Sistema SIGEPRO.
+                  </p>                  
                 </div>
+              </div>
+
+               <%--  <div class="card-avatar">
+                  <a href="#pablo">
+                     <img alt="" width="200"  height="100" src="assets/img/faces/Negritos.jpg"/>
+                  </a>
+                </div> --%>
+
+
+                  <%-- <div class="tim-typo">                       
+                    <h2><span class="tim-note"></span>
+                        &nbsp Coorporación los Negritos S.A.</h2>
+                </div>--%>
                 <hr />
                 <!-- End Navbar -->
                 <div>
@@ -755,6 +776,7 @@
 
                 });
   </script>
+      </div>
     </form>
 </body>
 </html>

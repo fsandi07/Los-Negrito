@@ -4,9 +4,7 @@
           href="bower_components/chartist/dist/chartist.min.css">
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-    <br />   
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">     
    <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
               <div class="page-categories">
