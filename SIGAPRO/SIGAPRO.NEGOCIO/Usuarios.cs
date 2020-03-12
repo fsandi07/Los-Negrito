@@ -31,7 +31,8 @@ namespace SIGAPRO.NEGOCIO
         public int Estado { get => estado; set => estado = value; }
 
         // contructor con parametros 
-        public Usuarios(int opc, string cedula_usuario, string nombre_usuario, string apellido1, string apellido2, string nick_name, string correo_electronico, string clave_usuario, string rol, int estado)
+        public Usuarios(int opc, string cedula_usuario, string nombre_usuario, string apellido1, string apellido2, 
+            string nick_name, string correo_electronico, string clave_usuario, string rol, int estado)
         {
             this.opc = opc;
             this.cedula_usuario = cedula_usuario;

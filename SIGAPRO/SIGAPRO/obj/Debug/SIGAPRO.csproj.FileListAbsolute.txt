@@ -176,4 +176,3 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.csproj.
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.csproj.CopyComplete
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.pdb
-C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.csproj.CoreCompileInputs.cache
