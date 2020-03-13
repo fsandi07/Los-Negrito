@@ -148,6 +148,8 @@
     <Content Include="Vistas\assets\js\plugins\nouislider.min.js" />
     <Content Include="Vistas\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
+    <Content Include="Vistas\Bancos.aspx" />
+    <Content Include="Vistas\Centro_de_Costos.aspx" />
     <Content Include="Vistas\Consultar_Empleado.aspx" />
     <Content Include="Vistas\Consultar_Pagos_Empleados.aspx" />
     <Content Include="Vistas\Datos_del_XML.aspx" />
@@ -194,6 +196,7 @@
     <Content Include="Vistas\js\sb-admin-2.js" />
     <Content Include="Vistas\js\sb-admin-2.min.js" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Partidas.aspx" />
     <Content Include="Vistas\Registro_Empleados.aspx" />
     <Content Include="Vistas\Registro_pagos.aspx" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.js" />
@@ -215,6 +218,20 @@
     </Compile>
     <Compile Include="Vistas\Agregar_usuarios.aspx.designer.cs">
       <DependentUpon>Agregar_usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Bancos.aspx.cs">
+      <DependentUpon>Bancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Bancos.aspx.designer.cs">
+      <DependentUpon>Bancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Centro_de_Costos.aspx.cs">
+      <DependentUpon>Centro_de_Costos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Centro_de_Costos.aspx.designer.cs">
+      <DependentUpon>Centro_de_Costos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Consultar_Empleado.aspx.cs">
       <DependentUpon>Consultar_Empleado.aspx</DependentUpon>
@@ -264,6 +281,13 @@
     </Compile>
     <Compile Include="Vistas\MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Partidas.aspx.cs">
+      <DependentUpon>Partidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Partidas.aspx.designer.cs">
+      <DependentUpon>Partidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Registro_Empleados.aspx.cs">
       <DependentUpon>Registro_Empleados.aspx</DependentUpon>
