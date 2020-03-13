@@ -234,13 +234,13 @@
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Registro_pagos.aspx">
-                                            <span class="sidebar-mini">EF </span>
+                                            <span class="sidebar-mini">RPC </span>
                                             <span class="sidebar-normal">Registar Pago Colaborador </span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Consultar_Pagos_Empleados.aspx">
-                                            <span class="sidebar-mini">VF </span>
+                                            <span class="sidebar-mini">CP </span>
                                             <span class="sidebar-normal">Consulta Pago Colaborador</span>
                                         </a>
                                     </li>                                    

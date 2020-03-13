@@ -15,22 +15,22 @@ namespace SIGAPRO.Vistas
     {
 
         /// <summary>
-        /// Control txt_identificacion.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_identificacion;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control Btn_validar.
+        /// Control DptColaborador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_validar;
+        protected global::System.Web.UI.WebControls.DropDownList DptColaborador;
 
         /// <summary>
         /// Control txt_Nombre.
@@ -42,66 +42,183 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre;
 
         /// <summary>
-        /// Control txt_Apellido1.
+        /// Control txt_Apellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Apellido1;
+        protected global::System.Web.UI.WebControls.TextBox txt_Apellido;
 
         /// <summary>
-        /// Control txt_Apellido2.
+        /// Control txt_Salario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Apellido2;
+        protected global::System.Web.UI.WebControls.TextBox txt_Salario;
 
         /// <summary>
-        /// Control txt_Domicilio.
+        /// Control Dptsin_goce.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Domicilio;
+        protected global::System.Web.UI.WebControls.DropDownList Dptsin_goce;
 
         /// <summary>
-        /// Control Calendar1.
+        /// Control Txt_total_sin_goce.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.TextBox Txt_total_sin_goce;
 
         /// <summary>
-        /// Control txt_Numero_telefonico.
+        /// Control txt_Comision_Productividad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Numero_telefonico;
+        protected global::System.Web.UI.WebControls.TextBox txt_Comision_Productividad;
 
         /// <summary>
-        /// Control txt_Correo_Electronico.
+        /// Control txt_Prestamo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Correo_Electronico;
+        protected global::System.Web.UI.WebControls.TextBox txt_Prestamo;
 
         /// <summary>
-        /// Control txt_Cuenta_IBAN.
+        /// Control Dptferiados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Cuenta_IBAN;
+        protected global::System.Web.UI.WebControls.DropDownList Dptferiados;
+
+        /// <summary>
+        /// Control txt_total_feriados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_feriados;
+
+        /// <summary>
+        /// Control txt_horas_extras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_horas_extras;
+
+        /// <summary>
+        /// Control txt_total_Extras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_Extras;
+
+        /// <summary>
+        /// Control Txt_Salario_Neto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_Salario_Neto;
+
+        /// <summary>
+        /// Control Txt_caja_seguro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_caja_seguro;
+
+        /// <summary>
+        /// Control Txt_impuesto_renta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_impuesto_renta;
+
+        /// <summary>
+        /// Control txt_descrip_deduc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descrip_deduc;
+
+        /// <summary>
+        /// Control txt_total_otras_deduc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_otras_deduc;
+
+        /// <summary>
+        /// Control txt_total_deducciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_deducciones;
+
+        /// <summary>
+        /// Control txt_total_depositado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_depositado;
+
+        /// <summary>
+        /// Control txt_saldo_anterior.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_saldo_anterior;
+
+        /// <summary>
+        /// Control txt_saldo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_saldo;
+
+        /// <summary>
+        /// Control btn_Pago_Cola.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Pago_Cola;
     }
 }
