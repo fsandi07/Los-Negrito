@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SIGAPRO.Vistas {
-    
-    
-    public partial class Extracion_de_XML {
-        
+namespace SIGAPRO.Vistas
+{
+
+
+    public partial class Extracion_de_XML
+    {
+
         /// <summary>
         /// Control DropDownList2.
         /// </summary>
@@ -20,16 +22,16 @@ namespace SIGAPRO.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
-        
+
         /// <summary>
-        /// Control DropDownList1.
+        /// Control Dpt_partida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
+        protected global::System.Web.UI.WebControls.DropDownList Dpt_partida;
+
         /// <summary>
         /// Control radioB1.
         /// </summary>
@@ -38,7 +40,7 @@ namespace SIGAPRO.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton radioB1;
-        
+
         /// <summary>
         /// Control radioB2.
         /// </summary>
@@ -47,25 +49,43 @@ namespace SIGAPRO.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton radioB2;
-        
+
         /// <summary>
-        /// Control Label1.
+        /// Control Radiopagada_si.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
+        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_si;
+
         /// <summary>
-        /// Control File_XML_Extraccion.
+        /// Control Radiopagada_no.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload File_XML_Extraccion;
-        
+        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_no;
+
+        /// <summary>
+        /// Control Dpt_plazo_pago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Dpt_plazo_pago;
+
+        /// <summary>
+        /// Control FileUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
         /// <summary>
         /// Control btn_Extraccion.
         /// </summary>

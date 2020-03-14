@@ -32,7 +32,11 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link5" role="tablist">Aprobación de Factura.
+                                    <a class="nav-link" data-toggle="tab" href="#link5" role="tablist">Aprobación de Factura
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#link6" role="tablist">Estado de pago
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -57,45 +61,76 @@
                                     <div>
                                     </div>
                                     <br />
-                                    This is very nice.
+                                    Asignación del centro de costos registrado previamente,seleccione en el menu de opciones desplegable.
                                 </div>
 
                                 <div class="tab-pane" id="link2">
-                                    Asigne la partida correspondiente.
+                                    Asigne la partida correspondiente
                                     <br />
                                     <br />
                                     <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="DropDownList1" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">Pureba1</asp:ListItem>
-                                            <asp:ListItem Value="2">Prueba2</asp:ListItem>
-                                            <asp:ListItem Value="3">Prueba 3</asp:ListItem>
+                                        <asp:DropDownList ID="Dpt_partida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
+                                            <asp:ListItem Value="1">Partida1</asp:ListItem>
+                                            <asp:ListItem Value="2">Partida2</asp:ListItem>
+                                            <asp:ListItem Value="3">Partida3</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                     <br />
                                     <br />
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                                    Asignacion de partidas de producción registradas por rangos de fecha.
                                 </div>
                                 <div class="tab-pane" id="link5">
                                     La factura se encuentra aprobada por hacienda?
                                     <br />
-                                    <br />                                   
+                                    <br />
 
-                                    <div class="btn-group form-check" >
-                                        <label class="btn btn-primary btn-round" >
-                                            <asp:RadioButton runat="server" ID="radioB1" GroupName="radioB"  />
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="radioB1" GroupName="radioB" />
                                             Sí   
                                         </label>
-                                     </div>
-                                    <div class="btn-group form-check" >
-                                        <label class="btn btn-primary btn-round" >
+                                    </div>
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
                                             <asp:RadioButton runat="server" ID="radioB2" GroupName="radioB" />
-                                            No
-   
+                                            No   
                                         </label>
                                     </div>
                                     <br />
                                     <br />
-                                    Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                                    Opcion que permite indicar si  la factura se encuentra aporbada o si aun se encuentra pendiente de realizar la aceptación.
+                                </div>
+                                <div class="tab-pane" id="link6">
+                                    La factura se encuentra pagada?
+                                    <br />
+                                    <br />
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
+                                            Pendiente   
+                                        </label>
+                                    </div>
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
+                                            Pagada   
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    Seleccione el plazo de credito.
+                                        <br />
+                                    <br />
+                                    <div class="col-lg-5 col-md-6 col-sm-3">
+                                        <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
+                                            <asp:ListItem Value="1">15 dias</asp:ListItem>
+                                            <asp:ListItem Value="2">30 dias</asp:ListItem>
+                                            <asp:ListItem Value="3">45 dias</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
                                 </div>
                                 <div class="tab-pane" id="link3">
                                     Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
@@ -105,27 +140,41 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    
                                     <br />
-                                      
-  <div class="form-group form-file-upload form-file-multiple">
-    <input type="file" multiple="" class="inputFileHidden">
-      
-    <div class="input-group">
-       
- <%--       <input type="text" class="form-control inputFileVisible" placeholder="Single File">--%>
-         <a href="#" class="badge badge-primary"><i class="material-icons">attach_file</i>
-        <span class="input-group-btn">
-           
-             <asp:Label ID="Label1" runat="server" Text="Precione el circulo para cargar Archivo XML"></asp:Label>
-                
-            <button type="button" class="btn btn-fab btn-round btn-success">
-         
-                 <asp:FileUpload ID="File_XML_Extraccion" runat="server"/>
-          </button>
-                  
-        </span>
-              </a> 
-    </div>
-  </div>
+
+                                    <div class="form-group form-file-upload form-file-multiple">
+                                        <input type="file" multiple="" class="inputFileHidden">
+
+                                        <div class="input-group">
+
+                                            <%--       <input type="text" class="form-control inputFileVisible" placeholder="Single File">--%>
+                                          <%--  <a href="#" class="badge badge-primary"><i class="material-icons">attach_file</i>
+                                                <span class="input-group-btn">
+
+                                                    <asp:Label ID="Label1" runat="server" Text="Precione el circulo para cargar Archivo XML"></asp:Label>
+
+                                                    <button type="button" class="btn btn-fab btn-round btn-success">
+
+                                                        <asp:FileUpload ID="File_XML_Extraccion" runat="server" />
+                                                    </button>
+
+                                                </span> --%>                                              
+                                            <%--</a>--%>
+                                        </div>
+                                    </div>
+                                      <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                        <div class="fileinput-new thumbnail">
+                          <img src="assets/img/descarga.jpg" alt="...">
+                        </div>
+                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                        <div>
+                          <span class="btn btn-rose btn-round btn-file">
+                            <span class="fileinput-new"><asp:FileUpload ID="FileUpload1" runat="server" /></span>
+                            <span class="fileinput-exists">Change</span>
+                            <input type="file" name="..." />
+                          </span>
+                          <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                        </div>
+                      </div>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

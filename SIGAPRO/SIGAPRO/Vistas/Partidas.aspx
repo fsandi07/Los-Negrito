@@ -93,31 +93,6 @@
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <label class="col-sm-2 col-form-label">Numero de Factura</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                                  <div class="tab-pane active" id="link1">
-                                   Seleccione un numero de Factura.
-                                     <br />
-                                    <br />
-                                    <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:dropdownlist runat="server" DataSourceID="SqlDataNumero_Facturas" DataTextField="numero_factura" DataValueField="numero_factura"  class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Numero de Factura">
-
-                                        </asp:dropdownlist>
-                                        <asp:SqlDataSource ID="SqlDataNumero_Facturas" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [numero_factura] FROM [Los_negritos_Extraccion_DE_Datos]"></asp:SqlDataSource>
-                                    </div>
-
-                                    <br />
-                                    <div>
-                                    </div>
-                                    <br />
-                        
-                                </div>
-                        </div>
-                      </div>
-                    </div>
-
                   </form>
                 </div>
               </div>

@@ -269,7 +269,44 @@
                                             <span class="sidebar-mini">CU </span>
                                             <span class="sidebar-normal">Consultar Usuarios </span>
                                         </a>
-                                    </li>                                    
+                                    </li>  
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Bancos.aspx">
+                                            <span class="sidebar-mini">IB </span>
+                                            <span class="sidebar-normal">Ingresar Bancos </span>
+                                        </a>
+                                    </li> 
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Ver_Usuarios.aspx">
+                                            <span class="sidebar-mini">CB </span>
+                                            <span class="sidebar-normal">Consultar Bancos </span>
+                                        </a>
+                                    </li> 
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Centro_de_Costos.aspx">
+                                            <span class="sidebar-mini">ICC </span>
+                                            <span class="sidebar-normal">Ingresar Centro Costos </span>
+                                        </a>
+                                    </li> 
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Ver_Usuarios.aspx">
+                                            <span class="sidebar-mini">CCC </span>
+                                            <span class="sidebar-normal">Consultar Centro Costos </span>
+                                        </a>
+                                    </li> 
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="Partidas.aspx">
+                                            <span class="sidebar-mini">IP </span>
+                                            <span class="sidebar-normal">Ingresar Partidas</span>
+                                        </a>
+                                    </li> 
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="Ver_Usuarios.aspx">
+                                            <span class="sidebar-mini">CP </span>
+                                            <span class="sidebar-normal">Consultar Partidas </span>
+                                        </a>
+                                    </li> 
+
                                 </ul>
                             </div>
                         </li>
