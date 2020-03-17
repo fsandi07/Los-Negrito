@@ -28,7 +28,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">Asignar Partidas
+                                    <a class="nav-link" data-toggle="tab" href="#link2" role="tablist">Asignar Partidas y Detalle
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -76,8 +76,19 @@
                                         </asp:DropDownList>
                                     </div>
                                     <br />
+                                    Asigne el detalle que corresponde
                                     <br />
-                                    Asignacion de partidas de producción registradas por rangos de fecha.
+                                    <br />
+                                    <div class="col-lg-5 col-md-6 col-sm-3">
+                                        <asp:DropDownList ID="Dpt_Detalle" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
+                                            <asp:ListItem Value="1">detalle1</asp:ListItem>
+                                            <asp:ListItem Value="2">detalle2</asp:ListItem>
+                                            <asp:ListItem Value="3">detalle3</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    Asignacion de partidas de producción registradas por rangos de fecha y su detalle correspondiente.
                                 </div>
                                 <div class="tab-pane" id="link5">
                                     La factura se encuentra aprobada por hacienda?
@@ -147,7 +158,7 @@
                                         <div class="input-group">
 
                                             <%--       <input type="text" class="form-control inputFileVisible" placeholder="Single File">--%>
-                                          <%--  <a href="#" class="badge badge-primary"><i class="material-icons">attach_file</i>
+                                            <%--  <a href="#" class="badge badge-primary"><i class="material-icons">attach_file</i>
                                                 <span class="input-group-btn">
 
                                                     <asp:Label ID="Label1" runat="server" Text="Precione el circulo para cargar Archivo XML"></asp:Label>
@@ -157,24 +168,25 @@
                                                         <asp:FileUpload ID="File_XML_Extraccion" runat="server" />
                                                     </button>
 
-                                                </span> --%>                                              
+                                                </span> --%>
                                             <%--</a>--%>
                                         </div>
                                     </div>
-                                      <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail">
-                          <img src="assets/img/descarga.jpg" alt="...">
-                        </div>
-                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                        <div>
-                          <span class="btn btn-rose btn-round btn-file">
-                            <span class="fileinput-new"><asp:FileUpload ID="FileUpload1" runat="server" /></span>
-                            <span class="fileinput-exists">Change</span>
-                            <input type="file" name="..." />
-                          </span>
-                          <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                        </div>
-                      </div>
+                                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                        <div class="fileinput-new thumbnail">
+                                            <img src="assets/img/xml.jpg" alt="...">
+                                        </div>
+                                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                        <div>
+                                            <span class="btn btn-rose btn-round btn-file">
+                                                <span class="fileinput-new">
+                                                    <asp:FileUpload ID="File_XML_Extraccion" runat="server" /></span>
+                                                <span class="fileinput-exists">Change</span>
+                                                <input type="file" name="..." />
+                                            </span>
+                                            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Remove</a>
+                                        </div>
+                                    </div>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -189,48 +201,49 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // mensaje de espera 
+        function mensajeEspera() {
+            let timerInterval
+            Swal.fire({
+                title: '¡Extrayendo XML Por Favor Espere!',
 
+                timer: 5000,
+                allowOutsideClick: false,
+                onBeforeOpen: () => {
 
-                <script type="text/javascript">
-                    // mensaje de espera 
-                    function mensajeEspera() {
-                        let timerInterval
-                        Swal.fire({
-                            title: '¡Extrayendo XML Por Favor Espere!',
+                    Swal.showLoading()
 
-                            timer: 5000,
-                            allowOutsideClick: false,
-                            onBeforeOpen: () => {
+                    timerInterval = setInterval(() => {
+                        Swal.getContent().querySelector('strong')
+                            .textContent = (Swal.getTimerLeft() / 1000)
+                                .toFixed(0)
+                    }, 100)
+                },
+                onClose: () => {
+                    clearInterval(timerInterval)
+                }
 
-                                Swal.showLoading()
+            })
 
-                                timerInterval = setInterval(() => {
-                                    Swal.getContent().querySelector('strong')
-                                        .textContent = (Swal.getTimerLeft() / 1000)
-                                            .toFixed(0)
-                                }, 100)
-                            },
-                            onClose: () => {
-                                clearInterval(timerInterval)
-                            }
+            window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
 
-                        })
+        }
+        // mensaje de error
+        function mensajeError() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + " Lo sentimos el archivo no es de tipo XML o este XML ya fue Extraido Por Favor Verifique" + "!",
+                type: 'error',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 5000,
 
-                        window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
+            })
+        }
 
-                    }
-                    // mensaje de error
-                    function mensajeError() {
-                        swal.fire({
-                            title: '¡Error!',
-                            text: "¡" + " Lo sentimos el archivo no es de tipo XML o este XML ya fue Extraido Por Favor Verifique" + "!",
-                            type: 'error',
-                            showConfirmButton: false,
-                            allowOutsideClick: false,
-                            timer: 5000,
-
-                        })
-                    }
-
-                </script>
+    </script>
 </asp:Content>

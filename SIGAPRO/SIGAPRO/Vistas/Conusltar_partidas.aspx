@@ -1,29 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Consultar_Pagos_Empleados.aspx.cs" Inherits="SIGAPRO.Vistas.Consultar_Pagos_Empleados" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Conusltar_partidas.aspx.cs" Inherits="SIGAPRO.Vistas.Conusltar_partidas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-       <style type="text/css">
-        .auto-style1 {
-            width: 84px;
-        }
-        .auto-style2 {
-            width: 114px;
-        }
-        .auto-style4 {
-            width: 69px;
-        }
-        .auto-style5 {
-            width: 119px;
-        }
-    </style>
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <%-- links para las alertas  --%>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="content">   
+      <div class="content">   
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header card-header-icon card-header-rose">
                     <div class="card-icon">
                       <i class="material-icons">group</i>
                     </div>
-                    <h4 class="card-title "> Consulta de pagos</h4>
+                    <h4 class="card-title "> Consulta Partidas</h4>
                   </div>
                     <br />
                     <br />
@@ -69,8 +60,17 @@
             </div>
        
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-    <br />
-     <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" Text="Nuevo Pago" OnClick="Btn_redirije_Click"  />
-    
+   <br />
+    <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="card">
+                    <div class="card-body text-center">
+                        <code>Agregar nueva Partida?</code><br />
+                       <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" Text="Nuevo Partida" OnClick="Btn_redirije_Click" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
 </asp:Content>

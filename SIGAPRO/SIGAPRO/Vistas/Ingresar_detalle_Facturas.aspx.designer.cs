@@ -11,25 +11,25 @@ namespace SIGAPRO.Vistas
 {
 
 
-    public partial class Consultar_Pagos_Empleados
+    public partial class Ingresar_detalle_Facturas
     {
 
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control txt_nombre_detalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox txt_nombre_detalle;
 
         /// <summary>
-        /// Control Btn_redirije.
+        /// Control txt_descripcion_detalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_redirije;
+        protected global::System.Web.UI.WebControls.TextBox txt_descripcion_detalle;
     }
 }

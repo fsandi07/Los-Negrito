@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SIGAPRO.Vistas {
-    
-    
-    public partial class Ver_Usuarios {
-        
+namespace SIGAPRO.Vistas
+{
+
+
+    public partial class Ver_Usuarios
+    {
+
         /// <summary>
         /// Control SqlDataSource1.
         /// </summary>
@@ -20,5 +22,14 @@ namespace SIGAPRO.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Control Btn_redirije.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_redirije;
     }
 }

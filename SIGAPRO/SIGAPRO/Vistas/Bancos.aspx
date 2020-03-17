@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Bancos.aspx.cs" Inherits="SIGAPRO.Vistas.Bancos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-
+     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <%-- links para las alertas  --%>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
 </asp:Content>
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <br>
    <br /> 
@@ -15,8 +16,7 @@
                     <h4 class="card-title">Agregar un Banco</h4>
                   </div>
                 </div>
-                <div class="card-body ">
-                  <form method="get" action="/" class="form-horizontal">
+                <div class="card-body ">                 
                     <div class="row">
                       <label class="col-sm-2 col-form-label">Nombre del Banco</label>
                       <div class="col-sm-10">
@@ -41,8 +41,7 @@
                          <asp:TextBox ID="txt_cuenta_iban" runat="server" class="form-control"></asp:TextBox>
                         </div>
                       </div>
-                    </div>
-                   </form>
+                    </div>                  
                 </div>
               </div>
             </div>

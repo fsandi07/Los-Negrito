@@ -11,7 +11,7 @@ namespace SIGAPRO.Vistas
 {
 
 
-    public partial class Consultar_Pagos_Empleados
+    public partial class Consultar_centro_costos
     {
 
         /// <summary>

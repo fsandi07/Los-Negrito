@@ -127,5 +127,15 @@
               </div>
             </div>       
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-      <script src="assets/js/plugins/jquery.datatables.min.js"></script>
+        <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="card">
+                    <div class="card-body text-center">
+                        <code>Agregar nuevo Usuario?</code><br />
+                       <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" alling="Center" Text="Nuevo Usuario" />
+                    </div>
+                  </div>
+                </div>
+              </div> 
+    <script src="assets/js/plugins/jquery.datatables.min.js"></script>
 </asp:Content>

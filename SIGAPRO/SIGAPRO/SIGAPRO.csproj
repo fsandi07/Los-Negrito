@@ -118,6 +118,7 @@
     <Content Include="Vistas\assets\img\Negritos.jpg" />
     <Content Include="Vistas\assets\img\Negritos2.jpg" />
     <Content Include="Vistas\assets\img\new_logo.png" />
+    <Content Include="Vistas\assets\img\pdf.png" />
     <Content Include="Vistas\assets\img\placeholder.jpg" />
     <Content Include="Vistas\assets\img\product1.jpg" />
     <Content Include="Vistas\assets\img\product2.jpg" />
@@ -127,6 +128,7 @@
     <Content Include="Vistas\assets\img\sidebar-2.jpg" />
     <Content Include="Vistas\assets\img\sidebar-3.jpg" />
     <Content Include="Vistas\assets\img\sidebar-4.jpg" />
+    <Content Include="Vistas\assets\img\xml.jpg" />
     <Content Include="Vistas\assets\js\core\bootstrap-material-design.min.js" />
     <Content Include="Vistas\assets\js\core\jquery.min.js" />
     <Content Include="Vistas\assets\js\core\popper.min.js" />
@@ -151,10 +153,15 @@
     <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
     <Content Include="Vistas\Bancos.aspx" />
     <Content Include="Vistas\Centro_de_Costos.aspx" />
+    <Content Include="Vistas\Consultar_centro_costos.aspx" />
+    <Content Include="Vistas\Consultar_detalle_factura.aspx" />
     <Content Include="Vistas\Consultar_Empleado.aspx" />
     <Content Include="Vistas\Consultar_Pagos_Empleados.aspx" />
+    <Content Include="Vistas\Consulta_bancos.aspx" />
+    <Content Include="Vistas\Conusltar_partidas.aspx" />
     <Content Include="Vistas\Datos_del_XML.aspx" />
     <Content Include="Vistas\docs\documentation.html" />
+    <Content Include="Vistas\Egreso_Manual.aspx" />
     <Content Include="Vistas\examples\calendar.html" />
     <Content Include="Vistas\examples\charts.html" />
     <Content Include="Vistas\examples\components\buttons.html" />
@@ -186,6 +193,7 @@
     <Content Include="Vistas\examples\widgets.html" />
     <Content Include="Vistas\Extracion_de_XML.aspx" />
     <Content Include="Vistas\gulpfile.js" />
+    <Content Include="Vistas\Ingresar_detalle_Facturas.aspx" />
     <Content Include="Vistas\jquery\jquery.js" />
     <Content Include="Vistas\jquery\jquery.min.js" />
     <Content Include="Vistas\jquery\jquery.slim.js" />
@@ -199,6 +207,7 @@
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\Partidas.aspx" />
     <Content Include="Vistas\Registro_Empleados.aspx" />
+    <Content Include="Vistas\Registro_Ingresos.aspx" />
     <Content Include="Vistas\Registro_pagos.aspx" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.js" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.min.js" />
@@ -234,6 +243,20 @@
     <Compile Include="Vistas\Centro_de_Costos.aspx.designer.cs">
       <DependentUpon>Centro_de_Costos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Consultar_centro_costos.aspx.cs">
+      <DependentUpon>Consultar_centro_costos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultar_centro_costos.aspx.designer.cs">
+      <DependentUpon>Consultar_centro_costos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultar_detalle_factura.aspx.cs">
+      <DependentUpon>Consultar_detalle_factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultar_detalle_factura.aspx.designer.cs">
+      <DependentUpon>Consultar_detalle_factura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Consultar_Empleado.aspx.cs">
       <DependentUpon>Consultar_Empleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +271,20 @@
     <Compile Include="Vistas\Consultar_Pagos_Empleados.aspx.designer.cs">
       <DependentUpon>Consultar_Pagos_Empleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Consulta_bancos.aspx.cs">
+      <DependentUpon>Consulta_bancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consulta_bancos.aspx.designer.cs">
+      <DependentUpon>Consulta_bancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Conusltar_partidas.aspx.cs">
+      <DependentUpon>Conusltar_partidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Conusltar_partidas.aspx.designer.cs">
+      <DependentUpon>Conusltar_partidas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Datos_del_XML.aspx.cs">
       <DependentUpon>Datos_del_XML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,12 +292,26 @@
     <Compile Include="Vistas\Datos_del_XML.aspx.designer.cs">
       <DependentUpon>Datos_del_XML.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Egreso_Manual.aspx.cs">
+      <DependentUpon>Egreso_Manual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Egreso_Manual.aspx.designer.cs">
+      <DependentUpon>Egreso_Manual.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Extracion_de_XML.aspx.cs">
       <DependentUpon>Extracion_de_XML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Extracion_de_XML.aspx.designer.cs">
       <DependentUpon>Extracion_de_XML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ingresar_detalle_Facturas.aspx.cs">
+      <DependentUpon>Ingresar_detalle_Facturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ingresar_detalle_Facturas.aspx.designer.cs">
+      <DependentUpon>Ingresar_detalle_Facturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -296,6 +347,13 @@
     </Compile>
     <Compile Include="Vistas\Registro_Empleados.aspx.designer.cs">
       <DependentUpon>Registro_Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Registro_Ingresos.aspx.cs">
+      <DependentUpon>Registro_Ingresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Registro_Ingresos.aspx.designer.cs">
+      <DependentUpon>Registro_Ingresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Registro_pagos.aspx.cs">
       <DependentUpon>Registro_pagos.aspx</DependentUpon>
