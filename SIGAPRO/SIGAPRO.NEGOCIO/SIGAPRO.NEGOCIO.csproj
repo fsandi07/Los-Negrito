@@ -47,6 +47,7 @@
     <Compile Include="Centro_de_costos_Helper.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Empleados_Helper.cs" />
+    <Compile Include="ingresos_xml.cs" />
     <Compile Include="Pagos_empleados.cs" />
     <Compile Include="Pago_empleado_Helper.cs" />
     <Compile Include="Partidas.cs" />

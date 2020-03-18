@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SIGAPRO.NEGOCIO
 {
-    public class DatosXML
+   public  class ingresos_xml
     {
         private byte[] xml;
         private int opc;
@@ -15,7 +15,7 @@ namespace SIGAPRO.NEGOCIO
         private byte[] archivo_pdf;
 
         // contructor con parametros.
-        public DatosXML(byte[] xml, int opc, string aceptada_gti, string cuenta_por_pagar, string factura_fisica, string detalle, DateTime vencimiento, byte[] archivo_pdf)
+        public ingresos_xml(byte[] xml, int opc, string aceptada_gti, string cuenta_por_pagar, string factura_fisica, string detalle, DateTime vencimiento, byte[] archivo_pdf)
         {
             this.Xml = xml;
             this.Opc = opc;
@@ -27,7 +27,7 @@ namespace SIGAPRO.NEGOCIO
             this.archivo_pdf = archivo_pdf;
         }
         //contructor sin parametros
-        public DatosXML()
+        public ingresos_xml()
         {
             this.Opc = 0;
             this.aceptada_gti = "";
@@ -35,7 +35,7 @@ namespace SIGAPRO.NEGOCIO
             this.factura_fisica = "";
             this.detalle = "";
             this.vencimiento = DateTime.Today;
-     
+
         }
 
         public byte[] Xml { get => xml; set => xml = value; }
@@ -46,5 +46,9 @@ namespace SIGAPRO.NEGOCIO
         public string Detalle { get => detalle; set => detalle = value; }
         public DateTime Vencimiento { get => vencimiento; set => vencimiento = value; }
         public byte[] Archivo_pdf { get => archivo_pdf; set => archivo_pdf = value; }
+
+
+
+
     }
 }
