@@ -45,5 +45,38 @@
                 </div>
               </div>
             </div>
+     <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="card">
+                    <div class="card-body text-center">                        
+                       <asp:Button class="btn btn-success" ID="Btn_redirije" runat="server" Text="Registrar" OnClick="Btn_redirije_Click"  />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <script type="text/javascript">  
+//mensaje de conrfimacion
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
+        }
+        // mensaje de error
+        function mensajeError() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + " Lo sentimos ha ocurrido un error, intente de nuevo" + "!",
+                type: 'error',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 5000,
+
+            })
+        }
+</script>
 
 </asp:Content>

@@ -14,63 +14,39 @@
                     <div class="card-icon">
                       <i class="material-icons">group</i>
                     </div>
-                    <h4 class="card-title "> Consulta de detalle Factura</h4>
+                    <h4 class="card-title "> Consulta de Clasificacion Factura</h4>
                   </div>
                     <br />
+                    <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="+ DETALLE" OnClick="Btn_redirije_Click" />
                     <br />
                   <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">
                       <table class="table">
-                        <thead class="">
-                          <th class="auto-style4">
-                            ID
-                          </th>
-                          <th class="auto-style1">                                                   
-                            Name
-                          </th>
-                          <th class="auto-style2">
-                            Country
-                          </th>
-                          <th class="auto-style5">
-                            City
-                          </th>
-                          <th>
-                            Salary
-                          </th>
-                        </thead>
                         <tbody>
 
-         <asp:gridview runat="server" cssclass="table table-striped table-no-bordered table-hover" autogeneratecolumns="False" datakeynames="cedula_usuario" datasourceid="SqlDataSource1" enablepersistedselection="True" AllowPaging="True">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="cedula_usuario" HeaderText="cedula_usuario" ReadOnly="True" SortExpression="cedula_usuario" />
-            <asp:BoundField DataField="nombre_usuario" HeaderText="nombre_usuario" SortExpression="nombre_usuario" />
-            <asp:BoundField DataField="apellido1" HeaderText="apellido1" SortExpression="apellido1" />
-            <asp:BoundField DataField="nick_name" HeaderText="nick_name" SortExpression="nick_name" />
-            <asp:BoundField DataField="correo_electronico" HeaderText="correo_electronico" SortExpression="correo_electronico" />
-        </Columns>
-    </asp:gridview>
+                            <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-no-bordered table-hover" DataSourceID="SqlDataSource2" AllowPaging="True" AllowSorting="True" HorizontalAlign="Center" EditRowStyle-HorizontalAlign="Center" EditRowStyle-VerticalAlign="Middle" EmptyDataRowStyle-HorizontalAlign="Center" EmptyDataRowStyle-VerticalAlign="Middle" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle" HeaderStyle-HorizontalAlign="Center" HeaderStyle-VerticalAlign="Middle" PagerStyle-HorizontalAlign="Center" PagerStyle-VerticalAlign="Middle" RowStyle-HorizontalAlign="Center" RowStyle-VerticalAlign="Middle" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />
+                                    <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" InsertVisible="False" SortExpression="ID"></asp:BoundField>
+                                    <asp:BoundField DataField="Nombre Clasificacion" HeaderText="Nombre Clasificacion" SortExpression="Nombre Clasificacion"></asp:BoundField>
+                                    <asp:BoundField DataField="Descripci&#243;n" HeaderText="Descripci&#243;n" SortExpression="Descripci&#243;n"></asp:BoundField>
+                                    <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
+
+                                </Columns>
+                                <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
+                              </asp:GridView>
 
                         </tbody>
                       </table>
+
+         
                     </div>
                   </div>
                 </div>
               </div>
             </div>
        
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-    <div class="row">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <div class="card">
-                    <div class="card-body text-center">
-                        <code>Agregar nuevo detalle?</code><br />
-                      <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" Text="Nuevo Detalle" OnClick="Btn_redirije_Click"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand=" select id_detalle as[ID],nombre_detalle as [Nombre Clasificacion], descripcion_detalle as [Descripción], estado_detalle as [Estado] from tb_Detalle_Factura_los_negritos"></asp:SqlDataSource>
     
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
 </asp:Content>

@@ -55,13 +55,21 @@
                       </div>
                     </div>
                        <div class="row">
-                      <label class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-                      <div class="col-sm-10">
-                        <div class="form-group">
-                          <asp:Calendar ID="Calendar1" runat="server" CssClass="alert-dark"></asp:Calendar>
-                        </div>
-                      </div>
-                    </div>
+                                        <label class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
+                                        <div class="col-sm-10"> <br />                                         
+                                            <input type="date" id="start" name="trip-start"
+                                                value=date.now();
+                                                min="1960-01-01" max="2020-12-31">
+                                        </div>
+                                    </div>
+                      <div class="row">
+                                        <label class="col-sm-2 col-form-label">Fecha de Inicio Trabajar:</label>
+                                        <div class="col-sm-10"> <br />                                         
+                                            <input type="date" id="start1" name="trip-start"
+                                                value=date.now();
+                                                min="2010-01-01" max="2030-12-31" onblur="verificarDato()">
+                                        </div>
+                                    </div>
                      <div class="row">
                       <label class="col-sm-2 col-form-label">Número Telefonico:</label>
                       <div class="col-sm-10">
@@ -74,7 +82,7 @@
                       <label class="col-sm-2 col-form-label">Correo Electronico:</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                          <asp:TextBox ID="txt_Correo_Electronico" runat="server" class="form-control" ></asp:TextBox>
+                          <asp:TextBox ID="txt_Correo_Electronico" runat="server" class="form-control" TextMode="Email"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -85,9 +93,56 @@
                           <asp:TextBox ID="txt_Cuenta_IBAN" runat="server" class="form-control" ></asp:TextBox>
                         </div>
                       </div>
-                    </div>                         
+                    </div> 
                   </form>
                 </div>
               </div>
             </div>
+    <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="card">
+                    <div class="card-body text-center">                        
+                      <asp:Button class="btn btn-success" ID="btn_registra" runat="server" Text="Registrar Colaborador" Width="210px" OnClick="btn_registra_Click" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+     <asp:HiddenField ID="fecha_nacimiento" runat="server" />
+    <asp:HiddenField ID="fecha_ingreso" runat="server" />
+
+      <script type="text/javascript"> 
+
+          function verificarDato() {
+
+              //alert('ha cargado la ventanaJAO');          
+              var Fecha = document.getElementById("start").value;
+            document.getElementById('<%=fecha_nacimiento.ClientID%>').value =
+                Fecha;
+              var Fecha_ingreso = document.getElementById("start1").value;
+              document.getElementById('<%=fecha_ingreso.ClientID%>').value =
+                  Fecha_ingreso;
+          }
+          //mensaje de conrfimacion
+          function mensajeDeconfirmacion() {
+              swal.fire({
+                  title: "¡EXITO!",
+                  text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                  type: 'success',
+                  allowOutsideClick: false,
+              })
+          }
+          // mensaje de error
+          function mensajeError() {
+              swal.fire({
+                  title: '¡Error!',
+                  text: "¡" + " Lo sentimos ha ocurrido un error, intente de nuevo" + "!",
+                  type: 'error',
+                  showConfirmButton: false,
+                  allowOutsideClick: false,
+                  timer: 5000,
+
+              })
+          }
+
+</script>
 </asp:Content>

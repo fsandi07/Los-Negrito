@@ -17,39 +17,26 @@
                     <h4 class="card-title "> Consulta Partidas</h4>
                   </div>
                     <br />
+                    <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="+ PARTIDA" OnClick="Btn_redirije_Click" />
                     <br />
                   <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">
                       <table class="table">
-                        <thead class="">
-                          <th class="auto-style4">
-                            ID
-                          </th>
-                          <th class="auto-style1">                                                   
-                            Name
-                          </th>
-                          <th class="auto-style2">
-                            Country
-                          </th>
-                          <th class="auto-style5">
-                            City
-                          </th>
-                          <th>
-                            Salary
-                          </th>
-                        </thead>
+                       
                         <tbody>
+                            <asp:GridView ID="GridViewPartidas" CssClass="table table-striped table-no-bordered table-hover" runat="server" DataSourceID="SQLdataPartida" AllowPaging="True" AllowSorting="True">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" ></asp:CommandField>
+                                </Columns>
+                                <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                                    <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
 
-         <asp:gridview runat="server" cssclass="table table-striped table-no-bordered table-hover" autogeneratecolumns="False" datakeynames="cedula_usuario" datasourceid="SqlDataSource1" enablepersistedselection="True" AllowPaging="True">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="cedula_usuario" HeaderText="cedula_usuario" ReadOnly="True" SortExpression="cedula_usuario" />
-            <asp:BoundField DataField="nombre_usuario" HeaderText="nombre_usuario" SortExpression="nombre_usuario" />
-            <asp:BoundField DataField="apellido1" HeaderText="apellido1" SortExpression="apellido1" />
-            <asp:BoundField DataField="nick_name" HeaderText="nick_name" SortExpression="nick_name" />
-            <asp:BoundField DataField="correo_electronico" HeaderText="correo_electronico" SortExpression="correo_electronico" />
-        </Columns>
-    </asp:gridview>
+                            </asp:GridView>
 
                         </tbody>
                       </table>
@@ -58,19 +45,8 @@
                 </div>
               </div>
             </div>
-       
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-   <br />
-    <div class="row">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <div class="card">
-                    <div class="card-body text-center">
-                        <code>Agregar nueva Partida?</code><br />
-                       <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" Text="Nuevo Partida" OnClick="Btn_redirije_Click" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
+    <asp:SqlDataSource ID="SQLdataPartida" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="select numero_partida as [Numero Partida], descripcion as [Descripción Partida],
+fecha_inicio as [Fecha Inicio], fecha_finla as [Fecha Final], estado as [Estado] from tb_Partidas_Los_Negritos"></asp:SqlDataSource>
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
 </asp:Content>

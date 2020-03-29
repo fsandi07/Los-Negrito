@@ -25,12 +25,19 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="" >
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
         <div class="wrapper ">
             <div class="sidebar" data-color="purple" data-background-color="black" style="background-image: url('assets/img/bg9.jpg')" >
                       
                 <div class="sidebar-wrapper">
                     <div class="user">
+                          <div class="card-avatar">
+                  <a href="#pablo">
+                     <img alt="" width="220"  height="80" src="assets/img/faces/Negritos.jpg"/>
+                  </a>
+                </div> 
+                    </div>
+                <%--    <div class="user">
                         <div class="photo">
                             <img src="assets/img/faces/avatar.jpg" />
                         </div>
@@ -64,19 +71,19 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>               
                     <ul class="nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="Inicio.aspx">
-                                <i class="material-icons">dashboard</i>
+                                <i class="material-icons">home</i>
                                 <p>Menú Princial</p>
                             </a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-                                <i class="material-icons">zoom_out</i>
+                                <i class="material-icons">call_received</i>
                                 <p>
-                                    Módulo de Egresos
+                                    Gastos
                
                                     <b class="caret"></b>
                                 </p>
@@ -84,25 +91,19 @@
                             <div class="collapse" id="pagesExamples">
                                 <ul class="nav">
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Extracion_de_XML.aspx">
-                                            <span class="sidebar-mini">EXML </span>
-                                            <span class="sidebar-normal">Extracción de XML </span>
+                                        <a class="nav-link" href="Consulta_Pagos.aspx">
+                                            <span class="sidebar-mini">CP</span>
+                                            <span class="sidebar-normal">Consulta Pagos </span>
                                         </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="Egreso_Manual.aspx">
-                                            <span class="sidebar-mini">EM </span>
-                                            <span class="sidebar-normal">Egreso Manual </span>
-                                        </a>
-                                    </li>                                  
+                                    </li>                                                                   
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#pagesExamples2">
-                                <i class="material-icons">zoom_in</i>
+                                <i class="material-icons">call_made</i>
                                 <p>
-                                    Módulo de Ingresos
+                                    Ingresos
                
                                     <b class="caret"></b>
                                 </p>
@@ -110,16 +111,15 @@
                                 <div class="collapse" id="pagesExamples2">
                                 <ul class="nav">
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Registro_Ingreso.aspx">
-                                            <span class="sidebar-mini">RI</span>
-                                            <span class="sidebar-normal">Registro de Ingresos</span>
+                                        <a class="nav-link" href="Consultar_Ingresos.aspx">
+                                            <span class="sidebar-mini">CI</span>
+                                            <span class="sidebar-normal">Consulta Ingresos</span>
                                         </a>
                                     </li>                                                                    
                                 </ul>
                             </div>
-                            
                         </li>
-                        <li class="nav-item ">
+                          <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#formsExamples">
                                 <i class="material-icons">group</i>
                                 <p>
@@ -129,34 +129,49 @@
                                 </p>
                             </a>
                             <div class="collapse" id="formsExamples">
-                                <ul class="nav">
-                                      <li class="nav-item ">
-                                        <a class="nav-link" href="Registro_Empleados.aspx">
-                                            <span class="sidebar-mini">IE </span>
-                                            <span class="sidebar-normal">Ingresar Colaborador </span>
-                                        </a>
-                                    </li> 
+                                <ul class="nav">                                     
                                      <li class="nav-item ">
                                         <a class="nav-link" href="Consultar_Empleado.aspx">
                                             <span class="sidebar-mini">CE </span>
                                             <span class="sidebar-normal">Consultar Colaborador </span>
                                         </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="Registro_pagos.aspx">
-                                            <span class="sidebar-mini">RPC </span>
-                                            <span class="sidebar-normal">Registar Pago Colaborador </span>
-                                        </a>
-                                    </li>
+                                    </li>                                   
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Consultar_Pagos_Empleados.aspx">
                                             <span class="sidebar-mini">CP </span>
-                                            <span class="sidebar-normal">Consulta Pago Colaborador</span>
+                                            <span class="sidebar-normal">Pago Colaborador</span>
                                         </a>
                                     </li>                                    
                                 </ul>
                             </div>
                         </li>
+                         <li class="nav-item ">
+                            <a class="nav-link" data-toggle="collapse" href="#pagesExamples3">
+                                <i class="material-icons">account_balance</i>
+                                <p>
+                                    Bancos
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                                <div class="collapse" id="pagesExamples3">
+                                <ul class="nav">                                   
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Consulta_bancos.aspx">
+                                            <span class="sidebar-mini"> B </span>
+                                            <span class="sidebar-normal">Bancos </span>
+                                        </a>
+                                    </li> 
+                                     <li class="nav-item ">
+                                        <a class="nav-link" href="Consulta_metodo_pago.aspx">
+                                            <span class="sidebar-mini"> MP </span>
+                                            <span class="sidebar-normal">Método de Págo </span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                            </div>
+                            
+                        </li>
+                      
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#tablesExamples">
                                 <i class="material-icons">settings</i>
@@ -169,64 +184,29 @@
 
                             <div class="collapse" id="tablesExamples">
                                 <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="Agregar_usuarios.aspx">
-                                            <span class="sidebar-mini">IU </span>
-                                            <span class="sidebar-normal">Ingresar Usuarios</span>
-                                        </a>
-                                    </li>
+                                   
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Ver_Usuarios.aspx">
                                             <span class="sidebar-mini">CU </span>
-                                            <span class="sidebar-normal">Consultar Usuarios </span>
+                                            <span class="sidebar-normal">Usuarios </span>
                                         </a>
-                                    </li>  
+                                    </li>                                     
                                      <li class="nav-item ">
-                                        <a class="nav-link" href="Bancos.aspx">
-                                            <span class="sidebar-mini">IB </span>
-                                            <span class="sidebar-normal">Ingresar Bancos </span>
-                                        </a>
-                                    </li> 
-                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Consulta_bancos.aspx">
-                                            <span class="sidebar-mini">CB </span>
-                                            <span class="sidebar-normal">Consultar Bancos </span>
-                                        </a>
-                                    </li> 
-                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Centro_de_Costos.aspx">
-                                            <span class="sidebar-mini">ICC </span>
-                                            <span class="sidebar-normal">Ingresar Centro Costos </span>
-                                        </a>
-                                    </li> 
-                                     <li class="nav-item ">
-                                        <a class="nav-link" href="Ver_Usuarios.aspx">
+                                        <a class="nav-link" href="Consultar_centro_costos.aspx">
                                             <span class="sidebar-mini">CCC </span>
-                                            <span class="sidebar-normal">Consultar Centro Costos </span>
+                                            <span class="sidebar-normal">Centro Costos </span>
                                         </a>
-                                    </li> 
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="Partidas.aspx">
-                                            <span class="sidebar-mini">IP </span>
-                                            <span class="sidebar-normal">Ingresar Partidas</span>
-                                        </a>
-                                    </li> 
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Conusltar_partidas.aspx">
                                             <span class="sidebar-mini">CP </span>
-                                            <span class="sidebar-normal">Consultar Partidas </span>
+                                            <span class="sidebar-normal">Partidas </span>
                                         </a>
                                     </li> 
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="Ingresar_detalle_Facturas.aspx">
-                                            <span class="sidebar-mini">ID </span>
-                                            <span class="sidebar-normal">Ingresar Detalle Factura</span>
-                                        </a>
-                                    </li> 
+                                   
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Consultar_detalle_Factura.aspx">
                                             <span class="sidebar-mini">CD </span>
-                                            <span class="sidebar-normal">Consultar Detalle Factura </span>
+                                            <span class="sidebar-normal">Detalle Factura </span>
                                         </a>
                                     </li> 
                                 </ul>
@@ -302,19 +282,7 @@
                     </div>
                 </nav>
                 <br /> 
-                <div class="card card-profile">
-                <div class="card-avatar">
-                  <a href="#pablo">
-                    <img class="img" src="assets/img/faces/Negritos.jpg" />
-                  </a>
-                </div> 
-                <div class="card-body">
-                  <h2 class="card-title text-warning">Coorporación Avícola los Negritos</h2>               
-                  <p class="card-description">
-                   Sistema SIGEPRO.
-                  </p>                  
-                </div>
-              </div>
+                
 
                <%--  <div class="card-avatar">
                   <a href="#pablo">

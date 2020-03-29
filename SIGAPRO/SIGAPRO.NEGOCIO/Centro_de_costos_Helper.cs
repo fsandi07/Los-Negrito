@@ -46,11 +46,11 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[2].Size = 50;
                 parParameter[2].SqlValue = OBJc_costos.Descripcion;
 
-                parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@numero_factura";
-                parParameter[3].SqlDbType = SqlDbType.VarChar;
-                parParameter[3].Size = 50;
-                parParameter[3].SqlValue = OBJc_costos.Numero_fatura;
+                parParameter[2] = new SqlParameter();
+                parParameter[2].ParameterName = "@estado_cc";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = OBJc_costos.Estado;
 
                 cnGeneral.EjecutarSP(parParameter, "SP_los_negritos_centro_de_costos");
             }

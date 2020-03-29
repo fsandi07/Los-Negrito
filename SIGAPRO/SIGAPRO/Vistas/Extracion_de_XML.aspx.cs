@@ -43,5 +43,12 @@ namespace SIGAPRO.Vistas
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
         }
+
+        protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Consulta_Pagos.aspx");
+        }
+
+        
     }
 }

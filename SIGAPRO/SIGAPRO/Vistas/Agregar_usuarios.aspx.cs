@@ -31,7 +31,7 @@ namespace SIGAPRO.Vistas
                 this.usu.Correo_electronico = this.txt_correo.Text;
                 this.usu.Clave_usuario = this.txt_clave2.Text;
                 this.usu.Rol = "administrador";
-                this.usu.Estado = 1;
+                this.usu.Estado = "Activo";
                 this.usu.Opc = 1;
                 this.usuariosHelper = new UsuariosHelper(usu);
                 this.usuariosHelper.Agregar_Usuarios();

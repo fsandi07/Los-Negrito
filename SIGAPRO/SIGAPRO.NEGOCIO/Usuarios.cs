@@ -17,7 +17,7 @@ namespace SIGAPRO.NEGOCIO
         private string correo_electronico;
         private string clave_usuario;
         private string rol;
-        private int estado;
+        private string estado;
 
         public int Opc { get => opc; set => opc = value; }
         public string Cedula_usuario { get => cedula_usuario; set => cedula_usuario = value; }
@@ -28,11 +28,11 @@ namespace SIGAPRO.NEGOCIO
         public string Correo_electronico { get => correo_electronico; set => correo_electronico = value; }
         public string Clave_usuario { get => clave_usuario; set => clave_usuario = value; }
         public string Rol { get => rol; set => rol = value; }
-        public int Estado { get => estado; set => estado = value; }
+        public string Estado { get => estado; set => estado = value; }
 
         // contructor con parametros 
         public Usuarios(int opc, string cedula_usuario, string nombre_usuario, string apellido1, string apellido2, 
-            string nick_name, string correo_electronico, string clave_usuario, string rol, int estado)
+            string nick_name, string correo_electronico, string clave_usuario, string rol, string estado)
         {
             this.opc = opc;
             this.cedula_usuario = cedula_usuario;
@@ -57,7 +57,7 @@ namespace SIGAPRO.NEGOCIO
             this.correo_electronico ="" ;
             this.clave_usuario = "";
             this.rol = "";
-            this.estado = 0;
+            this.estado = "";
         }
     }
 }

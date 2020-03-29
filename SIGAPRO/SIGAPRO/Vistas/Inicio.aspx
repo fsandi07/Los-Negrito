@@ -12,12 +12,12 @@
                 <br />
                 <ul class="nav nav-pills nav-pills-warning nav-pills-icons justify-content-center" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#link7" role="tablist">
+                    <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
                       <i class="material-icons">info</i> Descripción del Sistema
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#link8" role="tablist">
+                    <a class="nav-link " data-toggle="tab" href="#link8" role="tablist">
                       <i class="material-icons">location_on</i> Extracción de XML
                     </a>
                   </li>

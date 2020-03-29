@@ -14,9 +14,9 @@ namespace SIGAPRO.NEGOCIO
         Datos cnGeneral = null;
         DataTable tblDatos = null;
         // llama a mi clase cliente donde tengo mis constructores, set and get 
-        Partidas OBJpartidas = null;
+        Partida OBJpartidas = null;
 
-        public Partida_Helper(Partidas parObjpartidas)
+        public Partida_Helper(Partida parObjpartidas)
         {
             OBJpartidas = parObjpartidas;
         }
@@ -35,7 +35,8 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@numero_partida ";
-                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
                 parParameter[1].SqlValue = OBJpartidas.Numero_partida;
 
                 parParameter[2] = new SqlParameter();
@@ -51,18 +52,18 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[3].SqlValue = OBJpartidas.Fecha_inicio;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@fecha_finla";
+                parParameter[4].ParameterName = "@fecha_final";
                 parParameter[4].SqlDbType = SqlDbType.VarChar;
                 parParameter[4].Size = 50;
                 parParameter[4].SqlValue = OBJpartidas.Fecha_final;
 
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@numero_factura";
+                parParameter[5].ParameterName = "@estado";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
-                parParameter[5].Size = 100;
-                parParameter[5].SqlValue = OBJpartidas.Numero_factura;
+                parParameter[5].Size = 50;
+                parParameter[5].SqlValue = OBJpartidas.Estado;
 
-                cnGeneral.EjecutarSP(parParameter, "SPpartidas_los_negritos");
+                cnGeneral.EjecutarSP(parParameter, "SPpartidas_los_negrito");
             }
             catch (Exception ex)
             {

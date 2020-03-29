@@ -15,49 +15,58 @@ namespace SIGAPRO.Vistas
     {
 
         /// <summary>
-        /// Control DropDownList2.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
 
         /// <summary>
-        /// Control Dpt_partida.
+        /// Control DptCCostos_EXML.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_partida;
+        protected global::System.Web.UI.WebControls.DropDownList DptCCostos_EXML;
 
         /// <summary>
-        /// Control Dpt_Detalle.
+        /// Control DptPartida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_Detalle;
+        protected global::System.Web.UI.WebControls.DropDownList DptPartida;
 
         /// <summary>
-        /// Control radioB1.
+        /// Control DptClasificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton radioB1;
+        protected global::System.Web.UI.WebControls.DropDownList DptClasificacion;
 
         /// <summary>
-        /// Control radioB2.
+        /// Control Radioaprobada1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton radioB2;
+        protected global::System.Web.UI.WebControls.RadioButton Radioaprobada1;
+
+        /// <summary>
+        /// Control Radioaprobada2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Radioaprobada2;
 
         /// <summary>
         /// Control Radiopagada_si.
@@ -76,15 +85,6 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton Radiopagada_no;
-
-        /// <summary>
-        /// Control Dpt_plazo_pago.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_plazo_pago;
 
         /// <summary>
         /// Control File_XML_Extraccion.

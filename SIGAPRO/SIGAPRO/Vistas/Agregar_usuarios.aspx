@@ -83,12 +83,19 @@
                         </div>
                       </div>
                     </div>
-              <asp:button runat="server" text="Agregar usuario" ID="btn_agregar_usuario" OnClick="btn_agregar_usuario_Click" />
                   </form>
                 </div>
               </div>
             </div>
-
+    <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <div class="card">
+                    <div class="card-body text-center">                        
+                        <asp:button runat="server" class="btn btn-success" text="Agregar usuario" ID="btn_agregar_usuario"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
      <script src="bower_components/chartist/dist/chartist.min.js"></script>
     <script>
     $(document).ready(function() {

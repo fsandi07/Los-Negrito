@@ -14,9 +14,9 @@ namespace SIGAPRO.NEGOCIO
         Datos cnGeneral = null;
         DataTable tblDatos = null;
         // llama a mi clase cliente donde tengo mis constructores, set and get 
-        Bancos OBJbancos = null;
+        Banco OBJbancos = null;
 
-        public bancoHelper(Bancos parObjbanco)
+        public bancoHelper(Banco parObjbanco)
         {
             OBJbancos = parObjbanco;
         }
@@ -27,7 +27,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[4];
+                SqlParameter[] parParameter = new SqlParameter[5];
 
 
                 parParameter[0] = new SqlParameter();
@@ -52,6 +52,13 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 100;
                 parParameter[3].SqlValue =OBJbancos.Cuenta_iban ;
+
+
+                parParameter[4] = new SqlParameter();
+                parParameter[4].ParameterName = "@estado";
+                parParameter[4].SqlDbType = SqlDbType.VarChar;
+                parParameter[4].Size =50;
+                parParameter[4].SqlValue = OBJbancos.Estado;
 
                 cnGeneral.EjecutarSP(parParameter, "SP_los_negritos_bancos");
             }

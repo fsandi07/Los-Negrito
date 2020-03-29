@@ -85,39 +85,35 @@
                     </div>
                     <h4 class="card-title "> Usuarios del Sistema</h4>
                   </div>
-                  <div class="card-body table-full-width table-hover">
-                      <div id="datatables_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search records" aria-controls="datatables"></label></div>
+                    <br />
+                     <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="+ USUARIO" OnClick="Btn_redirije_Click" />
+                    <br />
+                    <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">
-                      <table class="table">
-                        <thead class="">
-                          <th class="auto-style4">
-                            ID
-                          </th>
-                          <th class="auto-style1">                                                   
-                            Name
-                          </th>
-                          <th class="auto-style2">
-                            Country
-                          </th>
-                          <th class="auto-style5">
-                            City
-                          </th>
-                          <th>
-                            Salary
-                          </th>
-                        </thead>
+                      <table class="table">                       
                         <tbody>
 
-         <asp:gridview runat="server" cssclass="table table-striped table-no-bordered table-hover" autogeneratecolumns="False" datakeynames="cedula_usuario" datasourceid="SqlDataSource1" enablepersistedselection="True" AllowPaging="True">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="cedula_usuario" HeaderText="cedula_usuario" ReadOnly="True" SortExpression="cedula_usuario" />
-            <asp:BoundField DataField="nombre_usuario" HeaderText="nombre_usuario" SortExpression="nombre_usuario" />
-            <asp:BoundField DataField="apellido1" HeaderText="apellido1" SortExpression="apellido1" />
-            <asp:BoundField DataField="nick_name" HeaderText="nick_name" SortExpression="nick_name" />
-            <asp:BoundField DataField="correo_electronico" HeaderText="correo_electronico" SortExpression="correo_electronico" />
-        </Columns>
-    </asp:gridview>
+                          <asp:GridView ID="GridView1" CssClass="table table-striped table-no-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Cedula" DataSourceID="SqlDataUsuario" AllowPaging="True" AllowSorting="True">
+                              <Columns>
+                                  <asp:CommandField ShowSelectButton="True" HeaderText="Editar" ></asp:CommandField>
+                                  <asp:BoundField DataField="Cedula" HeaderText="Cedula" ReadOnly="True" SortExpression="Cedula"></asp:BoundField>
+                                  <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre"></asp:BoundField>
+                                  <asp:BoundField DataField="Primer Apellido" HeaderText="Primer Apellido" SortExpression="Primer Apellido"></asp:BoundField>
+                                  <asp:BoundField DataField="Segundo Apellido" HeaderText="Segundo Apellido" SortExpression="Segundo Apellido"></asp:BoundField>
+                                  <asp:BoundField DataField="Nombre Usuario" HeaderText="Nombre Usuario" SortExpression="Nombre Usuario"></asp:BoundField>
+                                  <asp:BoundField DataField="Correo Electronico" HeaderText="Correo Electronico" SortExpression="Correo Electronico"></asp:BoundField>
+                                  <asp:BoundField DataField="Rol" HeaderText="Rol" SortExpression="Rol"></asp:BoundField>
+                                  <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
+                              </Columns>
+
+                              <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                                    <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
+                          </asp:GridView>
 
                         </tbody>
                       </table>
@@ -126,16 +122,8 @@
                 </div>
               </div>
             </div>       
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-        <div class="row">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <div class="card">
-                    <div class="card-body text-center">
-                        <code>Agregar nuevo Usuario?</code><br />
-                       <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" alling="Center" Text="Nuevo Usuario" />
-                    </div>
-                  </div>
-                </div>
-              </div> 
+    <asp:SqlDataSource ID="SqlDataUsuario" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="select cedula_usuario as [Cedula], nombre_usuario as [Nombre], apellido1 as [Primer Apellido],
+ apellido2 as [Segundo Apellido], nick_name as [Nombre Usuario],correo_electronico as [Correo Electronico],
+ rol as [Rol], estado as [Estado]  from tb_Usuarios_Los_negritos"></asp:SqlDataSource>
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
 </asp:Content>

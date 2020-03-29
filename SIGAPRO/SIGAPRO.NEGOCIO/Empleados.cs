@@ -14,11 +14,12 @@ namespace SIGAPRO.NEGOCIO
         private string apellido1_empleado;
         private string apellido2_empleado;
         private string domicilio;
-        private int telefono_empleado;
+        private string telefono_empleado;
         private string correo_empleado;
         private string cuenta_banco_empleado;
-        private DateTime fecha_nacimientoi_empleado;
-        private DateTime fecha_inicio_empleado;
+        private string fecha_nacimientoi_empleado;
+        private string fecha_inicio_empleado;
+        private string estado_empleado;
 
       
 
@@ -28,15 +29,16 @@ namespace SIGAPRO.NEGOCIO
         public string Apellido1_empleado { get => apellido1_empleado; set => apellido1_empleado = value; }
         public string Apellido2_empleado { get => apellido2_empleado; set => apellido2_empleado = value; }
         public string Domicilio { get => domicilio; set => domicilio = value; }
-        public int Telefono_empleado { get => telefono_empleado; set => telefono_empleado = value; }
+        public string Telefono_empleado { get => telefono_empleado; set => telefono_empleado = value; }
         public string Correo_empleado { get => correo_empleado; set => correo_empleado = value; }
         public string Cuenta_banco_empleado { get => cuenta_banco_empleado; set => cuenta_banco_empleado = value; }
-        public DateTime Fecha_nacimientoi_empleado { get => fecha_nacimientoi_empleado; set => fecha_nacimientoi_empleado = value; }
-        public DateTime Fecha_inicio_empleado { get => fecha_inicio_empleado; set => fecha_inicio_empleado = value; }
+        public string Fecha_nacimientoi_empleado { get => fecha_nacimientoi_empleado; set => fecha_nacimientoi_empleado = value; }
+        public string Fecha_inicio_empleado { get => fecha_inicio_empleado; set => fecha_inicio_empleado = value; }
+        public string Estado_empleado { get => estado_empleado; set => estado_empleado = value; }
 
         public Empleados(int opc, string cedula_empleado, string nombre_empelado, string apellido1_empleado,
-         string apellido2_empleado, string domicilio, int telefono_empleado, string correo_empleado,
-         string cuenta_banco_empleado, DateTime fecha_nacimientoi_empleado, DateTime fecha_inicio_empleado)
+         string apellido2_empleado, string domicilio, string telefono_empleado, string correo_empleado,
+         string cuenta_banco_empleado, string fecha_nacimientoi_empleado, string fecha_inicio_empleado, string estado_empleado)
         {
             this.opc = opc;
             this.cedula_empleado = cedula_empleado;
@@ -49,6 +51,7 @@ namespace SIGAPRO.NEGOCIO
             this.cuenta_banco_empleado = cuenta_banco_empleado;
             this.fecha_nacimientoi_empleado = fecha_nacimientoi_empleado;
             this.fecha_inicio_empleado = fecha_inicio_empleado;
+            this.estado_empleado = estado_empleado;
         }
 
         public Empleados()
@@ -59,15 +62,15 @@ namespace SIGAPRO.NEGOCIO
             this.apellido1_empleado = "";
             this.apellido2_empleado = "";
             this.domicilio = "";
-            this.telefono_empleado = 0;
+            this.telefono_empleado = "";
             this.correo_empleado = "";
             this.cuenta_banco_empleado = "";
-            this.fecha_nacimientoi_empleado = DateTime.Today;
-            this.fecha_inicio_empleado = DateTime.Today;
+            this.fecha_nacimientoi_empleado = "";
+            this.fecha_inicio_empleado = "";
+            this.estado_empleado = "";
         }
 
-
-
+      
     }
 
    

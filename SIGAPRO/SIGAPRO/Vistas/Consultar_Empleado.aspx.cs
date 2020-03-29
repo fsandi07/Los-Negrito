@@ -13,5 +13,10 @@ namespace SIGAPRO.Vistas
         {
 
         }
+
+        protected void Btnredirije_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registro_Empleados.aspx");
+        }
     }
 }

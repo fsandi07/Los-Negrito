@@ -54,5 +54,10 @@ namespace SIGAPRO.Vistas
 
         }
 
+        protected void Btn_redirije_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Agregar_usuarios.aspx");
+        }
+
     }
 }

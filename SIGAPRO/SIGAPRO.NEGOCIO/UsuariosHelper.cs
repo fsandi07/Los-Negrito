@@ -121,7 +121,8 @@ namespace SIGAPRO.NEGOCIO
 
                 parParameter[9] = new SqlParameter();
                 parParameter[9].ParameterName = "@estado";
-                parParameter[9].SqlDbType = SqlDbType.Int;
+                parParameter[9].SqlDbType = SqlDbType.VarChar;
+                parParameter[9].Size=50;
                 parParameter[9].SqlValue = OBJusuarios.Estado;
 
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario_los_negritos");
@@ -152,7 +153,5 @@ namespace SIGAPRO.NEGOCIO
             }
             return tblDatos;
         }
-
-
     }
 }

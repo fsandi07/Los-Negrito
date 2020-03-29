@@ -16,8 +16,7 @@
                     <h4 class="card-title">Resultado de Extraccion de Datos</h4>
                   </div>
                 </div>
-                <div class="card-body ">
-                  <form method="get" action="/" class="form-horizontal">
+                <div class="card-body ">         
                     <div class="row">
                       <label class="col-sm-2 col-form-label">Fecha de Emision</label>
                       <div class="col-sm-10">
@@ -75,8 +74,7 @@
                           <asp:TextBox ID="txt_total_pagar" runat="server" class="form-control" disabled="true"></asp:TextBox>
                         </div>
                       </div>
-                    </div>
-                  </form>
+                    </div>                
                 </div>
               </div>
             </div>

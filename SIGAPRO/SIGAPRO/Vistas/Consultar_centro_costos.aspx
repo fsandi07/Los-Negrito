@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Consultar_centro_costos.aspx.cs" Inherits="SIGAPRO.Vistas.Consultar_centro_costos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
     <%-- links para las alertas  --%>
@@ -7,67 +8,46 @@
     <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="content">   
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header card-header-icon card-header-rose">
+    <div class="content">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-icon card-header-rose">
                     <div class="card-icon">
-                      <i class="material-icons">group</i>
+                        <i class="material-icons">group</i>
                     </div>
-                    <h4 class="card-title "> Consulta de Centro de Costos</h4>
-                  </div>
-                    <br />
-                    <br />
-                  <div class="card-body table-full-width table-hover">
+                    <h4 class="card-title ">Consulta de Centro de Costos</h4>
+                </div>
+                <br />
+                <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="+ CENTRO COSTOS" OnClick="Btn_redirije_Click" />
+                <br />
+                <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">
-                      <table class="table">
-                        <thead class="">
-                          <th class="auto-style4">
-                            ID
-                          </th>
-                          <th class="auto-style1">                                                   
-                            Name
-                          </th>
-                          <th class="auto-style2">
-                            Country
-                          </th>
-                          <th class="auto-style5">
-                            City
-                          </th>
-                          <th>
-                            Salary
-                          </th>
-                        </thead>
-                        <tbody>
+                        <table class="table">                            
+                            <tbody>
+                               
+                            </tbody>
+                        </table>
+                        <asp:GridView runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="Centro de Costos" DataSourceID="SqlDataSource2" EnablePersistedSelection="True" AllowPaging="True" EditRowStyle-BorderStyle="None" AllowSorting="True" HorizontalAlign="Center">
+                            <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Top" />
+                            <Columns>
+                                <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />
+                                <asp:BoundField DataField="Centro de Costos" HeaderText="Centro de Costos" ReadOnly="True" SortExpression="Centro de Costos"></asp:BoundField>
+                                <asp:BoundField DataField="Descripci&#243;n" HeaderText="Descripci&#243;n" SortExpression="Descripci&#243;n" />
+                                <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                                    </Columns>
 
-         <asp:gridview runat="server" cssclass="table table-striped table-no-bordered table-hover" autogeneratecolumns="False" datakeynames="cedula_usuario" datasourceid="SqlDataSource1" enablepersistedselection="True" AllowPaging="True">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="cedula_usuario" HeaderText="cedula_usuario" ReadOnly="True" SortExpression="cedula_usuario" />
-            <asp:BoundField DataField="nombre_usuario" HeaderText="nombre_usuario" SortExpression="nombre_usuario" />
-            <asp:BoundField DataField="apellido1" HeaderText="apellido1" SortExpression="apellido1" />
-            <asp:BoundField DataField="nick_name" HeaderText="nick_name" SortExpression="nick_name" />
-            <asp:BoundField DataField="correo_electronico" HeaderText="correo_electronico" SortExpression="correo_electronico" />
-        </Columns>
-    </asp:gridview>
-
-                        </tbody>
-                      </table>
+<EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                                    <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                </asp:GridView>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>       
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-    <div class="row">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <div class="card">
-                    <div class="card-body text-center">
-                        <code>Agregar nuevo Centro de Costos?</code><br />
-                       <asp:Button class="btn btn-primary" ID="Btn_redirije" runat="server" alling="Center" Text="Nuevo CCostos" OnClick="Btn_redirije_Click" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
+            </div>
+        </div>
+    </div>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand=" select numero_centro_costos as [Centro de Costos],descripcion as [Descripción], estado as [Estado] from tb_centro_de_costos_los_negritos"></asp:SqlDataSource>
 </asp:Content>

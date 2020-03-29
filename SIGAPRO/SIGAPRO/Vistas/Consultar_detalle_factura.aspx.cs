@@ -16,7 +16,7 @@ namespace SIGAPRO.Vistas
 
         protected void Btn_redirije_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ingresar_detalle_Factura.aspx.aspx");
+            Response.Redirect("Ingresar_detalle_Facturas.aspx");
         }
     }
 }

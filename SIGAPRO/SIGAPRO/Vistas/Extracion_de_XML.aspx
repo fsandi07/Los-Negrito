@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Extracion_de_XML.aspx.cs" Inherits="SIGAPRO.Vistas.Extracion_de_XML" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true"  EnableEventValidation="false" CodeBehind="Extracion_de_XML.aspx.cs" Inherits="SIGAPRO.Vistas.Extracion_de_XML" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
@@ -21,6 +21,7 @@
                     <small class="description">Facturas XML</small>
                             </h4>
                         </div>
+                           <asp:Button class="btn btn-danger col-md-3 ml-auto" ID="btn_cancelar" runat="server"  Text="Cancelar" Width="178px" OnClick="btn_cancelar_Click"  />
                         <div class="card-body ">
                             <ul class="nav nav-pills nav-pills-warning" role="tablist">
                                 <li class="nav-item">
@@ -49,15 +50,19 @@
                                     Seleccione el Centro de Costos.
                                      <br />
                                     <br />
-                                    <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="DropDownList2" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos">
-                                            <asp:ListItem Value="1">Pureba1</asp:ListItem>
-                                            <asp:ListItem Value="2">Prueba2</asp:ListItem>
-                                            <asp:ListItem Value="3">Prueba 3</asp:ListItem>
-                                        </asp:DropDownList>
+                                    <div class="row">
+                                        <div class="col-md-6 ml-auto mr-auto">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <asp:DropDownList ID="DptCCostos_EXML" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos">
+                                                        <asp:ListItem Value="1">Pureba1</asp:ListItem>
+                                                        <asp:ListItem Value="2">Prueba2</asp:ListItem>
+                                                        <asp:ListItem Value="3">Prueba 3</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <br />
                                     <div>
                                     </div>
                                     <br />
@@ -66,70 +71,86 @@
 
                                 <div class="tab-pane" id="link2">
                                     Asigne la partida correspondiente
+                                     <div class="row">
+                                         <div class="col-md-6 ml-auto mr-auto">
+                                             <div class="card">
+                                                 <div class="card-body text-center">
+                                                     <asp:DropDownList ID="DptPartida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
+                                                         <asp:ListItem Value="1">Pureba1</asp:ListItem>
+                                                         <asp:ListItem Value="2">Prueba2</asp:ListItem>
+                                                         <asp:ListItem Value="3">Prueba 3</asp:ListItem>
+                                                     </asp:DropDownList>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
                                     <br />
-                                    <br />
-                                    <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="Dpt_partida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">Partida1</asp:ListItem>
-                                            <asp:ListItem Value="2">Partida2</asp:ListItem>
-                                            <asp:ListItem Value="3">Partida3</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                    <br />
-                                    Asigne el detalle que corresponde
-                                    <br />
-                                    <br />
-                                    <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="Dpt_Detalle" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">detalle1</asp:ListItem>
-                                            <asp:ListItem Value="2">detalle2</asp:ListItem>
-                                            <asp:ListItem Value="3">detalle3</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-                                    <br />
+                                    Asigne la clasificacón que corresponde
+                                       <div class="row">
+                                           <div class="col-md-6 ml-auto mr-auto">
+                                               <div class="card">
+                                                   <div class="card-body text-center">
+                                                       <asp:DropDownList ID="DptClasificacion" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Clasificación">
+                                                           <asp:ListItem Value="1">Pureba1</asp:ListItem>
+                                                           <asp:ListItem Value="2">Prueba2</asp:ListItem>
+                                                           <asp:ListItem Value="3">Prueba 3</asp:ListItem>
+                                                       </asp:DropDownList>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
                                     <br />
                                     Asignacion de partidas de producción registradas por rangos de fecha y su detalle correspondiente.
                                 </div>
                                 <div class="tab-pane" id="link5">
                                     La factura se encuentra aprobada por hacienda?
+                                       <div class="row">
+                                           <div class="col-md-6 ml-auto mr-auto">
+                                               <div class="card">
+                                                   <div class="card-body text-center">
+                                                       <div class="btn-group form-check">
+                                                           <label class="btn btn-primary btn-round">
+                                                               <asp:RadioButton runat="server" ID="Radioaprobada1" GroupName="radiopagada" />
+                                                               Sí 
+                                                           </label>
+                                                       </div>
+                                                       <div class="btn-group form-check">
+                                                           <label class="btn btn-primary btn-round">
+                                                               <asp:RadioButton runat="server" ID="Radioaprobada2" GroupName="radiopagada" />
+                                                               No  
+                                                           </label>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
                                     <br />
-                                    <br />
-
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="radioB1" GroupName="radioB" />
-                                            Sí   
-                                        </label>
-                                    </div>
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="radioB2" GroupName="radioB" />
-                                            No   
-                                        </label>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    Opcion que permite indicar si  la factura se encuentra aporbada o si aun se encuentra pendiente de realizar la aceptación.
+                                    Opcion que permite indicar si  la factura se encuentra aprobada o si aun se encuentra pendiente de realizar la aceptación.
                                 </div>
                                 <div class="tab-pane" id="link6">
                                     La factura se encuentra pagada?
+                                       <div class="row">
+                                           <div class="col-md-6 ml-auto mr-auto">
+                                               <div class="card">
+                                                   <div class="card-body text-center">
+                                                       <div class="btn-group form-check">
+                                                           <label class="btn btn-primary btn-round">
+                                                               <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
+                                                               Pendiente   
+                                                           </label>
+                                                       </div>
+                                                       <div class="btn-group form-check">
+                                                           <label class="btn btn-primary btn-round">
+                                                               <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
+                                                               Pagada   
+                                                           </label>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
                                     <br />
-                                    <br />
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
-                                            Pendiente   
-                                        </label>
-                                    </div>
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
-                                            Pagada   
-                                        </label>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    Seleccione el plazo de credito.
+                                    <%--Seleccione el plazo de credito.
                                         <br />
                                     <br />
                                     <div class="col-lg-5 col-md-6 col-sm-3">
@@ -139,14 +160,14 @@
                                             <asp:ListItem Value="3">45 dias</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
-                                    <br />
+                                    <br />--%>
                                     <br />
                                     Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
                                 </div>
                                 <div class="tab-pane" id="link3">
                                     Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     <br />
                                     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    
@@ -186,15 +207,16 @@
                                             </span>
                                             <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Remove</a>
                                         </div>
+                                    </div>                                  
+                                    <div class="row">
+                                        <div class="col-md-6 ml-auto mr-auto">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <asp:Button class="btn btn-success" ID="btn_Extraccion" runat="server" OnClick="btn_Extraccion_Click" Text="Extraer Datos" Width="178px" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button class="btn" alligment ID="btn_Extraccion" runat="server" OnClick="btn_Extraccion_Click" Text="Extraer Datos" Width="178px" />
-                                    <br />
-                                    &nbsp;
                                 </div>
                             </div>
                         </div>
@@ -202,6 +224,7 @@
                 </div>
 
             </div>
+             
         </div>
     </div>
     <script type="text/javascript">
@@ -231,6 +254,15 @@
 
             window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
 
+        }
+        //mensaje de conrfimacion
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
         }
         // mensaje de error
         function mensajeError() {

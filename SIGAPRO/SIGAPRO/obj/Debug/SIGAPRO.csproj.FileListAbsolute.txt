@@ -176,3 +176,7 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.csproj.
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.csproj.CopyComplete
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\obj\Debug\SIGAPRO.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
