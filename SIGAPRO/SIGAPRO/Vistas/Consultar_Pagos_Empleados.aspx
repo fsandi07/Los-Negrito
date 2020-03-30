@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Consultar_Pagos_Empleados.aspx.cs" Inherits="SIGAPRO.Vistas.Consultar_Pagos_Empleados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- 
+     <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+    <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content">   
@@ -19,7 +21,7 @@
                        
                         <tbody>
 
-                              <asp:GridView runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="Id_comprobante" DataSourceID="SqlDatapagos" EnablePersistedSelection="True" AllowPaging="True" >
+                              <asp:GridView runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="Id_comprobante" DataSourceID="SqlDatapagos" EnablePersistedSelection="True" AllowPaging="True" OnSelectedIndexChanged="grid_pagos_empleados_SelectedIndexChanged" ID="grid_pagos_empleados" >
                                   <Columns>
                                       <asp:CommandField ShowSelectButton="True" HeaderText="Editar" ></asp:CommandField>
                                       <asp:BoundField DataField="Id_comprobante" HeaderText="Id" ReadOnly="True" InsertVisible="False" SortExpression="Id_comprobante"></asp:BoundField>
@@ -47,7 +49,6 @@
                                       <asp:BoundField DataField="Saldo_anterior" HeaderText="Saldo_anterior" SortExpression="Saldo_anterior"></asp:BoundField>
                                       <asp:BoundField DataField="Saldo" HeaderText="Saldo" SortExpression="Saldo"></asp:BoundField>
                                       <asp:BoundField DataField="Total_depositado" HeaderText="Total_depositado" SortExpression="Total_depositado"></asp:BoundField>
-
                                       <asp:BoundField DataField="Id_banco" HeaderText="Id_banco" SortExpression="Id_banco" />
                                       <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
                                       <asp:BoundField DataField="Id_centro_costos" HeaderText="Id_centro_costos" SortExpression="Id_centro_costos" />
@@ -75,4 +76,33 @@
     <br />   
     
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
+     <script type="text/javascript">
+   //Alerta para actualizar o ver detalles 
+        function Actualizar(){
+          Swal.fire({
+            title: '¿Que Accion Desea Realizar?',
+            text: "¡Por favor eliga una opccion!",
+            type: 'warning',
+            //showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Modificar!',
+              allowOutsideClick: false,        
+          }).then((result) => {
+              if (result.value) {
+               window.setTimeout('location.href="Registro_pagos.aspx"')
+              //Swal.fire({
+              //  //title: 'Borrado',
+              //  //text:'Tu Archivo se ha borrado.',
+              //  //type:'success',
+              //  //allowOutsideClick: false,
+                  
+              //})
+              }
+          })
+
+          
+        };
+         </script>
+
 </asp:Content>

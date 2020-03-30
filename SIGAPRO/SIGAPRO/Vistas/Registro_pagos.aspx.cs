@@ -10,18 +10,24 @@ using SIGAPRO.NEGOCIO;
 namespace SIGAPRO.Vistas
 {
     public partial class Registro_pagos : System.Web.UI.Page
-
     {
-
         private DataTable datos;
         private Empleados emple;
         private Empleados_Helper empleHelper;
         private Pago_Empleados pagoemple;
         private Pago_Empleados_Helper pagoempleHelper;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.DptMes.SelectedValue = (string)Session["mes"];
+            this.Dptyear.SelectedValue = (string)Session["periodo"];
+            this.Dpquincena.SelectedValue= (string)Session["quincena"];
+            this.DptMoneda.SelectedValue = (string)Session["moneda"];
+            //fecha.Value=(string)Session["fecha_registro"];
+            //SalarioQuincenal.Value.ToString();
+            //comisionProductividad.Value =(string)Session["comision"];
+            //prestamo.Value = (string)Session["prestamos"];
+            //(string)Session["dias_sin_goce"];
+            //Session.Contents.Remove("dias_sin_goce");
         }
 
         protected void Btn_redirije_Click(object sender, EventArgs e)
@@ -62,7 +68,6 @@ namespace SIGAPRO.Vistas
             try
             {
                 this.pagoemple = new Pago_Empleados();
-                this.pagoemple.Opc = 1;
                 this.pagoemple.Id_comprobante = int.Parse(this.Lblnumcompro.Text);
                 this.pagoemple.Mes = this.DptMes.SelectedValue;
                 this.pagoemple.Anio = this.Dptyear.SelectedValue;
@@ -94,8 +99,7 @@ namespace SIGAPRO.Vistas
                 this.pagoemple.Id_centro_costos = this.DptCentroCostos.SelectedValue;
                 this.pagoemple.Pdf_comprobante = this.file_pdf.FileBytes;
                 this.pagoemple.Realname_pdf = this.file_pdf.FileName;
-
-
+                this.pagoemple.Opc = 1;
                 this.pagoempleHelper = new Pago_Empleados_Helper(pagoemple);
                 this.pagoempleHelper.Agregar_pago_empleado();
 

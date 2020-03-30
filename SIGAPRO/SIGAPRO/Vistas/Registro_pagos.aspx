@@ -148,19 +148,20 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Salario Quincenal</label>
-                          <input id="txtSalarioquincenal" type="text" class="form-control" />
+                          <input id="txtSalarioquincenal" type="text" class="form-control"  value="<%=(string)Session["salario_quincenal"]%>"/>
+                           
                         </div>
                       </div>                    
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Comisión Productividad</label>
-                              <input id="txtComisionProduct" type="text" class="form-control"  />
+                              <input id="txtComisionProduct" type="text" class="form-control" value="<%=(string)Session["comision"]%>"/>
                         </div>
                       </div>
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Prestamo</label><br />
-                          <input id="txtPrestamo" type="text" class="form-control"  />
+                          <input id="txtPrestamo" type="text" class="form-control" value="<%=(string)Session["prestamos"]%>" />
                         </div>
                       </div>
                     </div>
@@ -169,7 +170,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtDiassinGoce" type="text" class="form-control" placeholder="Días sin goce" />
+                                <input id="txtDiassinGoce" type="text" class="form-control" placeholder="Días sin goce" value="<%=(string)Session["dias_sin_goce"]%>"/>
                                 <input id="txttotalsinGoce" type="text" class="form-control" placeholder="Total días sin goce"
                                     readonly="readonly" />
                             </div>
@@ -323,10 +324,10 @@
         <asp:SqlDataSource ID="SqlDataBancos" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [id_banco], [nombre_banco] FROM [tb_bancos_los_negritos]"></asp:SqlDataSource>
         
         <%--    inicio del salario neto--%>
-    <asp:HiddenField ID="fecha" runat="server" />
+    <asp:HiddenField ID="fecha" runat="server"/>
     <asp:HiddenField ID="totalDepositado" runat="server" />
     <asp:HiddenField ID="diasSinGoce" runat="server" />
-        <asp:HiddenField ID="SalarioQuincenal" runat="server" />
+    <asp:HiddenField ID="SalarioQuincenal" runat="server"/>
     <asp:HiddenField ID="totalsingoce" runat="server" />
     <asp:HiddenField ID="comisionProductividad" runat="server" />
     <asp:HiddenField ID="diasFeriados" runat="server" />
@@ -365,7 +366,9 @@
         function verificarDato(){
 
             //alert('ha cargado la ventanaJAO');          
+            //
 
+            //
             var Salarioquincenal = document.getElementById("txtSalarioquincenal").value;
             var Diassingoce = document.getElementById("txtDiassinGoce").value;
             var Comisionproduct = document.getElementById("txtComisionProduct").value;
@@ -394,7 +397,7 @@
             document.getElementById("txtPrestamo").value = Prestamo;
             //document.getElementById("txtSalarioquincenal").value = new Intl.NumberFormat().format(Salarioquincenal);
 
-            document.getElementById('<%=SalarioQuincenal.ClientID%>').value = Salarioquincenal;            
+            document.getElementById('<%=SalarioQuincenal.ClientID%>').value = Salarioquincenal;    
             document.getElementById('<%=diasSinGoce.ClientID%>').value = Diassingoce;
             document.getElementById('<%=totalsingoce.ClientID%>').value = Totalsingoce;
             document.getElementById('<%=comisionProductividad.ClientID%>').value = Comisionproduct;
