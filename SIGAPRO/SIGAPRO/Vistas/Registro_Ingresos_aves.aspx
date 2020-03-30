@@ -44,10 +44,7 @@
                                     <br />
                                     <br />
                                     <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="Dpt_partida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">Partida1</asp:ListItem>
-                                            <asp:ListItem Value="2">Partida2</asp:ListItem>
-                                            <asp:ListItem Value="3">Partida3</asp:ListItem>
+                                        <asp:DropDownList ID="Dpt_partida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida" DataSourceID="SqlDataPartida" DataTextField="descripcion" DataValueField="numero_partida">
                                         </asp:DropDownList>
                                     </div>
                                     <br />
@@ -105,7 +102,11 @@
                                                         <label class="col-sm-2 col-form-label">Detalle de la factura:</label>
                                                         <div class="col-sm-10">
                                                             <div class="form-group">
-                                                                <asp:TextBox ID="txtdetalle_factura" runat="server" class="form-control"></asp:TextBox>
+                                                                <div class="col-lg-5 col-md-6 col-sm-3">
+                                                                    <asp:DropDownList ID="Dptdetalle" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida" DataSourceID="SqlDatadetalle" DataTextField="nombre_detalle" DataValueField="id_detalle">
+                                            
+                                        </asp:DropDownList>
+                                    </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -169,29 +170,27 @@
                                         </div>
                                     </div>
                                     <br />
-                                    <div class="row">
-                                        <label class="col-sm-2 col-form-label">Cargar factura física en caso de existir:</label><br />
-                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail">
-                                                <img src="assets/img/pdf.png" alt="...">
-                                            </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                                            <div>
-                                                <span class="btn btn-rose btn-round btn-file">
-                                                    <span class="fileinput-new">
-                                                        <asp:FileUpload ID="File_egreso_manual" runat="server" /></span>
-                                                    <span class="fileinput-exists">Change</span>
-                                                    <input type="file" name="..." />
-                                                </span>
-                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Remove</a>
-                                            </div>
+                                     <label class="col-sm-4 col-form-label">Cargar factura física en caso de existir:</label>
+                                        <br />
+                                    <br />
+                                      <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                        <div class="fileinput-new thumbnail">
+                                            <img src="assets/img/pdf.jpg" alt="...">
+                                        </div>
+                                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                        <div>
+                                            <span class="btn btn-rose btn-round btn-file">
+                                                <span class="fileinput-new">
+                                                    <asp:FileUpload ID="file_pdf" runat="server" CssClass="alert-dark" /></span>                                               
+                                            </span>
+                                            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Quitar</a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 ml-auto mr-auto">
                                             <div class="card">
                                                 <div class="card-body text-center">
-                                                    <asp:Button class="btn btn-success" ID="btn_registrar" runat="server" Text="Extraer Datos" Width="178px" />
+                                                    <asp:Button class="btn btn-success" ID="btn_registrar" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_registrar_Click" />
                                                 </div>
                                             </div>
                                         </div>
@@ -207,29 +206,34 @@
                                     <br />
                                     <div class="btn-group form-check">
                                         <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
+                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada"  />
                                             Pendiente   
                                         </label>
                                     </div>
                                     <div class="btn-group form-check">
                                         <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
+                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada"  />
                                             Pagada   
                                         </label>
                                     </div>
+
+                                    <div id="dptplazo">
                                     <br />
                                     <br />
-                                    Seleccione el plazo de credito.
+                                    Seleccione el plazo de credito en caso de estar pendiente.
                                         <br />
                                     <br />
                                     <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">15 dias</asp:ListItem>
-                                            <asp:ListItem Value="2">30 dias</asp:ListItem>
-                                            <asp:ListItem Value="3">45 dias</asp:ListItem>
+                                        <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Plazo" >
+                                            <asp:ListItem Value="15">15 dias</asp:ListItem>
+                                            <asp:ListItem Value="30">30 dias</asp:ListItem>
+                                            <asp:ListItem Value="45">45 dias</asp:ListItem>
+                                            <asp:ListItem Value="60">60 dias</asp:ListItem>
+                                            <asp:ListItem Value="90">90 dias</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
-                                    <br />
+                                    </div>
+                                 <br />
                                     <br />
                                     Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
                                 </div>
@@ -240,12 +244,20 @@
                 </div>
             </div>
         </div>
+        <asp:SqlDataSource ID="SqlDatadetalle" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [id_detalle], [nombre_detalle] FROM [tb_Detalle_Factura_los_negritos]"></asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqlDataPartida" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_partida], [descripcion] FROM [tb_Partidas_Los_Negritos]"></asp:SqlDataSource>
     </div>
+
+
+
     <asp:HiddenField ID="fecha" runat="server" />
     <asp:HiddenField ID="totalIva" runat="server" />
     <asp:HiddenField ID="totalmenosIva" runat="server" />
     <asp:HiddenField ID="totalmenosCargas" runat="server" />  
     <asp:HiddenField ID="montoFacatura" runat="server" />
+    <asp:HiddenField ID="otrasCargas" runat="server" />
+    <asp:HiddenField ID="porcenIva" runat="server" />
     <script type="text/javascript">       // mensaje de espera
 
 
@@ -267,7 +279,7 @@
             document.getElementById("txttotalIva").value = totalIva;
             document.getElementById("txtmenosIva").value = totalmenosIva;
             document.getElementById("txttotalmonto").value = totalmenosCargas;
-
+            
 
             //captura los valores de los imputs por medio de l Hidden
             document.getElementById('<%=montoFacatura.ClientID%>').value =
@@ -280,6 +292,10 @@
                 totalmenosCargas;
             document.getElementById('<%=fecha.ClientID%>').value =
                 fecha;
+            document.getElementById('<%=otrasCargas.ClientID%>').value =
+                segundoValor;
+            document.getElementById('<%=porcenIva.ClientID%>').value =
+                document.getElementById("txtporcenIva").value;
         }
 
 
@@ -309,11 +325,20 @@
             window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
 
         }
+        //mensaje de conrfimacion
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
+        }
         // mensaje de error
         function mensajeError() {
             swal.fire({
                 title: '¡Error!',
-                text: "¡" + " Lo sentimos el archivo no es de tipo XML o este XML ya fue Extraido Por Favor Verifique" + "!",
+                text: "¡" + " Lo sentimos ha ocurrido un error, intente de nuevo" + "!",
                 type: 'error',
                 showConfirmButton: false,
                 allowOutsideClick: false,

@@ -447,7 +447,29 @@
             document.getElementById('<%=saldo.ClientID%>').value = Saldo;
             
         }
-       
+     
+            //mensaje de conrfimacion
+            function mensajeDeconfirmacion() {
+                swal.fire({
+                    title: "¡EXITO!",
+                    text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                    type: 'success',
+                    allowOutsideClick: false,
+                })
+            }
+            // mensaje de error
+            function mensajeError() {
+                swal.fire({
+                    title: '¡Error!',
+                    text: "¡" + " Lo sentimos ha ocurrido un error, intente de nuevo" + "!",
+                    type: 'error',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    timer: 5000,
+
+                })
+            }
+
        
     </script>
 </asp:Content>

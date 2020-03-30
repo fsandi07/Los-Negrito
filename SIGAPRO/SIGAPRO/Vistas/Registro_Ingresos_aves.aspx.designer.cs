@@ -51,13 +51,13 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre_comercio_ingreso;
 
         /// <summary>
-        /// Control txtdetalle_factura.
+        /// Control Dptdetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdetalle_factura;
+        protected global::System.Web.UI.WebControls.DropDownList Dptdetalle;
 
         /// <summary>
         /// Control txt_detalle_carga.
@@ -69,13 +69,13 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_detalle_carga;
 
         /// <summary>
-        /// Control File_egreso_manual.
+        /// Control file_pdf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload File_egreso_manual;
+        protected global::System.Web.UI.WebControls.FileUpload file_pdf;
 
         /// <summary>
         /// Control btn_registrar.
@@ -112,6 +112,24 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Dpt_plazo_pago;
+
+        /// <summary>
+        /// Control SqlDatadetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatadetalle;
+
+        /// <summary>
+        /// Control SqlDataPartida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataPartida;
 
         /// <summary>
         /// Control fecha.
@@ -157,5 +175,23 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField montoFacatura;
+
+        /// <summary>
+        /// Control otrasCargas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField otrasCargas;
+
+        /// <summary>
+        /// Control porcenIva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField porcenIva;
     }
 }

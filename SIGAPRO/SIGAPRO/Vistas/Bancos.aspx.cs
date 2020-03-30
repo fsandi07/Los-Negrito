@@ -46,9 +46,6 @@ namespace SIGAPRO.Vistas
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
 
-
-
-
         }
     }
 }

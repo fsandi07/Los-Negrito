@@ -46,9 +46,5 @@ namespace SIGAPRO.NEGOCIO
         public string Detalle { get => detalle; set => detalle = value; }
         public DateTime Vencimiento { get => vencimiento; set => vencimiento = value; }
         public byte[] Archivo_pdf { get => archivo_pdf; set => archivo_pdf = value; }
-
-
-
-
     }
 }

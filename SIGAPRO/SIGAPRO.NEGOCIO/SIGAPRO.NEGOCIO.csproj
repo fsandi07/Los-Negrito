@@ -72,7 +72,11 @@
     <Compile Include="Egreso_Manual_Helper.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Empleados_Helper.cs" />
+    <Compile Include="Ingresar_Pollinaza_Helper.cs" />
     <Compile Include="ingresos_xml.cs" />
+    <Compile Include="Ingreso_Aves.cs" />
+    <Compile Include="Ingreso_Aves_Helper.cs" />
+    <Compile Include="Ingreso_Pollinaza.cs" />
     <Compile Include="Metodo_pagos.cs" />
     <Compile Include="Metodo_pago_Helper.cs" />
     <Compile Include="Pago_Empleados.cs" />
