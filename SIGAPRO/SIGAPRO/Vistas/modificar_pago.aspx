@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Registro_pagos.aspx.cs" Inherits="SIGAPRO.Vistas.Registro_pagos" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="modificar_pago.aspx.cs" Inherits="SIGAPRO.Vistas.modificar_pago" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-md-12">
+      <div class="col-md-12">
         <div class="card ">
             <div class="card-header card-header-rose card-header-text">
                 <div class="card-text">
@@ -134,7 +133,7 @@
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha</label><br />
                           <input type="date" id="start" name="trip-start" onblur="registrofecha()"
-                            value="date.now();"
+                            value="date.now(); <%--value=" <%=(string)Session["fecha_registro"]%>--%>
                             min="2017-01-01" max="2030-12-31">
                         </div>
                       </div>
@@ -148,20 +147,20 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Salario Quincenal</label>
-                          <input id="txtSalarioquincenal" type="text" class="form-control"/>
+                          <input id="txtSalarioquincenal" type="text" class="form-control"  value="<%=(string)Session["salario_quincenal"]%>"/>
                            
                         </div>
                       </div>                    
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Comisión Productividad</label>
-                              <input id="txtComisionProduct" type="text" class="form-control"/>
+                              <input id="txtComisionProduct" type="text" class="form-control" value="<%=(string)Session["comision"]%>"/>
                         </div>
                       </div>
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Prestamo</label><br />
-                          <input id="txtPrestamo" type="text" class="form-control" />
+                          <input id="txtPrestamo" type="text" class="form-control" value="<%=(string)Session["prestamos"]%>" />
                         </div>
                       </div>
                     </div>
@@ -170,7 +169,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtDiassinGoce" type="text" class="form-control" placeholder="Días sin goce" "/>
+                                <input id="txtDiassinGoce" type="text" class="form-control" placeholder="Días sin goce" value="<%=(string)Session["dias_sin_goce"]%>"/>
                                 <input id="txttotalsinGoce" type="text" class="form-control" placeholder="Total días sin goce"
                                     readonly="readonly" />
                             </div>
@@ -182,7 +181,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtDiasFeriados" type="text" class="form-control" placeholder="Días feriados" />
+                                <input id="txtDiasFeriados" type="text" class="form-control" placeholder="Días feriados" value="<%=(string)Session["dias_feriados"]%>"/>
                                 <input id="txttotalferiados" type="text" class="form-control" placeholder="Total feriados" readonly="readonly" />
                             </div>
                         </div>
@@ -193,7 +192,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtHorasExtras" type="text" class="form-control" placeholder="Cantidad de Horas" onblur="verificarDato()" />
+                                <input id="txtHorasExtras" type="text" class="form-control" placeholder="Cantidad de Horas" value="<%=(string)Session["horas_extras"]%>" onblur="verificarDato()" />
                                 <input id="txttotalExtras" type="text" class="form-control" placeholder="Total Extras" readonly="readonly" />
                             </div>
                         </div>
@@ -311,7 +310,7 @@
                     <div class="col-md-6 ml-auto mr-auto">
                         <div class="card">
                             <div class="card-body text-center">
-                                <asp:Button class="btn btn-success" ID="btn_Pago_Cola" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_Pago_Cola_Click"/>
+                                <%--<asp:Button class="btn btn-success" ID="btn_Pago_Cola" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_Pago_Cola_Click"/>--%>
                             </div>
                         </div>
                     </div>
@@ -447,7 +446,6 @@
             document.getElementById('<%=saldo.ClientID%>').value = Saldo;
             
         }
-     
             //mensaje de conrfimacion
             function mensajeDeconfirmacion() {
                 swal.fire({

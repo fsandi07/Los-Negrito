@@ -18,16 +18,7 @@ namespace SIGAPRO.Vistas
         private Pago_Empleados_Helper pagoempleHelper;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.DptMes.SelectedValue = (string)Session["mes"];
-            this.Dptyear.SelectedValue = (string)Session["periodo"];
-            this.Dpquincena.SelectedValue= (string)Session["quincena"];
-            this.DptMoneda.SelectedValue = (string)Session["moneda"];
-            //fecha.Value=(string)Session["fecha_registro"];
-            //SalarioQuincenal.Value.ToString();
-            //comisionProductividad.Value =(string)Session["comision"];
-            //prestamo.Value = (string)Session["prestamos"];
-            //(string)Session["dias_sin_goce"];
-            //Session.Contents.Remove("dias_sin_goce");
+
         }
 
         protected void Btn_redirije_Click(object sender, EventArgs e)

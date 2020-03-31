@@ -210,6 +210,7 @@
     <Content Include="Vistas\js\sb-admin-2.min.js" />
     <Content Include="Vistas\Login.aspx" />
     <Content Include="Vistas\Metodo_pago.aspx" />
+    <Content Include="Vistas\modificar_pago.aspx" />
     <Content Include="Vistas\Partidas1.aspx" />
     <Content Include="Vistas\Registro_Empleados.aspx" />
     <Content Include="Vistas\Registro_Ingresos_aves.aspx" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="Vistas\Metodo_pago.aspx.designer.cs">
       <DependentUpon>Metodo_pago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\modificar_pago.aspx.cs">
+      <DependentUpon>modificar_pago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\modificar_pago.aspx.designer.cs">
+      <DependentUpon>modificar_pago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Partidas1.aspx.cs">
       <DependentUpon>Partidas1.aspx</DependentUpon>

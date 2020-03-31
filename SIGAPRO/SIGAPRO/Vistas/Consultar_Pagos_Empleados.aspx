@@ -83,14 +83,14 @@
             title: '¿Que Accion Desea Realizar?',
             text: "¡Por favor eliga una opccion!",
             type: 'warning',
-            //showCancelButton: true,
+            showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: '¡Modificar!',
               allowOutsideClick: false,        
           }).then((result) => {
               if (result.value) {
-               window.setTimeout('location.href="Registro_pagos.aspx"')
+               window.setTimeout('location.href="modificar_pago.aspx"')
               //Swal.fire({
               //  //title: 'Borrado',
               //  //text:'Tu Archivo se ha borrado.',

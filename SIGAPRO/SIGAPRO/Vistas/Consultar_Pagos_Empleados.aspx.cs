@@ -31,6 +31,12 @@ namespace SIGAPRO.Vistas
             Session["comision"] = grid_pagos_empleados.SelectedRow.Cells[9].Text;
             Session["prestamos"] = grid_pagos_empleados.SelectedRow.Cells[10].Text;
             Session["dias_sin_goce"] = grid_pagos_empleados.SelectedRow.Cells[11].Text;
+            //lunes 30/03/2020
+            Session["dias_feriados"] = grid_pagos_empleados.SelectedRow.Cells[13].Text;
+            Session["horas_extras"] = grid_pagos_empleados.SelectedRow.Cells[15].Text;
+
+
+
             ScriptManager.RegisterStartupScript(this, typeof(Page), "Actualizar", "Actualizar('" + "" + "');", true);
         }
     }
