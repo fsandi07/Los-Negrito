@@ -130,6 +130,15 @@ namespace SIGAPRO.Vistas {
         protected global::System.Web.UI.WebControls.FileUpload file_pdf;
         
         /// <summary>
+        /// Control btn_modificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_modificar;
+        
+        /// <summary>
         /// Control SqlDatacentrocostos.
         /// </summary>
         /// <remarks>

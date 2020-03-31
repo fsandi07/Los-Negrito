@@ -6,15 +6,6 @@ C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.NEGOCIO
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.pdb
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.dll
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.pdb
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csprojAssemblyReference.cache
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
-C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.pdb
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.dll
@@ -107,6 +98,8 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SqlServ
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.pdb
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -114,6 +107,7 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microso
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.WebDesign.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.WebForms.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EnvDTE.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.ReportViewer.WinForms.dll
@@ -123,6 +117,7 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microso
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\Microsoft.MSXML.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.DATOS.pdb
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
@@ -183,3 +178,8 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\pt\Micr
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb

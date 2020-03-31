@@ -133,7 +133,7 @@
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha</label><br />
                           <input type="date" id="start" name="trip-start" onblur="registrofecha()"
-                            value="date.now(); <%--value=" <%=(string)Session["fecha_registro"]%>--%>
+                            value="date.now();" <%--value=" <%=(string)Session["fecha_registro"]%>--%>
                             min="2017-01-01" max="2030-12-31">
                         </div>
                       </div>
@@ -170,8 +170,7 @@
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
                                 <input id="txtDiassinGoce" type="text" class="form-control" placeholder="Días sin goce" value="<%=(string)Session["dias_sin_goce"]%>"/>
-                                <input id="txttotalsinGoce" type="text" class="form-control" placeholder="Total días sin goce"
-                                    readonly="readonly" />
+                                <input id="txttotalsinGoce" type="text" class="form-control" placeholder="Total días sin goce" readonly="readonly" value="<%=(string)Session["total_dias_sin_goce"]%>"/>
                             </div>
                         </div>
                     </div>
@@ -182,7 +181,7 @@
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
                                 <input id="txtDiasFeriados" type="text" class="form-control" placeholder="Días feriados" value="<%=(string)Session["dias_feriados"]%>"/>
-                                <input id="txttotalferiados" type="text" class="form-control" placeholder="Total feriados" readonly="readonly" />
+                                <input id="txttotalferiados" type="text" class="form-control" placeholder="Total feriados" readonly="readonly" value="<%=(string)Session["total_feriados"] %>"/>
                             </div>
                         </div>
                     </div>
@@ -193,7 +192,7 @@
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
                                 <input id="txtHorasExtras" type="text" class="form-control" placeholder="Cantidad de Horas" value="<%=(string)Session["horas_extras"]%>" onblur="verificarDato()" />
-                                <input id="txttotalExtras" type="text" class="form-control" placeholder="Total Extras" readonly="readonly" />
+                                <input id="txttotalExtras" type="text" class="form-control" placeholder="Total Extras" readonly="readonly" value="<%=(string)Session["total_horas_extras"]%>" />
                             </div>
                         </div>
                     </div>
@@ -205,7 +204,7 @@
                     </label>
                     <div class="col-sm-10">
                         <div class="form-group">
-                            <input id="txtSalarioNeto" type="text" class="form-control" placeholder="Total Neto" readonly="readonly" />
+                            <input id="txtSalarioNeto" type="text" class="form-control" placeholder="Total Neto" readonly="readonly" value="<%=(string)Session["salario_neto"]%>" />
                         </div>
                     </div>
                 </div>
@@ -215,8 +214,8 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtCajaSeguro" type="text" class="form-control" placeholder="% CCSS" />
-                                <input id="txttotalCaja" type="text" class="form-control" placeholder="Total CCSS" readonly="readonly" />
+                                <input id="txtCajaSeguro" type="text" class="form-control" placeholder="% CCSS" value="<%=(string)Session["porcentaje_caja"]%>" />
+                                <input id="txttotalCaja" type="text" class="form-control" placeholder="Total CCSS" readonly="readonly" value="<%=Session["total_caja"]%>""/>
                             </div>
                         </div>
                     </div>
@@ -226,7 +225,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtImpuestoRenta" type="text" class="form-control" onkeypress="return checkIt(event)" />
+                                <input id="txtImpuestoRenta" type="text" class="form-control" onkeypress="return checkIt(event)" value="<%=(string)Session["impuesto_renta"]%>" />
                             </div>
 
                         </div>
@@ -237,7 +236,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtTotalOtrasdeud" type="text" class="form-control" placeholder="Total otras deducciones" onblur="deducciones()" onkeypress="return checkIt(event)" />
+                                <input id="txtTotalOtrasdeud" type="text" class="form-control" placeholder="Total otras deducciones" onblur="deducciones()" onkeypress="return checkIt(event)" value="<%=(string)Session["otras_deducciones"]%>"/>
                                 <asp:TextBox ID="txtDescripDedud" class="form-control" placeholder="Descripción de la deducción" runat="server"></asp:TextBox>                                
                             </div>
                         </div>
@@ -250,7 +249,7 @@
 
                     <div class="col-sm-10">
                         <div class="form-group">
-                            <input id="txtTotalDeducciones" type="text" class="form-control" readonly="readonly" />
+                            <input id="txtTotalDeducciones" type="text" class="form-control" readonly="readonly" value="<%=(string)Session["total_deducciones"]%>" />
                         </div>
                     </div>
                 </div>
@@ -261,7 +260,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtsaldoAnterior" type="text" class="form-control" onblur="saldos()" onkeypress="return checkIt(event)" />
+                                <input id="txtsaldoAnterior" type="text" class="form-control" onblur="saldos()" onkeypress="return checkIt(event)" value="<%=(string)Session["saldo_anterior"]%>" />
                             </div>
                         </div>
                     </div>
@@ -271,7 +270,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtSaldo" type="text" class="form-control" readonly="readonly" />
+                                <input id="txtSaldo" type="text" class="form-control" readonly="readonly" value="<%=(string)Session["saldo"]%>" />
                             </div>
                         </div>
                     </div>
@@ -282,7 +281,7 @@
                     </label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                            <input id="txtTotaldepositado" type="text" class="form-control" readonly="readonly" />
+                            <input id="txtTotaldepositado" type="text" class="form-control" readonly="readonly" value="<%=(string)Session["total_depositado"]%>"" />
                         </div>
                     </div>                  
                 </div>
@@ -311,6 +310,7 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <%--<asp:Button class="btn btn-success" ID="btn_Pago_Cola" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_Pago_Cola_Click"/>--%>
+                                <asp:Button ID="btn_modificar" runat="server" Text="Modificar" class="btn btn-success"  Width="178px" OnClick="btn_modificar_Click"/>
                             </div>
                         </div>
                     </div>
@@ -450,9 +450,14 @@
             function mensajeDeconfirmacion() {
                 swal.fire({
                     title: "¡EXITO!",
-                    text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                    text: "¡" + "Los Datos se Modificaron Con Exito" + "!",
                     type: 'success',
                     allowOutsideClick: false,
+                }).then((result) => {
+                    if (result.value) {
+                        window.setTimeout('location.href="Consultar_Pagos_Empleados.aspx"')
+                  
+                    }
                 })
             }
             // mensaje de error
