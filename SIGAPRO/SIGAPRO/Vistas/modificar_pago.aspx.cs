@@ -26,6 +26,7 @@ namespace SIGAPRO.Vistas
             else
             {
                 dpcolaborador();
+                this.Lblnumcompro.Text = (string)Session["Id_comprobante"];
                 this.DptMes.SelectedValue = (string)Session["mes"];
                 this.Dptyear.SelectedValue = (string)Session["periodo"];
                 this.Dpquincena.SelectedValue = (string)Session["quincena"];

@@ -318,6 +318,7 @@
                 </div>
             </div>
     </div>
+        </div>
         <asp:SqlDataSource ID="SqlDatacentrocostos" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_centro_costos], [descripcion] FROM [tb_centro_de_costos_los_negritos]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataempleado" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_cedula], [nombre] FROM [tb_empleado_los_negritos]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataPartida" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_partida], [descripcion] FROM [tb_Partidas_Los_Negritos]"></asp:SqlDataSource>

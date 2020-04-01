@@ -24,33 +24,6 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
 
         /// <summary>
-        /// Control DptCCostos_Manual.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DptCCostos_Manual;
-
-        /// <summary>
-        /// Control Dpt_partida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_partida;
-
-        /// <summary>
-        /// Control Dpt_Detalle_Manual.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_Detalle_Manual;
-
-        /// <summary>
         /// Control txt_num_factura.
         /// </summary>
         /// <remarks>
@@ -60,58 +33,58 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_num_factura;
 
         /// <summary>
-        /// Control Btn_validar_num_factura.
+        /// Control DptCCostos_EXML.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_validar_num_factura;
+        protected global::System.Web.UI.WebControls.DropDownList DptCCostos_EXML;
 
         /// <summary>
-        /// Control txt_Nombre_comercio_egreso.
+        /// Control DptPartida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Nombre_comercio_egreso;
+        protected global::System.Web.UI.WebControls.DropDownList DptPartida;
 
         /// <summary>
-        /// Control txt_Detalle_Egreso.
+        /// Control DptClasificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Detalle_Egreso;
+        protected global::System.Web.UI.WebControls.DropDownList DptClasificacion;
 
         /// <summary>
-        /// Control txt_monto_egreso.
+        /// Control Radioaprobada1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_monto_egreso;
+        protected global::System.Web.UI.WebControls.RadioButton Radioaprobada1;
 
         /// <summary>
-        /// Control Calendar_fecha_egreso.
+        /// Control Radioaprobada2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar_fecha_egreso;
+        protected global::System.Web.UI.WebControls.RadioButton Radioaprobada2;
 
         /// <summary>
-        /// Control File_egreso_manual.
+        /// Control Radiopagada_no.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload File_egreso_manual;
+        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_no;
 
         /// <summary>
         /// Control Radiopagada_si.
@@ -123,12 +96,156 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.RadioButton Radiopagada_si;
 
         /// <summary>
-        /// Control Radiopagada_no.
+        /// Control Dpt_plazo_pago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_no;
+        protected global::System.Web.UI.WebControls.DropDownList Dpt_plazo_pago;
+
+        /// <summary>
+        /// Control DptBanco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DptBanco;
+
+        /// <summary>
+        /// Control DptMetodoPago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DptMetodoPago;
+
+        /// <summary>
+        /// Control txt_Nombre_comercio_egreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Nombre_comercio_egreso;
+
+        /// <summary>
+        /// Control DptMoneda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DptMoneda;
+
+        /// <summary>
+        /// Control Dptexiste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Dptexiste;
+
+        /// <summary>
+        /// Control file_pdf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload file_pdf;
+
+        /// <summary>
+        /// Control btn_registrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_registrar;
+
+        /// <summary>
+        /// Control SqlDatacentoC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatacentoC;
+
+        /// <summary>
+        /// Control SqlDatapartida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatapartida;
+
+        /// <summary>
+        /// Control SqlDatadetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatadetalle;
+
+        /// <summary>
+        /// Control SqlDatabanco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDatabanco;
+
+        /// <summary>
+        /// Control SqlDataMetodo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataMetodo;
+
+        /// <summary>
+        /// Control fecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField fecha;
+
+        /// <summary>
+        /// Control MontoFactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField MontoFactura;
+
+        /// <summary>
+        /// Control PorcentajeIVA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField PorcentajeIVA;
+
+        /// <summary>
+        /// Control TotalIva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalIva;
     }
 }

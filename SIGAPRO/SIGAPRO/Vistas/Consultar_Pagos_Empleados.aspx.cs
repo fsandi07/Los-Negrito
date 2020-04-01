@@ -22,6 +22,7 @@ namespace SIGAPRO.Vistas
 
         protected void grid_pagos_empleados_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["Id_comprobante"] = grid_pagos_empleados.SelectedRow.Cells[1].Text;
             Session["mes"] = grid_pagos_empleados.SelectedRow.Cells[2].Text;
             Session["periodo"]= grid_pagos_empleados.SelectedRow.Cells[3].Text;
             Session["quincena"] = grid_pagos_empleados.SelectedRow.Cells[4].Text;

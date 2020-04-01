@@ -11,17 +11,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="content">
+
+     <div class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
                         <div class="card-header ">
                             <h4 class="card-title">Extracción de Datos -
-                    <small class="description">Facturas XML</small>
+                    <small class="description">Egresos por XML</small>
                             </h4>
                         </div>
-                           <asp:Button class="btn btn-danger col-md-3 ml-auto" ID="btn_cancelar" runat="server"  Text="Cancelar" Width="178px" OnClick="btn_cancelar_Click"  />
+                        <asp:Button class="btn btn-danger col-md-3 ml-auto" ID="btn_cancelar" runat="server" Text="Cancelar" Width="178px" OnClick="btn_cancelar_Click" />
                         <div class="card-body ">
                             <ul class="nav nav-pills nav-pills-warning" role="tablist">
                                 <li class="nav-item">
@@ -41,173 +42,138 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link3" role="tablist">Buscar Archivo XML
+                                    <a class="nav-link" data-toggle="tab" href="#link3" role="tablist">Extraccion del XML
                                     </a>
                                 </li>
                             </ul>
                             <div class="tab-content tab-space">
                                 <div class="tab-pane active" id="link1">
+                                    Ingrese el numero de Factura                                                                   
                                     Seleccione el Centro de Costos.
                                      <br />
                                     <br />
-                                    <div class="row">
-                                        <div class="col-md-6 ml-auto mr-auto">
-                                            <div class="card">
-                                                <div class="card-body text-center">
-                                                    <asp:DropDownList ID="DptCCostos_EXML" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos">
-                                                        <asp:ListItem Value="1">Pureba1</asp:ListItem>
-                                                        <asp:ListItem Value="2">Prueba2</asp:ListItem>
-                                                        <asp:ListItem Value="3">Prueba 3</asp:ListItem>
-                                                    </asp:DropDownList>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                    </div>
+                                    <asp:DropDownList ID="DptCCostos_EXML" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos" DataSourceID="SqlDatacentoC" DataTextField="descripcion" DataValueField="numero_centro_costos">
+                                        
+                                    </asp:DropDownList>
+                                    <br />
                                     <br />
                                     Asignación del centro de costos registrado previamente,seleccione en el menu de opciones desplegable.
                                 </div>
 
                                 <div class="tab-pane" id="link2">
                                     Asigne la partida correspondiente
-                                     <div class="row">
-                                         <div class="col-md-6 ml-auto mr-auto">
-                                             <div class="card">
-                                                 <div class="card-body text-center">
-                                                     <asp:DropDownList ID="DptPartida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                                         <asp:ListItem Value="1">Pureba1</asp:ListItem>
-                                                         <asp:ListItem Value="2">Prueba2</asp:ListItem>
-                                                         <asp:ListItem Value="3">Prueba 3</asp:ListItem>
-                                                     </asp:DropDownList>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
+                                    <br />
+                                    <br />
+                                    <asp:DropDownList ID="DptPartida" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida" DataSourceID="SqlDatapartida" DataTextField="descripcion" DataValueField="numero_partida">
+                                        
+                                    </asp:DropDownList>
+                                    <br />
                                     <br />
                                     Asigne la clasificacón que corresponde
-                                       <div class="row">
-                                           <div class="col-md-6 ml-auto mr-auto">
-                                               <div class="card">
-                                                   <div class="card-body text-center">
-                                                       <asp:DropDownList ID="DptClasificacion" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Clasificación">
-                                                           <asp:ListItem Value="1">Pureba1</asp:ListItem>
-                                                           <asp:ListItem Value="2">Prueba2</asp:ListItem>
-                                                           <asp:ListItem Value="3">Prueba 3</asp:ListItem>
-                                                       </asp:DropDownList>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
+                                     <br />
+                                    <br />
+                                    <asp:DropDownList ID="DptClasificacion" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Clasificación" DataSourceID="SqlDatadetalle" DataTextField="nombre_detalle" DataValueField="id_detalle">
+                                        
+                                    </asp:DropDownList>
                                     <br />
                                     Asignacion de partidas de producción registradas por rangos de fecha y su detalle correspondiente.
                                 </div>
                                 <div class="tab-pane" id="link5">
                                     La factura se encuentra aprobada por hacienda?
-                                       <div class="row">
-                                           <div class="col-md-6 ml-auto mr-auto">
-                                               <div class="card">
-                                                   <div class="card-body text-center">
-                                                       <div class="btn-group form-check">
-                                                           <label class="btn btn-primary btn-round">
-                                                               <asp:RadioButton runat="server" ID="Radioaprobada1" GroupName="radiopagada" />
-                                                               Sí 
-                                                           </label>
-                                                       </div>
-                                                       <div class="btn-group form-check">
-                                                           <label class="btn btn-primary btn-round">
-                                                               <asp:RadioButton runat="server" ID="Radioaprobada2" GroupName="radiopagada" />
-                                                               No  
-                                                           </label>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
+                                     <br />
+                                    <br />
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radioaprobada1" GroupName="radioaprobada" />
+                                            Sí 
+                                        </label>
+                                    </div>
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radioaprobada2" GroupName="radioaprobada" />
+                                            No  
+                                        </label>
+                                    </div>
+                                    <br />
                                     <br />
                                     Opcion que permite indicar si  la factura se encuentra aprobada o si aun se encuentra pendiente de realizar la aceptación.
                                 </div>
                                 <div class="tab-pane" id="link6">
                                     La factura se encuentra pagada?
-                                       <div class="row">
-                                           <div class="col-md-6 ml-auto mr-auto">
-                                               <div class="card">
-                                                   <div class="card-body text-center">
-                                                       <div class="btn-group form-check">
-                                                           <label class="btn btn-primary btn-round">
-                                                               <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
-                                                               Pendiente   
-                                                           </label>
-                                                       </div>
-                                                       <div class="btn-group form-check">
-                                                           <label class="btn btn-primary btn-round">
-                                                               <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
-                                                               Pagada   
-                                                           </label>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
+                                      <br />
                                     <br />
-                                    <%--Seleccione el plazo de credito.
-                                        <br />
-                                    <br />
-                                    <div class="col-lg-5 col-md-6 col-sm-3">
-                                        <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Partida">
-                                            <asp:ListItem Value="1">15 dias</asp:ListItem>
-                                            <asp:ListItem Value="2">30 dias</asp:ListItem>
-                                            <asp:ListItem Value="3">45 dias</asp:ListItem>
-                                        </asp:DropDownList>
+                                    <%-- inicio del blouqe--%>
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
+                                            Pendiente   
+                                        </label>
                                     </div>
-                                    <br />--%>
+                                    <div class="btn-group form-check">
+                                        <label class="btn btn-primary btn-round">
+                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
+                                            Cancelada  
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    En caso de estar cancelada favor llene los siguientes datos?
+                                    <br />
+                                    <br />
+                                    <div class="col-sm-12" id="datospago">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Plazo</label>
+                                                    <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Plazo">
+                                                        <asp:ListItem Value="0">0 dias</asp:ListItem>
+                                                        <asp:ListItem Value="15">15 dias</asp:ListItem>
+                                                        <asp:ListItem Value="30">30 dias</asp:ListItem>
+                                                        <asp:ListItem Value="45">45 dias</asp:ListItem>
+                                                        <asp:ListItem Value="60">60 dias</asp:ListItem>
+                                                        <asp:ListItem Value="90">90 dias</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>                                        
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Banco</label><br />
+                                                    <asp:DropDownList ID="DptBanco" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Banco" DataSourceID="SqlDatabanco" DataTextField="nombre_banco" DataValueField="id_banco">
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Metodo de Pago</label>
+                                                    <div class="btn-group form-check">
+                                                        <asp:DropDownList ID="DptMetodoPago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Metodo" DataSourceID="SqlDataMetodo" DataTextField="Nombre" DataValueField="id_Metodo">
+                                                           
+                                                        </asp:DropDownList>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%--                fin del bloque--%>
+                                    <br />
                                     <br />
                                     Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
                                 </div>
+
                                 <div class="tab-pane" id="link3">
-                                    Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                     <br />
-                                    <br />
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
-                                    <br />
-
-                                    <div class="form-group form-file-upload form-file-multiple">
-                                        <input type="file" multiple="" class="inputFileHidden">
-
-                                        <div class="input-group">
-
-                                            <%--       <input type="text" class="form-control inputFileVisible" placeholder="Single File">--%>
-                                            <%--  <a href="#" class="badge badge-primary"><i class="material-icons">attach_file</i>
-                                                <span class="input-group-btn">
-
-                                                    <asp:Label ID="Label1" runat="server" Text="Precione el circulo para cargar Archivo XML"></asp:Label>
-
-                                                    <button type="button" class="btn btn-fab btn-round btn-success">
-
-                                                        <asp:FileUpload ID="File_XML_Extraccion" runat="server" />
-                                                    </button>
-
-                                                </span> --%>
-                                            <%--</a>--%>
+                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail">
+                                                <img src="assets/img/xml.jpg" alt="XML">
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new">
+                                                        <asp:FileUpload ID="File_XML_Extraccion" runat="server" /></span> 
+                                                </span>
+                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Quitar</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                        <div class="fileinput-new thumbnail">
-                                            <img src="assets/img/xml.jpg" alt="...">
-                                        </div>
-                                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                                        <div>
-                                            <span class="btn btn-rose btn-round btn-file">
-                                                <span class="fileinput-new">
-                                                    <asp:FileUpload ID="File_XML_Extraccion" runat="server" /></span>
-                                                <span class="fileinput-exists">Change</span>
-                                                <input type="file" name="..." />
-                                            </span>
-                                            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Remove</a>
-                                        </div>
-                                    </div>                                  
                                     <div class="row">
                                         <div class="col-md-6 ml-auto mr-auto">
                                             <div class="card">
@@ -216,18 +182,42 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <br />                                    
                                 </div>
+                               </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <asp:SqlDataSource ID="SqlDatacentoC" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_centro_costos], [descripcion] FROM [tb_centro_de_costos_los_negritos]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDatapartida" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_partida], [descripcion] FROM [tb_Partidas_Los_Negritos]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDatadetalle" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [id_detalle], [nombre_detalle] FROM [tb_Detalle_Factura_los_negritos]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDatabanco" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [id_banco], [nombre_banco] FROM [tb_bancos_los_negritos]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataMetodo" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [id_Metodo], [Nombre] FROM [tb_metodo_Pago_los_negritos]"></asp:SqlDataSource>
             </div>
-             
+
         </div>
     </div>
+    <asp:HiddenField ID="fecha" runat="server" />
+    <asp:HiddenField ID="MontoFactura" runat="server" />
+    <asp:HiddenField ID="PorcentajeIVA" runat="server" />
+    <asp:HiddenField ID="TotalIva" runat="server" />
+
+
     <script type="text/javascript">
+        function verificarDato() {
+
+            //alert('ha cargado la ventanaJAO');          
+
+
+            var Fecha = document.getElementById("start").value;
+            //captura los valores de los imputs por medio de l Hidden
+            document.getElementById('<%=fecha.ClientID%>').value =
+                Fecha;
+
+        }
+      
+
         // mensaje de espera 
         function mensajeEspera() {
             let timerInterval
@@ -255,7 +245,6 @@
             window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
 
         }
-        //mensaje de conrfimacion
         function mensajeDeconfirmacion() {
             swal.fire({
                 title: "¡EXITO!",
@@ -264,6 +253,7 @@
                 allowOutsideClick: false,
             })
         }
+        // mensaje de error
         // mensaje de error
         function mensajeError() {
             swal.fire({
