@@ -28,7 +28,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[22];
+                SqlParameter[] parParameter = new SqlParameter[24];
 
 
                 parParameter[0] = new SqlParameter();
@@ -160,6 +160,18 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[21].SqlDbType = SqlDbType.VarChar;
                 parParameter[21].Size = 50;
                 parParameter[21].SqlValue = OBJEgresoM.TotalIva;
+
+                parParameter[22] = new SqlParameter();
+                parParameter[22].ParameterName = "@cedulaJuridica";
+                parParameter[22].SqlDbType = SqlDbType.VarChar;
+                parParameter[22].Size = 50;
+                parParameter[22].SqlValue = OBJEgresoM.Cedula_juridica;
+
+                parParameter[23] = new SqlParameter();
+                parParameter[23].ParameterName = "@tipoCambio";
+                parParameter[23].SqlDbType = SqlDbType.VarChar;
+                parParameter[23].Size = 50;
+                parParameter[23].SqlValue = OBJEgresoM.Tipo_cambio;
 
                 cnGeneral.EjecutarSP(parParameter, "SP_egreso_manual_los_Negritos");
             }

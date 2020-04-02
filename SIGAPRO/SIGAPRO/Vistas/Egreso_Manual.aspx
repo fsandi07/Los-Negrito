@@ -8,7 +8,7 @@
     <script type="text/javascript" src="sweetalert/sweetalert2.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="content">
+    <div class="content"  >
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -178,6 +178,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 col-form-label">Cédula Juridica:</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <asp:TextBox ID="TxtCedula_juridica" runat="server" class="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">Monto de la factura:</label>
@@ -186,12 +194,12 @@
                                                  <input id="Monto_factura" type="text" class="form-control"/>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>                                     
                                       <div class="row">
                                         <label class="col-sm-2 col-form-label">Porcentaje IVA:</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
-                                                 <input id="txtporcenIVA" type="text" class="form-control"  onblur="CalculaIva()"/>
+                                                 <input id="txtporcenIVA" type="text" class="form-control"  onblur="CalculaIva()"  />
                                             </div>
                                         </div>
                                     </div>
@@ -214,12 +222,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    *En caso de ser en dolares la moneda  ingresar el siguiente dato. <br />
+                                      <div class="row">
+                                        <label class="col-sm-2 col-form-label">Tipo Cambio :</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <asp:TextBox ID="TxtTipocambio" runat="server" class="form-control"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">Fecha de Emisión:</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
                                                 <br />
-                                                <input type="date" id="start" name="trip-start" onblur="verificarDato()"
+                                                <input type="date" id="start" name="trip-start"  onblur="verificarDato()"
                                                     value="date.now();"
                                                     min="2017-01-01" max="2030-12-31">
                                             </div>
@@ -298,6 +315,8 @@
                 Fecha;
 
         }
+
+
         function CalculaIva() {
 
             //alert('ha cargado la ventanaJAO');          
@@ -305,7 +324,7 @@
 
             var monto = document.getElementById("Monto_factura").value;
             var porcenIva = document.getElementById("txtporcenIVA").value;            
-
+            
             var calcuporcen = parseFloat(porcenIva) / 100;
             var totaliva = parseFloat(monto) * parseFloat(calcuporcen);
 
@@ -370,6 +389,43 @@
 
             })
         }
+        function mensajevalidacion1() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + "Debe de elegir un banco y un metodo de pago" + "!",
+                type: 'error',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 5000,
+
+            })
+        }
+        function mensajevalidacion2() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + "Debe de elegir un plazo de crédito" + "!",
+                type: 'error',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 5000,
+
+            })
+        }
+   
+        
+
+        function mensajevalidacion3() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + "Debe de elegir un plazo de crédito" + "!",
+                type: 'warning', 
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 2000,
+                swalClasses: "height - auto",
+            })
+        }
+
 
     </script>
 </asp:Content>

@@ -132,6 +132,15 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre_comercio_egreso;
 
         /// <summary>
+        /// Control TxtCedula_juridica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtCedula_juridica;
+
+        /// <summary>
         /// Control DptMoneda.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,15 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DptMoneda;
+
+        /// <summary>
+        /// Control TxtTipocambio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtTipocambio;
 
         /// <summary>
         /// Control Dptexiste.

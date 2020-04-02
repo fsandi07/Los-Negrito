@@ -29,6 +29,7 @@ namespace SIGAPRO.Vistas
             this.txt_Nombre_comercio_egreso.Text = "Esto es una prueba";
         }
 
+
         protected void btn_registrar_Click(object sender, EventArgs e)
         {
             try
@@ -38,18 +39,28 @@ namespace SIGAPRO.Vistas
                 this.EgresoM.Digital = "No";
                 this.EgresoM.Fecha_registro = fecha.Value;
                 this.EgresoM.Numero_factura = this.txt_num_factura.Text;
-                
-                if (this.Radioaprobada1.Checked) {
+
+                if (this.Radioaprobada1.Checked)
+                {
                     this.EgresoM.Gti = "Si";
                 }
-                else if  (this.Radioaprobada2.Checked) {
+                else if (this.Radioaprobada2.Checked)
+                {
                     this.EgresoM.Gti = "No";
                 }
                 this.EgresoM.Nombre_comercio = this.txt_Nombre_comercio_egreso.Text;
+                if (this.TxtCedula_juridica.Text == null)
+                {
+                    this.EgresoM.Cedula_juridica = "No existe";
+                }
+                else {
+                    this.EgresoM.Cedula_juridica = this.TxtCedula_juridica.Text;
+                }
                 this.EgresoM.Id_detalle = this.DptClasificacion.SelectedValue;
                 this.EgresoM.Id_partida = this.DptPartida.SelectedValue;
                 this.EgresoM.Monto_factura = MontoFactura.Value;
-                if (this.Radiopagada_si.Checked) {
+                if (this.Radiopagada_si.Checked)
+                {
                     this.EgresoM.Estado_pago = "Si";
                     this.EgresoM.Plazo_pago = "0";
                     this.Dpt_plazo_pago.Enabled = true;
@@ -57,7 +68,8 @@ namespace SIGAPRO.Vistas
                     this.EgresoM.Id_metodo_pago = this.DptMetodoPago.SelectedValue;
 
                 }
-                else if (this.Radiopagada_no.Checked) {
+                else if (this.Radiopagada_no.Checked)
+                {
                     this.EgresoM.Estado_pago = "No";
                     this.EgresoM.Plazo_pago = this.Dpt_plazo_pago.SelectedValue;
                     this.EgresoM.Id_banco = "Pendiente";
@@ -65,18 +77,30 @@ namespace SIGAPRO.Vistas
                     this.DptBanco.Enabled = true;
                     this.DptMetodoPago.Enabled = true;
                 }
-
-                if (this.Dptexiste.SelectedValue == "Si") {
+                validarpago();
+                if (this.Dptexiste.SelectedValue == "Si")
+                {
                     this.EgresoM.Pdf_factura = this.file_pdf.FileBytes;
                     this.EgresoM.Nombre_pdf = this.file_pdf.FileName;
+                    this.EgresoM.Fisica = "Sí";
                 }
-                else if (this.Dptexiste.SelectedValue == "No") {
+                else if (this.Dptexiste.SelectedValue == "No")
+                {
                     this.EgresoM.Pdf_factura = null;
                     this.EgresoM.Nombre_pdf = "No existe documento";
+                    this.EgresoM.Fisica = "No";
                 }
 
-                this.EgresoM.Id_centroCostos = this.DptCCostos_EXML.SelectedValue;                
+                this.EgresoM.Id_centroCostos = this.DptCCostos_EXML.SelectedValue;
                 this.EgresoM.Moneda = this.DptMoneda.SelectedValue;
+                if (this.DptMoneda.SelectedValue == "Dolares")
+                {
+                    this.EgresoM.Tipo_cambio = this.TxtTipocambio.Text;
+                    
+                }
+                else {
+                    this.EgresoM.Tipo_cambio = "0";
+                }
                 this.EgresoM.PorcenIva = PorcentajeIVA.Value;
                 this.EgresoM.TotalIva = TotalIva.Value;
                 this.EgresoM.Estado = "Activo";
@@ -87,16 +111,31 @@ namespace SIGAPRO.Vistas
                
                 this.txt_Nombre_comercio_egreso.Text = null;
                 this.txt_num_factura.Text = null;              
-               
-
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mmensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
-
-
             }
             catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
         }
+        public void validarpago()
+        {
+            if (this.Radiopagada_si.Checked) {
+                if (this.DptBanco.SelectedValue == "" || this.DptMetodoPago.SelectedValue == "") {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion1()", "mensajevalidacion1()('" + "" + "');", true);
+                }
+                else { }
+
+            }
+            else if (this.Radiopagada_no.Checked) {
+                if (this.Dpt_plazo_pago.SelectedValue == "0")
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion3()", "mensajevalidacion3()('" + "" + "');", true);
+                }
+                else { }
+            }
+        }
+
+
     }
 }

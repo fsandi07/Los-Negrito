@@ -10,7 +10,8 @@ namespace SIGAPRO.NEGOCIO
     {
         private int opc, id_egreso;
         private string digital, fecha_registro, numero_factura, fisica, gti, nombre_comercio, id_detalle, id_partida, monto_factura,
-                        estado_pago, plazo_pago, nombre_pdf, id_centroCostos, estado, id_banco, id_metodo_pago,moneda,porcenIva,totalIva;
+                        estado_pago, plazo_pago, nombre_pdf, id_centroCostos, estado, id_banco, id_metodo_pago,moneda,porcenIva,totalIva,
+                        cedula_juridica,tipo_cambio;
         private byte[] pdf_factura;
 
         public int Opc { get => opc; set => opc = value; }
@@ -35,7 +36,8 @@ namespace SIGAPRO.NEGOCIO
         public string PorcenIva { get => porcenIva; set => porcenIva = value; }
         public string TotalIva { get => totalIva; set => totalIva = value; }
         public byte[] Pdf_factura { get => pdf_factura; set => pdf_factura = value; }
-
+        public string Cedula_juridica { get => cedula_juridica; set => cedula_juridica = value; }
+        public string Tipo_cambio { get => tipo_cambio; set => tipo_cambio = value; }
 
         public Egreso_manual()
         {
@@ -61,12 +63,14 @@ namespace SIGAPRO.NEGOCIO
             this.porcenIva = "";
             this.totalIva = "";
             this.moneda = "";
+            this.cedula_juridica = "";
+            this.tipo_cambio = "";
         }
 
-        public Egreso_manual(int opc, int id_egreso, string digital, string fecha_registro, string numero_factura, string fisica,
-            string gti, string nombre_comercio, string id_detalle, string id_partida, string monto_factura, string estado_pago,
+        public Egreso_manual(int opc, int id_egreso, string digital, string fecha_registro, string numero_factura, string fisica, 
+            string gti, string nombre_comercio, string id_detalle, string id_partida, string monto_factura, string estado_pago, 
             string plazo_pago, string nombre_pdf, string id_centroCostos, string estado, string id_banco, string id_metodo_pago,
-            string moneda, string porcenIva, string totalIva, byte[] pdf_factura)
+            string moneda, string porcenIva, string totalIva, string cedula_juridica, string tipo_cambio, byte[] pdf_factura)
         {
             this.opc = opc;
             this.id_egreso = id_egreso;
@@ -89,9 +93,9 @@ namespace SIGAPRO.NEGOCIO
             this.moneda = moneda;
             this.porcenIva = porcenIva;
             this.totalIva = totalIva;
+            this.cedula_juridica = cedula_juridica;
+            this.tipo_cambio = tipo_cambio;
             this.pdf_factura = pdf_factura;
         }
-
-       
     }
 }

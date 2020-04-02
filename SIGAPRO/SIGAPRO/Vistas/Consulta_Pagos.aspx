@@ -55,15 +55,93 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <div class="modal-footer">
-                        <asp:Button ID="btnExtraccion" class="btn btn-primary " runat="server" Text="Extracción XML " ForeColor="White" Width="200"  UseSubmitBehavior ="false" OnClick="btnExtraccion_Click" />
+                    <div class="modal-footer">                      
+                       <%-- <asp:Button ID="btnExtraccion" class="btn btn-primary " runat="server" Text="Extracción XML " ForeColor="White" Width="200"  UseSubmitBehavior ="false" OnClick="btnExtraccion_Click" />--%>
+                         <input id="Btnxml" type="button"  class="btn btn-primary" value="Extraccion XML" data-toggle="modal" data-target="#myModal10" aria-hidden="false" />
                         <asp:Button ID="btnManual" class="btn btn-primary " runat="server" Text="Págo Manual"  ForeColor="White" Width="200"  UseSubmitBehavior ="false" OnClick="btnManual_Click" />
                     </div>
                 </div>
             </div>
         </div>
         <%-- fin de la modal --%>
-
- 
+          <!-- small modal -->
+                      <div class="modal fade modal-mini modal-primary" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+                        <div class="modal-dialog modal-small">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Seleccione el documento XML</p>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail">
+                                                <img src="assets/img/xml.jpg" alt="XML">
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new">
+                                                        <asp:FileUpload ID="File_XML_Extraccion" runat="server" /></span> 
+                                                </span>
+                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Quitar</a>
+                                            </div>  
+                                           <asp:Button class="btn btn-success" ID="btn_Extraccion" runat="server" OnClick="btn_Extraccion_Click" Text="Extraer Datos" Width="178px" />
+                                        </div>                                                        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--    end small modal -->
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
+ <script type="text/javascript">
+        // mensaje de espera 
+        function mensajeEspera() {
+            let timerInterval
+            Swal.fire({
+                title: '¡Extrayendo XML Por Favor Espere!',
+
+                timer: 5000,
+                allowOutsideClick: false,
+                onBeforeOpen: () => {
+
+                    Swal.showLoading()
+
+                    timerInterval = setInterval(() => {
+                        Swal.getContent().querySelector('strong')
+                            .textContent = (Swal.getTimerLeft() / 1000)
+                                .toFixed(0)
+                    }, 100)
+                },
+                onClose: () => {
+                    clearInterval(timerInterval)
+                }
+
+            })
+
+            window.setTimeout('location.href="Extracion_de_XML.aspx"', 5000)
+        }
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                type: 'success',
+                allowOutsideClick: false,
+            })
+        }
+        // mensaje de error
+        // mensaje de error
+        function mensajeError() {
+            swal.fire({
+                title: '¡Error!',
+                text: "¡" + " Lo sentimos el archivo no es de tipo XML o este XML ya fue Extraido Por Favor Verifique" + "!",
+                type: 'error',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                timer: 5000,
+
+            })
+        }
+    </script>
 </asp:Content>

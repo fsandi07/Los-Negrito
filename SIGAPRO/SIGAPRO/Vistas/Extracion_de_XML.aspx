@@ -25,8 +25,12 @@
                         <asp:Button class="btn btn-danger col-md-3 ml-auto" ID="btn_cancelar" runat="server" Text="Cancelar" Width="178px" OnClick="btn_cancelar_Click" />
                         <div class="card-body ">
                             <ul class="nav nav-pills nav-pills-warning" role="tablist">
+                                 <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#link3" role="tablist">Extraccion del XML
+                                    </a>
+                                </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist">Asignar Centro de Costos
+                                    <a class="nav-link " data-toggle="tab" href="#link1" role="tablist">Asignar Centro de Costos
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -38,16 +42,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link6" role="tablist">Estado de pago
+                                    <a class="nav-link" data-toggle="tab" href="#link6" role="tablist">Metodo Págo
                                     </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link3" role="tablist">Extraccion del XML
-                                    </a>
-                                </li>
+                                </li>                               
                             </ul>
                             <div class="tab-content tab-space">
-                                <div class="tab-pane active" id="link1">
+                                <div class="tab-pane " id="link1">
                                     Ingrese el numero de Factura                                                                   
                                     Seleccione el Centro de Costos.
                                      <br />
@@ -99,42 +99,11 @@
                                     Opcion que permite indicar si  la factura se encuentra aprobada o si aun se encuentra pendiente de realizar la aceptación.
                                 </div>
                                 <div class="tab-pane" id="link6">
-                                    La factura se encuentra pagada?
+                                    En caso de estar paga introduzca la siguiente información.
                                       <br />
-                                    <br />
-                                    <%-- inicio del blouqe--%>
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_no" GroupName="radiopagada" />
-                                            Pendiente   
-                                        </label>
-                                    </div>
-                                    <div class="btn-group form-check">
-                                        <label class="btn btn-primary btn-round">
-                                            <asp:RadioButton runat="server" ID="Radiopagada_si" GroupName="radiopagada" />
-                                            Cancelada  
-                                        </label>
-                                    </div>
-                                    <br />
-                                    <br />
-                                    En caso de estar cancelada favor llene los siguientes datos?
-                                    <br />
-                                    <br />
+                                    <br />                                    
                                     <div class="col-sm-12" id="datospago">
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Plazo</label>
-                                                    <asp:DropDownList ID="Dpt_plazo_pago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Plazo">
-                                                        <asp:ListItem Value="0">0 dias</asp:ListItem>
-                                                        <asp:ListItem Value="15">15 dias</asp:ListItem>
-                                                        <asp:ListItem Value="30">30 dias</asp:ListItem>
-                                                        <asp:ListItem Value="45">45 dias</asp:ListItem>
-                                                        <asp:ListItem Value="60">60 dias</asp:ListItem>
-                                                        <asp:ListItem Value="90">90 dias</asp:ListItem>
-                                                    </asp:DropDownList>
-                                                </div>
-                                            </div>                                        
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Banco</label><br />
@@ -160,30 +129,79 @@
                                     Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
                                 </div>
 
-                                <div class="tab-pane" id="link3">
-                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail">
-                                                <img src="assets/img/xml.jpg" alt="XML">
-                                            </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                                            <div>
-                                                <span class="btn btn-rose btn-round btn-file">
-                                                    <span class="fileinput-new">
-                                                        <asp:FileUpload ID="File_XML_Extraccion" runat="server" /></span> 
-                                                </span>
-                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Quitar</a>
-                                            </div>
-                                        </div>
-                                    <div class="row">
-                                        <div class="col-md-6 ml-auto mr-auto">
-                                            <div class="card">
-                                                <div class="card-body text-center">
-                                                    <asp:Button class="btn btn-success" ID="btn_Extraccion" runat="server" OnClick="btn_Extraccion_Click" Text="Extraer Datos" Width="178px" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br />                                    
-                                </div>
+                                <div class="tab-pane active" id="link3">
+                                    <br />
+                                 
+                                     <div class="col-md-12">
+              <div class="card ">
+                <div class="card-header card-header-rose card-header-text">
+                  <div class="card-text">
+                    <h4 class="card-title">Resultado de Extraccion de Datos</h4>
+                  </div>
+                </div>
+                <div class="card-body ">         
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">Fecha de Emision</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                         <asp:TextBox ID="txt_fecha_emision" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                       
+                          <span class="bmd-help">A block of help text that breaks onto a new line.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">Numero de Factura </label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                         <asp:TextBox ID="txt_numero_factura" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">Nombre de el Comercio</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                         <asp:TextBox ID="txt_nombre_comercio" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row">
+                      <label class="col-sm-2 col-form-label">Cedula Juridica</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <asp:TextBox ID="txt_cedula_juridica" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">plazo a credito(si es 0 no hay plazo a credito)</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <asp:TextBox ID="txt_plazo_credito" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row">
+                      <label class="col-sm-2 col-form-label">Total IVA</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                         <asp:TextBox ID="txt_total_iva" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">Total a Pagar</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <asp:TextBox ID="txt_total_pagar" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>                
+                </div>
+              </div>
+            </div>
+
                                </div>
                             </div>
                         </div>
@@ -242,7 +260,7 @@
 
             })
 
-            window.setTimeout('location.href="Datos_del_XML.aspx"', 5000)
+            window.setTimeout('location.href="Extracion_de_XML.aspx"', 5000)
 
         }
         function mensajeDeconfirmacion() {

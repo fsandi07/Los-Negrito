@@ -69,33 +69,6 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.RadioButton Radioaprobada2;
 
         /// <summary>
-        /// Control Radiopagada_no.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_no;
-
-        /// <summary>
-        /// Control Radiopagada_si.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Radiopagada_si;
-
-        /// <summary>
-        /// Control Dpt_plazo_pago.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Dpt_plazo_pago;
-
-        /// <summary>
         /// Control DptBanco.
         /// </summary>
         /// <remarks>
@@ -114,22 +87,67 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.DropDownList DptMetodoPago;
 
         /// <summary>
-        /// Control File_XML_Extraccion.
+        /// Control txt_fecha_emision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload File_XML_Extraccion;
+        protected global::System.Web.UI.WebControls.TextBox txt_fecha_emision;
 
         /// <summary>
-        /// Control btn_Extraccion.
+        /// Control txt_numero_factura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Extraccion;
+        protected global::System.Web.UI.WebControls.TextBox txt_numero_factura;
+
+        /// <summary>
+        /// Control txt_nombre_comercio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_nombre_comercio;
+
+        /// <summary>
+        /// Control txt_cedula_juridica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cedula_juridica;
+
+        /// <summary>
+        /// Control txt_plazo_credito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_plazo_credito;
+
+        /// <summary>
+        /// Control txt_total_iva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_iva;
+
+        /// <summary>
+        /// Control txt_total_pagar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_pagar;
 
         /// <summary>
         /// Control SqlDatacentoC.
