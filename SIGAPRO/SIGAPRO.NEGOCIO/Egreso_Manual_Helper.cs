@@ -150,10 +150,10 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[19].SqlValue = OBJEgresoM.Moneda;
 
                 parParameter[20] = new SqlParameter();
-                parParameter[20].ParameterName = "@pocentIva";
+                parParameter[20].ParameterName = "@mes";
                 parParameter[20].SqlDbType = SqlDbType.VarChar;
                 parParameter[20].Size = 50;
-                parParameter[20].SqlValue = OBJEgresoM.PorcenIva;
+                parParameter[20].SqlValue = OBJEgresoM.Mes;
 
                 parParameter[21] = new SqlParameter();
                 parParameter[21].ParameterName = "@totalIva";
@@ -173,6 +173,7 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[23].Size = 50;
                 parParameter[23].SqlValue = OBJEgresoM.Tipo_cambio;
 
+             
                 cnGeneral.EjecutarSP(parParameter, "SP_egreso_manual_los_Negritos");
             }
             catch (Exception ex)

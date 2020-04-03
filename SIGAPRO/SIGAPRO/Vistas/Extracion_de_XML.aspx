@@ -98,7 +98,7 @@
                                     <br />
                                     Opcion que permite indicar si  la factura se encuentra aprobada o si aun se encuentra pendiente de realizar la aceptación.
                                 </div>
-                                <div class="tab-pane" id="link6">
+                                <div class="tab-pane" id="link6">                               
                                     En caso de estar paga introduzca la siguiente información.
                                       <br />
                                     <br />                                    
@@ -116,7 +116,6 @@
                                                     <label class="bmd-label-floating">Metodo de Pago</label>
                                                     <div class="btn-group form-check">
                                                         <asp:DropDownList ID="DptMetodoPago" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar Metodo" DataSourceID="SqlDataMetodo" DataTextField="Nombre" DataValueField="id_Metodo">
-                                                           
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -124,6 +123,33 @@
                                         </div>
                                     </div>
                                     <%--                fin del bloque--%>
+                                    <label class="col-sm-2 col-form-label">Cargar factura física PDF:</label><br />
+                                    <br />
+                                    <div class="row">
+
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail">
+                                                <img src="assets/img/pdf.jpg" alt="...">
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new">
+                                                        <asp:FileUpload ID="file_pdf" runat="server" CssClass="alert-dark" /></span>
+                                                </span>
+                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i>Quitar</a>
+                                            </div>
+                                        </div>
+                                    </div>                                                                   
+                                    <div class="row">
+                                        <div class="col-md-6 ml-auto mr-auto">
+                                            <div class="card">
+                                                <div class="card-body text-center">
+                                                    <asp:Button class="btn btn-success" ID="btn_registrar" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_registrar_Click"  />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <br />
                                     <br />
                                     Opción para indicar si la factura se encuentra en cuenta por pagar o si ya esta pagada,tambien puede seleccionar los dias de credito.
@@ -144,7 +170,7 @@
                       <label class="col-sm-2 col-form-label">Fecha de Emision</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                         <asp:TextBox ID="txt_fecha_emision" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                         <asp:TextBox ID="txt_fecha_emision" runat="server" class="form-control" readonly="true"></asp:TextBox>
                        
                           <span class="bmd-help">A block of help text that breaks onto a new line.</span>
                         </div>
@@ -154,7 +180,7 @@
                       <label class="col-sm-2 col-form-label">Numero de Factura </label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                         <asp:TextBox ID="txt_numero_factura" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                         <asp:TextBox ID="txt_numero_factura" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -162,7 +188,7 @@
                       <label class="col-sm-2 col-form-label">Nombre de el Comercio</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                         <asp:TextBox ID="txt_nombre_comercio" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                         <asp:TextBox ID="txt_nombre_comercio" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -170,7 +196,7 @@
                       <label class="col-sm-2 col-form-label">Cedula Juridica</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                          <asp:TextBox ID="txt_cedula_juridica" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                          <asp:TextBox ID="txt_cedula_juridica" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -178,7 +204,7 @@
                       <label class="col-sm-2 col-form-label">plazo a credito(si es 0 no hay plazo a credito)</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                          <asp:TextBox ID="txt_plazo_credito" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                          <asp:TextBox ID="txt_plazo_credito" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -186,7 +212,7 @@
                       <label class="col-sm-2 col-form-label">Total IVA</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                         <asp:TextBox ID="txt_total_iva" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                         <asp:TextBox ID="txt_total_iva" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
                     </div>
@@ -194,10 +220,29 @@
                       <label class="col-sm-2 col-form-label">Total a Pagar</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                          <asp:TextBox ID="txt_total_pagar" runat="server" class="form-control" disabled="true"></asp:TextBox>
+                          <asp:TextBox ID="txt_total_pagar" runat="server" class="form-control" readonly="true"></asp:TextBox>
                         </div>
                       </div>
-                    </div>                
+                    </div> 
+                    
+                      <div class="row">
+                      <label class="col-sm-2 col-form-label">Moneda</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <asp:TextBox ID="TxtMoneda" runat="server" class="form-control" readonly="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                      <label class="col-sm-2 col-form-label">Tipo Cambio</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <asp:TextBox ID="TxtCambio" runat="server" class="form-control" readonly="true"></asp:TextBox>
+                        </div>
+                      </div>
+                    </div>
+
                 </div>
               </div>
             </div>
@@ -218,7 +263,7 @@
     </div>
     <asp:HiddenField ID="fecha" runat="server" />
     <asp:HiddenField ID="MontoFactura" runat="server" />
-    <asp:HiddenField ID="PorcentajeIVA" runat="server" />
+    <asp:HiddenField ID="Mes" runat="server" />
     <asp:HiddenField ID="TotalIva" runat="server" />
 
 
@@ -229,9 +274,12 @@
 
 
             var Fecha = document.getElementById("start").value;
+            var mes = fecha.substr(5, 8);
             //captura los valores de los imputs por medio de l Hidden
             document.getElementById('<%=fecha.ClientID%>').value =
                 Fecha;
+            document.getElementById('<%=Mes.ClientID%>').value =
+                mes;
 
         }
       

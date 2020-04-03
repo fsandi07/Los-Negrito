@@ -26,16 +26,32 @@
                
                         <tbody>
 
-         <asp:gridview runat="server" cssclass="table table-striped table-no-bordered table-hover" autogeneratecolumns="False" datakeynames="cedula_usuario" datasourceid="SqlDataSource1" enablepersistedselection="True" AllowPaging="True">
-        <Columns>
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:BoundField DataField="cedula_usuario" HeaderText="cedula_usuario" ReadOnly="True" SortExpression="cedula_usuario" />
-            <asp:BoundField DataField="nombre_usuario" HeaderText="nombre_usuario" SortExpression="nombre_usuario" />
-            <asp:BoundField DataField="apellido1" HeaderText="apellido1" SortExpression="apellido1" />
-            <asp:BoundField DataField="nick_name" HeaderText="nick_name" SortExpression="nick_name" />
-            <asp:BoundField DataField="correo_electronico" HeaderText="correo_electronico" SortExpression="correo_electronico" />
-        </Columns>
-    </asp:gridview>
+                            <asp:GridView ID="GridEgreso" runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataSourceID="SqlDataegreso" AllowPaging="True" AllowSorting="True">
+                                <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Top" />
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />                                   
+                                    <asp:BoundField DataField="Digital" HeaderText="Digital" SortExpression="Digital"></asp:BoundField>
+                                    <asp:BoundField DataField="Fecha_ingreso" HeaderText="Fecha-ingreso" SortExpression="Fecha_ingreso"></asp:BoundField>
+                                    <asp:BoundField DataField="Numero_factura" HeaderText="Numero_factura" SortExpression="Numero_factura"></asp:BoundField>
+                                    <asp:BoundField DataField="Cedula_Juridica" HeaderText="Cedula_Juridica" SortExpression="Cedula_Juridica"></asp:BoundField>
+                                    <asp:BoundField DataField="GTI" HeaderText="GTI" SortExpression="GTI"></asp:BoundField>
+                                    <asp:BoundField DataField="Nombre_comercio" HeaderText="Nombre_comercio" SortExpression="Nombre_comercio"></asp:BoundField>
+                                    <asp:BoundField DataField="Monto_factura" HeaderText="Monto_factura" SortExpression="Monto_factura"></asp:BoundField>
+                                    <asp:BoundField DataField="Estado_pago" HeaderText="Estado_pago" SortExpression="Estado_pago"></asp:BoundField>
+                                    <asp:BoundField DataField="Plazo_pago" HeaderText="Plazo_pago" SortExpression="Plazo_pago"></asp:BoundField>
+                                    <asp:BoundField DataField="Moneda" HeaderText="Moneda" SortExpression="Moneda"></asp:BoundField>
+                                    <asp:BoundField DataField="Tipo_cambio" HeaderText="Tipo_cambio" SortExpression="Tipo_cambio"></asp:BoundField>
+                                    <asp:BoundField DataField="Mes" HeaderText="Mes" SortExpression="Mes"></asp:BoundField>
+                                    <asp:BoundField DataField="TotalIva" HeaderText="TotalIva" SortExpression="TotalIva"></asp:BoundField>
+                                    <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
+                                </Columns>
+                                  <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:GridView>
                         </tbody>
                       </table>
                     </div>
@@ -92,6 +108,8 @@
                             </div>
                           </div>
                         </div>
+
+<asp:SqlDataSource ID="SqlDataegreso" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [Digital], [Fecha_ingreso], [Numero_factura], [Cedula_Juridica], [GTI], [Nombre_comercio], [Monto_factura], [Estado_pago], [Plazo_pago], [Moneda], [Tipo_cambio], [Mes], [TotalIva], [Estado] FROM [tb_Egreso_Manual_los_negritos]"></asp:SqlDataSource>
                       </div>
                       <!--    end small modal -->
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>

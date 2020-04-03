@@ -191,23 +191,15 @@
                                         <label class="col-sm-2 col-form-label">Monto de la factura:</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
-                                                 <input id="Monto_factura" type="text" class="form-control"/>
+                                                 <asp:TextBox ID="TxtMontoTotal" class="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                    </div>                                     
-                                      <div class="row">
-                                        <label class="col-sm-2 col-form-label">Porcentaje IVA:</label>
-                                        <div class="col-sm-10">
-                                            <div class="form-group">
-                                                 <input id="txtporcenIVA" type="text" class="form-control"  onblur="CalculaIva()"  />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                                    
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">Total IVA:</label>
                                         <div class="col-sm-10">
-                                            <div class="form-group">
-                                                 <input id="txtTotal_IVA" type="text" class="form-control"/>
+                                            <div class="form-group">                                                
+                                                <asp:TextBox ID="TxtTotalIva" class="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -216,12 +208,14 @@
                                         <div class="col-sm-10">
                                             <div class="form-group">
                                                   <asp:DropDownList ID="DptMoneda" runat="server" class="selectpicker" data-style="select-with-transition" title="Seleccionar Moneda">
-                                                        <asp:ListItem Value="Colones">Colones</asp:ListItem>
-                                                        <asp:ListItem Value="Dolares">Dolares</asp:ListItem>
+                                                        <asp:ListItem Value="CRC">CRC</asp:ListItem>
+                                                        <asp:ListItem Value="USD">USD</asp:ListItem>
                                                     </asp:DropDownList>
                                             </div>
                                         </div>
                                     </div>
+                                    <br />
+                                    <br />
                                     *En caso de ser en dolares la moneda  ingresar el siguiente dato. <br />
                                       <div class="row">
                                         <label class="col-sm-2 col-form-label">Tipo Cambio :</label>
@@ -241,18 +235,8 @@
                                                     min="2017-01-01" max="2030-12-31">
                                             </div>
                                         </div>
-                                    </div>
-                                     <div class="row">
-                                        <label class="col-sm-2 col-form-label">Existe factura:</label>
-                                        <div class="col-sm-10">
-                                            <div class="form-group">
-                                                  <asp:DropDownList ID="Dptexiste" runat="server" class="selectpicker" data-style="select-with-transition" title="Seleccionar">
-                                                        <asp:ListItem Value="Si">Sí</asp:ListItem>
-                                                        <asp:ListItem Value="No">No</asp:ListItem>
-                                                    </asp:DropDownList>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                             
+                                    <br />
                                     <label class="col-sm-2 col-form-label">Cargar factura física en caso de existir:</label><br />
                                     <br />
                                     <div class="row">
@@ -326,9 +310,7 @@
             var porcenIva = document.getElementById("txtporcenIVA").value;            
             
             var calcuporcen = parseFloat(porcenIva) / 100;
-            var totaliva = parseFloat(monto) * parseFloat(calcuporcen);
-
-            document.getElementById("txtTotal_IVA").value = totaliva.toFixed(3);
+            var totaliva = parseFloat(monto) * parseFloat(calcuporcen);           
 
             //captura los valores de los imputs por medio de l Hidden
             document.getElementById('<%=MontoFactura.ClientID%>').value =

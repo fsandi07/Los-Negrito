@@ -87,6 +87,24 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.DropDownList DptMetodoPago;
 
         /// <summary>
+        /// Control file_pdf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload file_pdf;
+
+        /// <summary>
+        /// Control btn_registrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_registrar;
+
+        /// <summary>
         /// Control txt_fecha_emision.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,24 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_total_pagar;
+
+        /// <summary>
+        /// Control TxtMoneda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtMoneda;
+
+        /// <summary>
+        /// Control TxtCambio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtCambio;
 
         /// <summary>
         /// Control SqlDatacentoC.
@@ -213,13 +249,13 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.HiddenField MontoFactura;
 
         /// <summary>
-        /// Control PorcentajeIVA.
+        /// Control Mes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField PorcentajeIVA;
+        protected global::System.Web.UI.WebControls.HiddenField Mes;
 
         /// <summary>
         /// Control TotalIva.

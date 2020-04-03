@@ -36,7 +36,7 @@
                                 <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
                                     </Columns>
 
-<EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                                    <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
                                     <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
