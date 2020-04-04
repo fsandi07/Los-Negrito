@@ -25,27 +25,12 @@
                       <table class="table">
                
                         <tbody>
-
-                            <asp:GridView ID="GridEgreso" runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataSourceID="SqlDataegreso" AllowPaging="True" AllowSorting="True">
+                            <asp:GridView ID="GridVegreso" runat="server" CssClass="table table-striped table-no-bordered" DataSourceID="SqlDataEgreso2" AllowPaging="True" AllowSorting="True">
                                 <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Top" />
                                 <Columns>
-                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />                                   
-                                    <asp:BoundField DataField="Digital" HeaderText="Digital" SortExpression="Digital"></asp:BoundField>
-                                    <asp:BoundField DataField="Fecha_ingreso" HeaderText="Fecha-ingreso" SortExpression="Fecha_ingreso"></asp:BoundField>
-                                    <asp:BoundField DataField="Numero_factura" HeaderText="Numero_factura" SortExpression="Numero_factura"></asp:BoundField>
-                                    <asp:BoundField DataField="Cedula_Juridica" HeaderText="Cedula_Juridica" SortExpression="Cedula_Juridica"></asp:BoundField>
-                                    <asp:BoundField DataField="GTI" HeaderText="GTI" SortExpression="GTI"></asp:BoundField>
-                                    <asp:BoundField DataField="Nombre_comercio" HeaderText="Nombre_comercio" SortExpression="Nombre_comercio"></asp:BoundField>
-                                    <asp:BoundField DataField="Monto_factura" HeaderText="Monto_factura" SortExpression="Monto_factura"></asp:BoundField>
-                                    <asp:BoundField DataField="Estado_pago" HeaderText="Estado_pago" SortExpression="Estado_pago"></asp:BoundField>
-                                    <asp:BoundField DataField="Plazo_pago" HeaderText="Plazo_pago" SortExpression="Plazo_pago"></asp:BoundField>
-                                    <asp:BoundField DataField="Moneda" HeaderText="Moneda" SortExpression="Moneda"></asp:BoundField>
-                                    <asp:BoundField DataField="Tipo_cambio" HeaderText="Tipo_cambio" SortExpression="Tipo_cambio"></asp:BoundField>
-                                    <asp:BoundField DataField="Mes" HeaderText="Mes" SortExpression="Mes"></asp:BoundField>
-                                    <asp:BoundField DataField="TotalIva" HeaderText="TotalIva" SortExpression="TotalIva"></asp:BoundField>
-                                    <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />  
                                 </Columns>
-                                  <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -60,7 +45,7 @@
               </div>
             </div>       
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-       <!-- Logout Modal-->
+  
         <%-- modal opcional para la gestion de pagos --%>
         <div class="modal fade" id="logoutModalxml" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -110,7 +95,9 @@
                         </div>
 
 <asp:SqlDataSource ID="SqlDataegreso" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [Digital], [Fecha_ingreso], [Numero_factura], [Cedula_Juridica], [GTI], [Nombre_comercio], [Monto_factura], [Estado_pago], [Plazo_pago], [Moneda], [Tipo_cambio], [Mes], [TotalIva], [Estado] FROM [tb_Egreso_Manual_los_negritos]"></asp:SqlDataSource>
-                      </div>
+       <asp:SqlDataSource ID="SqlDataEgreso2" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT * FROM [tb_Egreso_Manual_los_negritos]"></asp:SqlDataSource>
+    <!-- Logout Modal-->
+                          </div>
                       <!--    end small modal -->
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
  <script type="text/javascript">

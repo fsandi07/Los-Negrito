@@ -15,13 +15,13 @@ namespace SIGAPRO.Vistas
     {
 
         /// <summary>
-        /// Control GridEgreso.
+        /// Control GridVegreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridEgreso;
+        protected global::System.Web.UI.WebControls.GridView GridVegreso;
 
         /// <summary>
         /// Control SqlDataSource1.
@@ -67,5 +67,14 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataegreso;
+
+        /// <summary>
+        /// Control SqlDataEgreso2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataEgreso2;
     }
 }

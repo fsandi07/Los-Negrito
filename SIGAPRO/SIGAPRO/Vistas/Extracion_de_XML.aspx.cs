@@ -21,6 +21,7 @@ namespace SIGAPRO.Vistas
         {
                       listarXML();
 
+
             if (txt_plazo_credito.Text == "0") {
                 this.DptBanco.Enabled = true;
                 this.DptMetodoPago.Enabled = true;
@@ -178,7 +179,7 @@ namespace SIGAPRO.Vistas
                     this.EgresoM.Nombre_pdf = this.file_pdf.FileName;
                     this.EgresoM.Fisica = "Sí";
                 }
-                else if (/*this.Dptexiste.SelectedValue == "No" */ this.file_pdf.FileName == "")
+                else if (this.file_pdf.FileName == "")
                 {
                     this.EgresoM.Pdf_factura = null;
                     this.EgresoM.Nombre_pdf = "No existe documento";
