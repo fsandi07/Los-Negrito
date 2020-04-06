@@ -141,6 +141,15 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.Button btn_Pago_Cola;
 
         /// <summary>
+        /// Control Bntpdf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Bntpdf;
+
+        /// <summary>
         /// Control SqlDatacentrocostos.
         /// </summary>
         /// <remarks>
@@ -364,5 +373,14 @@ namespace SIGAPRO.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField PDFvar;
+
+        /// <summary>
+        /// Control SalaQuinCompro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField SalaQuinCompro;
     }
 }

@@ -312,6 +312,7 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <asp:Button class="btn btn-success" ID="btn_Pago_Cola" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_Pago_Cola_Click"/>
+                                <asp:Button class="btn btn-warning" ID="Bntpdf" runat="server" Text="crear pdf" Width="178px" OnClick="Bntpdf_Click" />
                             </div>
                         </div>
                     </div>
@@ -347,7 +348,9 @@
     <asp:HiddenField ID="saldoAnterior" runat="server" />
     <asp:HiddenField ID="saldo" runat="server" />
     <asp:HiddenField ID="totalDepositado1" runat="server" />
-        <asp:HiddenField ID="PDFvar" runat="server" />
+    <asp:HiddenField ID="PDFvar" runat="server" />
+    <asp:HiddenField ID="SalaQuinCompro" runat="server" />
+
     <script type="text/javascript">       // mensaje de espera
 
         function registropdf() {
@@ -396,7 +399,7 @@
             document.getElementById("txtSalarioNeto").value = Salarioneto.toFixed(3);
             document.getElementById("txtComisionProduct").value = Comisionproduct;
             document.getElementById("txtPrestamo").value = Prestamo;
-            //document.getElementById("txtSalarioquincenal").value = new Intl.NumberFormat().format(Salarioquincenal);
+            var salarioquincecompro = new Intl.NumberFormat().format(Salarioquincenal);
 
             document.getElementById('<%=SalarioQuincenal.ClientID%>').value = Salarioquincenal;    
             document.getElementById('<%=diasSinGoce.ClientID%>').value = Diassingoce;
@@ -409,6 +412,8 @@
             document.getElementById('<%=salarioneto.ClientID%>').value = Salarioneto;
             document.getElementById('<%=prestamo.ClientID%>').value = Prestamo;
 
+            document.getElementById('<%=SalaQuinCompro.ClientID%>').value = salarioquincecompro;
+            
         }
         function deducciones() {
             // estos son pára declarar variables y extraerlas del imput.
