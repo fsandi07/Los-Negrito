@@ -41,7 +41,7 @@ namespace SIGAPRO.Vistas
                 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }

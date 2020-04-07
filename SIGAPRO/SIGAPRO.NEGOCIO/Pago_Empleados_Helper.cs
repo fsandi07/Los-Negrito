@@ -425,7 +425,36 @@ namespace SIGAPRO.NEGOCIO
                 throw new Exception(ex.Message);
             }
         }
+        public DataTable Consulta_num_pago()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
 
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJpagoemple.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@id_comprobante";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = OBJpagoemple.Id_comprobante;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPpago_emple_los_negritos");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
 
     }
 

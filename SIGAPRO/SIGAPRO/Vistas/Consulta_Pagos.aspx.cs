@@ -53,6 +53,32 @@ namespace SIGAPRO.Vistas
             Response.Redirect("Egreso_Manual.aspx");
         }
 
-      
+        protected void GridVegreso_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DateTime fecha_actual = DateTime.Today;
+                // obtinene el dia de la fecha actual=fecha_actual.ToString("dd")
+
+                // con este subestring obtengo los dias de la fecha de ingreso.
+                string dias_ingreso = e.Row.Cells[4].Text.Substring(8, 2);
+                // aqui realizo la logica de acorde a como quiero que los valores se resten, en este caso
+                // hago los dias de la fecha de ingreso menos los dias de la fecha actual.
+                int aux = int.Parse(dias_ingreso.ToString()) - int.Parse(fecha_actual.ToString("dd"));
+                // con este if hago que si el resultado de la resta anterior ya sea mayor a 3 coloque una alerta de color amarrilo.
+                if (aux > 3)
+                {
+
+                    e.Row.Cells[1].Text = "<i style='color: yellow' class='fas fa-exclamation-triangle'></i>" + aux + "Dias para el pago" + e.Row.Cells[1].Text;
+
+                }
+                // si el el resultado es menor o igual a 3 la alerta es de color rojo. 
+                else if (aux <= 3)
+                {
+                    e.Row.Cells[1].Text = "<i style='color: red' class='fas fa-exclamation-triangle'></i>" + aux + "Dias para el pago" + e.Row.Cells[1].Text;
+                }
+            }
+
+        }
     }
 }

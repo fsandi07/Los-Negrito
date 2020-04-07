@@ -147,7 +147,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Salario Quincenal</label>
-                          <input id="txtSalarioquincenal" type="text" class="form-control"  value="<%=(string)Session["salario_quincenal"]%>"/>
+                          <input id="txtSalarioquincenal"  type="text" class="form-control" value ="<%=(string)Session["salario_quincenal"]%>"/>
                            
                         </div>
                       </div>                    
@@ -192,7 +192,7 @@
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
                                 <input id="txtHorasExtras" type="text" class="form-control" placeholder="Cantidad de Horas" value="<%=(string)Session["horas_extras"]%>" onblur="verificarDato()" />
-                                <input id="txttotalExtras" type="text" class="form-control" placeholder="Total Extras" readonly="readonly" value="<%=(string)Session["total_horas_extras"]%>" />
+                                <input id="txttotalExtras" type="text" class="form-control" placeholder="Total Extras" readonly="readonly" value="<%=(string)Session["total_horas_extras"]%>"/>
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
                                 <input id="txtCajaSeguro" type="text" class="form-control" placeholder="% CCSS" value="<%=(string)Session["porcentaje_caja"]%>" />
-                                <input id="txttotalCaja" type="text" class="form-control" placeholder="Total CCSS" readonly="readonly" value="<%=Session["total_caja"]%>""/>
+                                <input id="txttotalCaja" type="text" class="form-control" placeholder="Total CCSS" readonly="readonly" value="<%=Session["total_caja"]%>"/>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtTotalOtrasdeud" type="text" class="form-control" placeholder="Total otras deducciones" onblur="deducciones()" onkeypress="return checkIt(event)" value="<%=(string)Session["otras_deducciones"]%>"/>
+                                <input id="txtTotalOtrasdeud" type="text" class="form-control" placeholder="Total otras deducciones" onblur="deducciones()" onkeypress="return checkIt(event)"value="<%=(string)Session["otras_deducciones"]%>"/>
                                 <asp:TextBox ID="txtDescripDedud" class="form-control" placeholder="Descripción de la deducción" runat="server"></asp:TextBox>                                
                             </div>
                         </div>
@@ -260,7 +260,7 @@
                     <div class="col-sm-10">
                         <div class="form-group">
                             <div class="col-lg-5 col-md-6 col-sm-3">
-                                <input id="txtsaldoAnterior" type="text" class="form-control" onblur="saldos()" onkeypress="return checkIt(event)" value="<%=(string)Session["saldo_anterior"]%>" />
+                                <input id="txtsaldoAnterior" type="text" class="form-control" onblur="saldos()" onkeypress="return checkIt(event)" value="<%=(string)Session["saldo_anterior"]%>"/>
                             </div>
                         </div>
                     </div>
@@ -281,7 +281,7 @@
                     </label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                            <input id="txtTotaldepositado" type="text" class="form-control" readonly="readonly" value="<%=(string)Session["total_depositado"]%>"" />
+                            <input id="txtTotaldepositado" type="text" class="form-control" readonly="readonly" value="<%=(string)Session["total_depositado"]%>"/>
                         </div>
                     </div>                  
                 </div>

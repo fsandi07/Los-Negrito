@@ -25,11 +25,12 @@
                       <table class="table">
                
                         <tbody>
-                            <asp:GridView ID="GridVegreso" runat="server" CssClass="table table-striped table-no-bordered" DataSourceID="SqlDataEgreso2" AllowPaging="True" AllowSorting="True">
+                            <asp:GridView ID="GridVegreso" runat="server" CssClass="table table-striped table-no-bordered" DataSourceID="SqlDataEgreso2" AllowPaging="True" AllowSorting="True" OnRowDataBound="GridVegreso_RowDataBound">
                                 <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Top" />
                                 <Columns>
-                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />  
-                                </Columns>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />
+    <asp:BoundField HeaderText="Advertencia"></asp:BoundField>
+</Columns>
                                 <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -51,7 +52,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalRoles">Seleccione una opción.</h5>
+                        <h5 class="modal-title" id="exampleModalRoles">Seleccione una opción.lRoles">Seleccione una opción.</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Cerrar">
                             <span aria-hidden="true">×</span>
                         </button>

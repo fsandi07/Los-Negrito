@@ -13,8 +13,7 @@ namespace SIGAPRO.Vistas
     {
       
         private Egreso_manual EgresoM;
-        private Egreso_Manual_Helper EgrsoHelper;
-        private string mes;
+        private Egreso_Manual_Helper EgrsoHelper;        
         protected void Page_Load(object sender, EventArgs e)
         {
 

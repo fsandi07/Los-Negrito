@@ -80,7 +80,7 @@ namespace SIGAPRO.Vistas
                 }
                BorrarXML();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 //throw new Exception(ex.Message);
 

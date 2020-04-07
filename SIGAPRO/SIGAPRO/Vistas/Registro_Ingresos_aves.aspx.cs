@@ -11,10 +11,7 @@ namespace SIGAPRO.Vistas
 {
     public partial class Registro_Ingresos : System.Web.UI.Page
     {
-        private Banco bank;
-        private bancoHelper bankHelper;
-
-        private Ingreso_Aves ingresoAves;
+         private Ingreso_Aves ingresoAves;
         private Ingreso_Aves_Helper ingresoAvesHelper;
 
         protected void Page_Load(object sender, EventArgs e)

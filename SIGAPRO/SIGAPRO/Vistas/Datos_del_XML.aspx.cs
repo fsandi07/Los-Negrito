@@ -12,9 +12,7 @@ namespace SIGAPRO.Vistas
 {
     public partial class Datos_del_XML : System.Web.UI.Page
     {
-        private DatosXML datos_Del_XML;
-        private DataTable datos;
-        private XMLHELPER XMLHELPER;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             

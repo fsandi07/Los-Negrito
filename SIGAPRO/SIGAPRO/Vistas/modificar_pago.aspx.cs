@@ -18,12 +18,7 @@ namespace SIGAPRO.Vistas
         private Pago_Empleados_Helper pagoempleHelper;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (DptColaborador.SelectedValue !="" )
-            {
-                dpcolaborador2();
-
-            }
-            else
+            if (!IsPostBack)
             {
                 dpcolaborador();
                 this.Lblnumcompro.Text = (string)Session["Id_comprobante"];
@@ -34,18 +29,27 @@ namespace SIGAPRO.Vistas
                 this.DptColaborador.SelectedValue = (string)Session["id_colaborador"];
                 //Page.Server.HtmlDecode para que el textbox refleje las tilves y caracteres especiales.
                 this.txtDescripDedud.Text = Page.Server.HtmlDecode((string)Session["detalle_otras_deducciones"]);
+               // con este codigo ejecuto las funciones en javacript para no perder los valores despues del load
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "verificarDato()", "verificarDato();", true);
+                //
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "deducciones()", "deducciones();", true);
+                //
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "saldos()", "saldos();", true);
+            }
+            else
+            {
 
             }
-
+           
         }
 
         protected void DptColaborador_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
+                this.txtDescripDedud.Text = "";
                 Session.Contents.RemoveAll();
                 dpcolaborador2();
-
 
             }
             catch (Exception)
@@ -119,6 +123,7 @@ namespace SIGAPRO.Vistas
         {
             try
             {
+             
                 this.pagoemple = new Pago_Empleados();
                 this.pagoemple.Id_comprobante = int.Parse(this.Lblnumcompro.Text);
                 this.pagoemple.Mes = this.DptMes.SelectedValue;
@@ -127,8 +132,8 @@ namespace SIGAPRO.Vistas
                 this.pagoemple.Moneda = this.DptMoneda.SelectedValue;
                 this.pagoemple.Fecha_registro = fecha.Value;
                 this.pagoemple.Id_colaborador = this.DptColaborador.SelectedValue;
-                this.pagoemple.Salario_quincenal = SalarioQuincenal.Value;
-                this.pagoemple.Comision = comisionProductividad.Value;
+                this.pagoemple.Salario_quincenal=SalarioQuincenal.Value;
+                this.pagoemple.Comision = comisionProductividad.Value ;
                 this.pagoemple.Prestamo = prestamo.Value;
                 this.pagoemple.Dias_sinGoce = diasSinGoce.Value;
                 this.pagoemple.Total_sinGoce = totalsingoce.Value;
@@ -136,16 +141,16 @@ namespace SIGAPRO.Vistas
                 this.pagoemple.Total_feriados = totalFeriados.Value;
                 this.pagoemple.Horas_extras = horasExtras.Value;
                 this.pagoemple.Total_extras = totalExtras.Value;
-                this.pagoemple.Salario_neto = salarioneto.Value;
-                this.pagoemple.Porcen_caja = porcentajeCCSS.Value;
+                this.pagoemple.Salario_neto = salarioneto.Value; 
+                this.pagoemple.Porcen_caja = porcentajeCCSS.Value; 
                 this.pagoemple.Total_caja = totalCCSS.Value;
-                this.pagoemple.Impuesto_renta = impuestoRentas.Value;
-                this.pagoemple.Otras_deduc = otrasDeduccion.Value;
+                this.pagoemple.Impuesto_renta = impuestoRentas.Value; 
+                this.pagoemple.Otras_deduc = otrasDeduccion.Value; 
                 this.pagoemple.Detalle_otras_deduc = this.txtDescripDedud.Text;
                 this.pagoemple.Total_deduc = totalDeducciones.Value;
                 this.pagoemple.Saldo_anterior = saldoAnterior.Value;
-                this.pagoemple.Saldo = saldo.Value;
-                this.pagoemple.Total_depositado = totalDepositado.Value;
+                this.pagoemple.Saldo = saldo.Value; 
+                this.pagoemple.Total_depositado = totalDepositado.Value; 
                 this.pagoemple.Id_banco = this.DptBancos.SelectedValue;
                 this.pagoemple.Estado = "Activo";
                 this.pagoemple.Id_centro_costos = this.DptCentroCostos.SelectedValue;
@@ -156,8 +161,9 @@ namespace SIGAPRO.Vistas
                 this.pagoempleHelper.modificar_pago_empleado();
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mmensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                this.txtDescripDedud.Text = ex.Message;
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }

@@ -17,7 +17,7 @@
                     <label class="col-sm-2 col-form-label">
                         <h6 class="card-title text-danger">
                         Comprobante N°:</label>
-                    <asp:Label ID="Lblnumcompro" class="card-title text-danger" runat="server" Text="Label">000</asp:Label>
+                    <asp:Label ID="Lblnumcompro" class="card-title text-danger" runat="server" Text="Label"></asp:Label>
                 </div>
                 <h3><span class="tim-note"></span>Datos Colaborador</h3>
                 <div class="row">
@@ -51,7 +51,7 @@
 
                      <div class="col-sm-12">
                      <div class="row">
-                      <div class="col-md-3">
+               <%--       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Mes</label>
                           <asp:DropDownList ID="DptMes" runat="server" class="selectpicker" data-style="select-with-transition">
@@ -69,8 +69,8 @@
                                                 <asp:ListItem Value="Diciembre">Diciembre</asp:ListItem>
                                             </asp:DropDownList>
                         </div>
-                      </div>
-                      <div class="col-md-3">
+                      </div>--%>
+                 <%--     <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Año</label>
                           <asp:DropDownList ID="Dptyear" runat="server" class="selectpicker" data-style="select-with-transition">
@@ -84,8 +84,17 @@
                                                 <asp:ListItem Value="2018">2018</asp:ListItem>
                                             </asp:DropDownList>
                         </div>
+                      </div>--%>
+                          <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Fecha</label><br />
+                          <input type="date" id="start" name="trip-start" onblur="registrofecha()"
+                            value="date.now();"
+                            min="2017-01-01" max="2030-12-31">
+                        </div>
                       </div>
-                      <div class="col-md-3">
+                         
+                     <%--    <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Quincena</label>
                           <asp:DropDownList ID="Dpquincena" runat="server" class="selectpicker" data-style="select-with-transition">
@@ -93,7 +102,7 @@
                                                 <asp:ListItem Value="2">2</asp:ListItem>
                                             </asp:DropDownList>
                         </div>
-                      </div>
+                      </div>--%>
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Moneda</label>
@@ -103,26 +112,28 @@
                                             </asp:DropDownList>
                         </div>
                       </div>
-                    </div>
-                </div>
-                    <br />
-                    <br />
-                      <div class="col-sm-12">
-                     <div class="row">
-                      <div class="col-md-3">
+                          <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Banco</label>
                           <asp:DropDownList ID="DptBancos" runat="server" class="selectpicker" data-style="select-with-transition" DataSourceID="SqlDataBancos" DataTextField="nombre_banco" DataValueField="id_banco">
                                             </asp:DropDownList>
                         </div>
                       </div>
-                      <div class="col-md-3">
+                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Partida</label>
                           <asp:DropDownList ID="DptPartida" runat="server" class="selectpicker" data-style="select-with-transition" DataSourceID="SqlDataPartida" DataTextField="numero_partida" DataValueField="numero_partida">
                                                </asp:DropDownList>
                         </div>
                       </div>
+                    </div>
+                </div>
+                    <br />
+                    <br />
+                      <div class="col-sm-12">
+                     <div class="row">
+                     
+                    
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Centro Costos</label>
@@ -130,14 +141,7 @@
                                             </asp:DropDownList>
                         </div>
                       </div>
-                          <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fecha</label><br />
-                          <input type="date" id="start" name="trip-start" onblur="registrofecha()"
-                            value="date.now();"
-                            min="2017-01-01" max="2030-12-31">
-                        </div>
-                      </div>
+                         
                     </div>
                 </div>
                 </div> <%--termina el row--%>
@@ -312,7 +316,7 @@
                         <div class="card">
                             <div class="card-body text-center">
                                 <asp:Button class="btn btn-success" ID="btn_Pago_Cola" runat="server" Text="Registrar Datos" Width="178px" OnClick="btn_Pago_Cola_Click"/>
-                                <asp:Button class="btn btn-warning" ID="Bntpdf" runat="server" Text="crear pdf" Width="178px" OnClick="Bntpdf_Click" />
+                                <asp:Button class="btn btn-warning" ID="Bntpdf" runat="server" Text="Crear Comprobante" Width="178px" OnClick="Bntpdf_Click" />
                             </div>
                         </div>
                     </div>
@@ -350,6 +354,21 @@
     <asp:HiddenField ID="totalDepositado1" runat="server" />
     <asp:HiddenField ID="PDFvar" runat="server" />
     <asp:HiddenField ID="SalaQuinCompro" runat="server" />
+    <asp:HiddenField ID="NetoCompro" runat="server" />
+    <asp:HiddenField ID="TotaldepoCompro" runat="server" />
+    <asp:HiddenField ID="TotalsinGoceCMP" runat="server" />
+    <asp:HiddenField ID="ComisionCMP" runat="server" />
+    <asp:HiddenField ID="PrestamoCMP" runat="server" />
+    <asp:HiddenField ID="TotalferiadoCMP" runat="server" />
+    <asp:HiddenField ID="TotalExtrasCMP" runat="server" />
+    <asp:HiddenField ID="NetoCMP" runat="server" />
+    <asp:HiddenField ID="TotalCajaCMP" runat="server" />
+    <asp:HiddenField ID="TotalISRCMP" runat="server" />
+    <asp:HiddenField ID="OtrasDeducCMP" runat="server" />
+    <asp:HiddenField ID="TotalDeducCMP" runat="server" />
+    <asp:HiddenField ID="TotalDepoCMP" runat="server" />
+    <asp:HiddenField ID="SaldoAnteCMP" runat="server" />
+    <asp:HiddenField ID="SaldoCMP" runat="server" />
 
     <script type="text/javascript">       // mensaje de espera
 
@@ -400,6 +419,7 @@
             document.getElementById("txtComisionProduct").value = Comisionproduct;
             document.getElementById("txtPrestamo").value = Prestamo;
             var salarioquincecompro = new Intl.NumberFormat().format(Salarioquincenal);
+            var netocomproban = new Intl.NumberFormat().format(Salarioneto);
 
             document.getElementById('<%=SalarioQuincenal.ClientID%>').value = Salarioquincenal;    
             document.getElementById('<%=diasSinGoce.ClientID%>').value = Diassingoce;
@@ -413,6 +433,13 @@
             document.getElementById('<%=prestamo.ClientID%>').value = Prestamo;
 
             document.getElementById('<%=SalaQuinCompro.ClientID%>').value = salarioquincecompro;
+            document.getElementById('<%=NetoCompro.ClientID%>').value = netocomproban;
+            document.getElementById('<%=TotalsinGoceCMP.ClientID%>').value = new Intl.NumberFormat().format(Totalsingoce);
+            document.getElementById('<%=ComisionCMP.ClientID%>').value = new Intl.NumberFormat().format(Comisionproduct);
+            document.getElementById('<%=PrestamoCMP.ClientID%>').value = new Intl.NumberFormat().format(Prestamo);
+            document.getElementById('<%=TotalferiadoCMP.ClientID%>').value = new Intl.NumberFormat().format(Totalferiados);
+            document.getElementById('<%=TotalExtrasCMP.ClientID%>').value = new Intl.NumberFormat().format(TotalHorasextras);
+            document.getElementById('<%=NetoCMP.ClientID%>').value = new Intl.NumberFormat().format(Salarioneto);
             
         }
         function deducciones() {
@@ -441,6 +468,13 @@
             document.getElementById('<%=totalDeducciones.ClientID%>').value = TotalDeducciones;
             document.getElementById('<%=impuestoRentas.ClientID%>').value = ImpuestoRenta;
             document.getElementById('<%=totalDepositado.ClientID%>').value = Totaldeposito;
+            document.getElementById('<%=TotaldepoCompro.ClientID%>').value = new Intl.NumberFormat().format(Totaldeposito);
+
+            document.getElementById('<%=TotalCajaCMP.ClientID%>').value = new Intl.NumberFormat().format(TotalCaja);
+            document.getElementById('<%=TotalISRCMP.ClientID%>').value = new Intl.NumberFormat().format(ImpuestoRenta);
+            document.getElementById('<%=OtrasDeducCMP.ClientID%>').value = new Intl.NumberFormat().format(Otrasdeducc);
+            document.getElementById('<%=TotalDeducCMP.ClientID%>').value = new Intl.NumberFormat().format(TotalDeducciones);
+            document.getElementById('<%=TotalDepoCMP.ClientID%>').value = new Intl.NumberFormat().format(Totaldeposito);
 
         }
         function saldos() {
@@ -451,9 +485,11 @@
 
             document.getElementById('<%=saldoAnterior.ClientID%>').value = Saldoanterior;
             document.getElementById('<%=saldo.ClientID%>').value = Saldo;
+
+            document.getElementById('<%=SaldoAnteCMP.ClientID%>').value = new Intl.NumberFormat().format(Saldoanterior);
+            document.getElementById('<%=SaldoCMP.ClientID%>').value = new Intl.NumberFormat().format(Saldo);
             
         }
-     
             //mensaje de conrfimacion
             function mensajeDeconfirmacion() {
                 swal.fire({
@@ -475,7 +511,6 @@
 
                 })
             }
-
        
     </script>
 </asp:Content>

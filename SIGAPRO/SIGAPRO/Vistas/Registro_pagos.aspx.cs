@@ -21,14 +21,27 @@ namespace SIGAPRO.Vistas
         private Empleados_Helper empleHelper;
         private Pago_Empleados pagoemple;
         private Pago_Empleados_Helper pagoempleHelper;
+        private Banco bancos;
+        private bancoHelper bancoshelper;
         private string nombredoc;
         private string apellidos;
-        private string mes;
-        private string quincena;
+        private string nombre_banco;
+        private int numcomprobante;
+        private string muestranumero;
+        private string muestrames;
+        private string muestrayear;
+        private string yearcompleto;
+        private string dias;
+        private int muestraDiaa;
+        private string quincecompro;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            buscaNumCompro();
+            if (numcomprobante < 100) { muestranumero = "00" + numcomprobante; }
+            else { muestranumero = numcomprobante.ToString(); }
+            this.Lblnumcompro.Text = muestranumero;
         }
 
         protected void Btn_redirije_Click(object sender, EventArgs e)
@@ -63,16 +76,78 @@ namespace SIGAPRO.Vistas
             }
 
         }
-       
-        protected void btn_Pago_Cola_Click(object sender, EventArgs e)
+
+        public void buscaBanco() {
+            try
+            {
+                this.bancos = new Banco();
+                this.bancos.Opc = 3;
+                this.bancos.Id_banco = int.Parse(this.DptBancos.SelectedValue);
+                this.bancoshelper = new bancoHelper(bancos);
+                this.datos = new DataTable();
+                this.datos = this.bancoshelper.Consulta_Bancos(); 
+                if (datos.Rows.Count >= 0)
+                {
+                    DataRow fila = datos.Rows[0];
+                   nombre_banco = fila["nombre_banco"].ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+        }
+        public void buscaNumCompro()
         {
             try
             {
                 this.pagoemple = new Pago_Empleados();
+                this.pagoemple.Opc = 5;
+                this.pagoempleHelper = new Pago_Empleados_Helper(pagoemple);
+                this.datos = new DataTable();
+                this.datos = this.pagoempleHelper.Consulta_num_pago();
+
+                if (datos.Rows.Count > 0)
+                {
+                    DataRow fila = datos.Rows[0];
+                    numcomprobante = int.Parse(fila["Id_comprobante"].ToString()) + 1;
+                }
+
+                numcomprobante = 1;
+            }
+            catch (Exception ex)
+            {
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+        }
+
+        protected void btn_Pago_Cola_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+
+                this.pagoemple = new Pago_Empleados();
                 this.pagoemple.Id_comprobante = int.Parse(this.Lblnumcompro.Text);
-                this.pagoemple.Mes = this.DptMes.SelectedValue;
-                this.pagoemple.Anio = this.Dptyear.SelectedValue;
-                this.pagoemple.Quincena = int.Parse(this.Dpquincena.SelectedValue);
+                ValidaMes();
+                muestrayear = fecha.Value;
+                yearcompleto = muestrayear.Substring(0, 4);
+                this.pagoemple.Mes = muestrames;
+                this.pagoemple.Anio = yearcompleto;
+                dias = fecha.Value;
+                muestraDiaa = int.Parse(dias.Substring(8, 2));
+                if (muestraDiaa < 15)
+                {
+                    this.pagoemple.Quincena = 1;
+
+                }
+                else {
+                    this.pagoemple.Quincena = 2;
+                }
+                
                 this.pagoemple.Moneda = this.DptMoneda.SelectedValue;
                 this.pagoemple.Fecha_registro = fecha.Value;
                 this.pagoemple.Id_colaborador = this.DptColaborador.SelectedValue;
@@ -99,14 +174,20 @@ namespace SIGAPRO.Vistas
                 this.pagoemple.Estado = "Activo";
                 this.pagoemple.Id_centro_costos = this.DptCentroCostos.SelectedValue;
                 this.pagoemple.Pdf_comprobante = this.file_pdf.FileBytes;
-                this.pagoemple.Realname_pdf = this.file_pdf.FileName;
+                if (this.file_pdf.FileName == "")
+                {
+                    this.pagoemple.Realname_pdf = "Pendiente de subir";
+                }
+                else {
+                    this.pagoemple.Realname_pdf = this.file_pdf.FileName;
+                }                
                 this.pagoemple.Opc = 1;
                 this.pagoempleHelper = new Pago_Empleados_Helper(pagoemple);
                 this.pagoempleHelper.Agregar_pago_empleado();
 
                 Limpiar();
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mmensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
-                
+                Response.Redirect("Consultar_Pagos_Empleados.aspx");
 
             }
             catch (Exception ex)
@@ -117,10 +198,7 @@ namespace SIGAPRO.Vistas
         public void Limpiar()
         {
 
-            this.Lblnumcompro.Text = null;
-            this.DptMes.SelectedValue = null;
-            this.Dptyear.SelectedValue = null;
-            this.Dpquincena.SelectedValue = null;
+            this.Lblnumcompro.Text = null;           
             this.DptMoneda.SelectedValue = null;
             this.txt_Nombre.Text = null;
             this.txt_Apellido.Text = null;
@@ -149,6 +227,25 @@ namespace SIGAPRO.Vistas
             this.DptCentroCostos.SelectedValue = null;
         }
 
+        public void ValidaMes() {
+            string pruebames = fecha.Value;
+            string validames = pruebames.Substring(5, 2);
+            if (validames == "01"){ muestrames = "Enero";}
+            else if (validames == "02") { muestrames = "Febrero";}
+            else if (validames == "03"){muestrames = "Marzo";}
+            else if (validames == "04"){muestrames = "Abril";}
+            else if (validames == "05"){muestrames = "Mayo";}
+            else if (validames == "06"){muestrames = "Junio";}
+            else if (validames == "07"){muestrames = "Julio";}
+            else if (validames == "08"){muestrames = "Agosto";}
+            else if (validames == "09"){muestrames = "Septiembre";}
+            else if (validames == "10"){muestrames = "Octubre";}
+            else if (validames == "11"){muestrames = "Novimebre";}
+            else if (validames == "12"){muestrames = "Diciembre";}
+
+        }
+
+
         public ActionResult pdf()
         {
             string centro = "                                                                                       ";
@@ -156,67 +253,92 @@ namespace SIGAPRO.Vistas
             string centro2 = "                                                        ";
             nombredoc = this.txt_Nombre.Text;
             apellidos = this.txt_Apellido.Text;
-            string calendar = fecha.Value;
-            string quincenas = this.Dpquincena.SelectedValue;
-            string bancos = this.DptBancos.DataTextField;
+            string calendar = fecha.Value;            
+            int muestraDias = int.Parse(calendar.Substring(8, 2));
+            string numquincena;
+            if (muestraDias < 15) {numquincena = "1";}
+            else { numquincena = "2"; }
+            string quincenas = numquincena;
+            buscaBanco();
+            string bancos = nombre_banco;
             string monedapagada = this.DptMoneda.SelectedValue;
             string terminoquincena = "";
-            if (quincenas == "1")
-            {
-                terminoquincena = "era";
-            }
-            else {
-                terminoquincena = "da";
-            }
+            if (quincenas == "1"){terminoquincena = "era";}
+            else { terminoquincena = "da";}
             string salarioquince = SalaQuinCompro.Value;
             string diassingoce = diasSinGoce.Value;
-            decimal totalsingo =  decimal.Parse(totalsingoce.Value);
-            decimal totalsingoredon = (Math.Round(totalsingo, 3)); 
-            string mes = calendar.Substring(5, 2);
+            string totalsingoce =  TotalsinGoceCMP.Value;           
+            ValidaMes();
+            string mes = muestrames;
             string anio = calendar.Substring(0,4);
-            string comisionp = comisionProductividad.Value;
-            string prestamos = prestamo.Value;
+            string comisionp = ComisionCMP.Value;
+            string prestamos = PrestamoCMP.Value;
             string diasferi = diasFeriados.Value;
-            decimal totaferi = decimal.Parse(totalFeriados.Value);
-            decimal totadericompro = (Math.Round(totaferi, 3));
+            string totadericompro = TotalferiadoCMP.Value;            
             string horasEx = horasExtras.Value;
-            string totaExtra = totalExtras.Value;
-            decimal neto = decimal.Parse(salarioneto.Value);
-            decimal netocompro = (Math.Round(neto, 3));
+            string totaExtra = TotalExtrasCMP.Value;
+            string netocompro = NetoCompro.Value;            
+            string porcencaja = porcentajeCCSS.Value;
+            string totacajacompro = TotalCajaCMP.Value;           
+            string impuestorenta = TotalISRCMP.Value;
+            string otradeduc = OtrasDeducCMP.Value;
+            string detallededuc = this.txtDescripDedud.Text;
+            string totaldeduc = TotalDeducCMP.Value;
+            string totaldepo = TotalDepoCMP.Value;
+            string saldoante = SaldoAnteCMP.Value;
+            string saldocompro = SaldoCMP.Value; 
 
 
             //FileStream fs = new FileStream("c://pdf/reporte.pdf", FileMode.Create);
             MemoryStream ms = new MemoryStream();
-
-
-            Document document = new Document(iTextSharp.text.PageSize.LETTER,30f,20f,80f,40f);
+            Document document = new Document(iTextSharp.text.PageSize.LETTER,30f,20f,65f,40f);
             PdfWriter pw = PdfWriter.GetInstance(document, /*fs*/ ms);
-            string panthImage = Server.MapPath("/Vistas/assets/img/Negritos.jpg");
-            pw.PageEvent = new HeaderFooter(panthImage);
-
+            string panthImage = Server.MapPath("/Vistas/assets/img/Negritos.jpg");            
+            string numcompro = this.Lblnumcompro.Text;           
+          
+            pw.PageEvent = new HeaderFooter(panthImage, numcompro);            
 
             document.Open();           
-            string nameFont = Server.MapPath("/Vistas/font/Megan June.otf");
-            BaseFont bf = BaseFont.CreateFont(nameFont, BaseFont.CP1250,BaseFont.EMBEDDED);
+            string nameFont = Server.MapPath("/Vistas/font/Megan June.otf"); 
+            BaseFont bf = BaseFont.CreateFont(nameFont, BaseFont.CP1250,BaseFont.EMBEDDED);           
             Font fonTex = new Font(bf,15,0,BaseColor.BLACK);
-            Font fonTexTitle = new Font(bf, 25, 0, BaseColor.BLUE);
-
-            document.Add(new Paragraph(centro + calendar, fonTex));
-            document.Add(new Paragraph(centro + quincenas+ terminoquincena + " "+"Quincena"+"                           Banco"+" "+bancos, fonTex));
-            document.Add(new Paragraph(centro + "                                                Moneda de Pago:" +" " + monedapagada, fonTex));
-            document.Add(new Paragraph(centro));
+            Font fonTexTitle = new Font(bf, 17, 0, BaseColor.BLUE);
+            Font fonTexdeduc = new Font(bf, 15, 0, BaseColor.RED);
+            Font fonTexsaldo = new Font(bf, 15, 0, BaseColor.BLUE);
+            document.Add(new Paragraph(centro +"    " +mes +" "+anio, fonTex));
+            document.Add(new Paragraph(centro + quincenas+ terminoquincena + " "+"Quincena"+"                           Banco:"+" "+bancos, fonTex));
+            document.Add(new Paragraph(centro + "                                                 Moneda de Pago:" +" " + monedapagada, fonTex));
+            //document.Add(new Paragraph(centro));
             document.Add(new Paragraph(centro1 + "Nombre:" + " " + nombredoc + " " + apellidos, fonTex));
-            document.Add(new Paragraph("-"+"-------------------------------------------------------------------------------------------------------------------------", fonTex));           
+            document.Add(new Paragraph("_________________________________________________________________________________________________________", fonTex));           
             document.Add(new Paragraph(centro));           
-            document.Add(new Paragraph("Salario Quincenal"+centro+"                                       " +salarioquince, fonTex));
-            document.Add(new Paragraph("Permisos sin goce Salario" +centro2 + diassingoce +"                                                      "+ totalsingoredon, fonTex));
-            document.Add(new Paragraph("Comision Productividad"+centro+"                            " +comisionp, fonTex));
-            document.Add(new Paragraph("Prestamo" + centro + "                                                  " + prestamos, fonTex));
-            document.Add(new Paragraph("Feriados" + centro2 +"                             "+ diasferi + "                                                     " + totadericompro, fonTex));
-            document.Add(new Paragraph("Extras" + centro2 +"                                " + horasEx + "                                                     " + totaExtra, fonTex));
-            document.Add(new Paragraph("Salario Neto" + centro + "                                               " + netocompro, fonTex));
+            document.Add(new Paragraph("Salario Quincenal"+centro+ "                                       ₡" + salarioquince, fonTexsaldo));
+            document.Add(new Paragraph("Permisos sin goce Salario" +centro2 + diassingoce + "                                                      ₡" + totalsingoce, fonTex));
+            document.Add(new Paragraph("Comisión Productividad"+centro+ "                            ₡" + comisionp, fonTex));
+            document.Add(new Paragraph("Préstamo" + centro + "                                                  " + prestamos, fonTex));
+            document.Add(new Paragraph("Feriados" + centro2 +"                             "+ diasferi + "                                                     ₡" + totadericompro, fonTex));
+            document.Add(new Paragraph("Extras" + centro2 +"                                " + horasEx + "                                                     ₡" + totaExtra, fonTex));
+            document.Add(new Paragraph("Salario Neto" + centro + "                                               " + netocompro, fonTexsaldo));
+            document.Add(new Paragraph(centro));
+            document.Add(new Paragraph("Deducciones", fonTexTitle));
+            document.Add(new Paragraph("CCSS" + centro2 + "                                  " + porcencaja + "                                                   ₡" + totacajacompro, fonTex));
+            document.Add(new Paragraph("Impuesto Renta" + centro + "                                         ₡" + impuestorenta, fonTex));
+            document.Add(new Paragraph("Otras deducciones" + centro + "                                     ₡" + otradeduc, fonTex));
+            document.Add(new Paragraph("Por concepto de:"+" "+"("+detallededuc+")", fonTex));
+            document.Add(new Paragraph("Total Deducciones" + centro + "                                      ₡" + totaldeduc, fonTexdeduc));
+            document.Add(new Paragraph(centro));
+            document.Add(new Paragraph("Totales", fonTexTitle));
+            document.Add(new Paragraph("Total Depositado" + centro + "                                        ₡" + totaldepo, fonTex));
+            document.Add(new Paragraph("Saldo Anterior" + centro + "                                           -₡" + saldoante, fonTex));
+            document.Add(new Paragraph("Saldo" + centro + "                                                           ₡" + saldocompro, fonTexsaldo));
+            document.Add(new Paragraph(centro));
+            document.Add(new Paragraph(centro));
+            document.Add(new Paragraph(centro));
+            document.Add(new Paragraph(centro2 +"                 " +"______________________________", fonTex));
+            document.Add(new Paragraph(centro +"      "+ "Recibido", fonTex));
+
             document.Close();
-                                 
+
             byte[] bytesStream = ms.ToArray();
             ms = new MemoryStream();
             ms.Write(bytesStream,0,bytesStream.Length);
@@ -241,9 +363,11 @@ namespace SIGAPRO.Vistas
     class HeaderFooter : PdfPageEventHelper {
 
         string PathImage = null;
-        public HeaderFooter(string logoPath) {
+        string NumeroComprobante = null;
+        public HeaderFooter(string logoPath, string numcompro) {
 
             PathImage = logoPath;
+            NumeroComprobante = numcompro;
         }
 
         public override void OnEndPage(PdfWriter writer, Document document)
@@ -256,11 +380,16 @@ namespace SIGAPRO.Vistas
 
             PdfPCell _cell = new PdfPCell(new Paragraph("Comprobante de Pago Salarial"));            
             _cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            _cell.Border = 0;           
+
+            tbHeader.AddCell(_cell);
+
+            _cell = new PdfPCell(new Paragraph("N°"+ NumeroComprobante));
+            _cell.HorizontalAlignment = Element.ALIGN_RIGHT;
             _cell.Border = 0;
 
             tbHeader.AddCell(_cell);
-            tbHeader.AddCell(new Paragraph());
-
+            tbHeader.AddCell(new Paragraph());          
             tbHeader.WriteSelectedRows(0, -1, document.LeftMargin, writer.PageSize.GetTop(document.TopMargin) + 30, writer.DirectContent);
             
           
@@ -272,7 +401,7 @@ namespace SIGAPRO.Vistas
             tbFooder.AddCell(new Paragraph());
            
 
-            _cell = new PdfPCell(new Paragraph("Los negritos S.A"));
+            _cell = new PdfPCell(new Paragraph("Coorporación Los negritos S.A"));
             _cell.HorizontalAlignment = Element.ALIGN_CENTER;
             _cell.Border = 0;
 
