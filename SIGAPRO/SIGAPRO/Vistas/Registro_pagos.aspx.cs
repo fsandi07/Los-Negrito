@@ -33,7 +33,7 @@ namespace SIGAPRO.Vistas
         private string yearcompleto;
         private string dias;
         private int muestraDiaa;
-        private string quincecompro;
+       
         
 
         protected void Page_Load(object sender, EventArgs e)
