@@ -183,3 +183,8 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.csproj.CopyComplete
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.dll
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\obj\Debug\SIGAPRO.NEGOCIO.pdb
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll.config
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.xml
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.xml

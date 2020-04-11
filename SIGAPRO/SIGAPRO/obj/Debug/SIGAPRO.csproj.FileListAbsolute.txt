@@ -214,3 +214,8 @@ C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\bin\System.Web.Razor.xml
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\bin\System.Web.WebPages.xml
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO\bin\System.Web.WebPages.Razor.xml
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\EntityFramework.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\EntityFramework.SqlServer.dll
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\SIGAPRO.NEGOCIO.dll.config
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\EntityFramework.xml
+C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO\bin\EntityFramework.SqlServer.xml

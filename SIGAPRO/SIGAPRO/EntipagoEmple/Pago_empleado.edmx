@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A4DE45_SIGEDOCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_pago_emple_los_negritos">
+          <Key>
+            <PropertyRef Name="Id_comprobante" />
+          </Key>
+          <Property Name="Id_comprobante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mes" Type="varchar" MaxLength="50" />
+          <Property Name="Periodo" Type="varchar" MaxLength="50" />
+          <Property Name="Quincena" Type="int" />
+          <Property Name="Moneda" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_registro" Type="varchar" MaxLength="50" />
+          <Property Name="Id_colaborador" Type="varchar" MaxLength="50" />
+          <Property Name="Salario_quincenal" Type="varchar" MaxLength="50" />
+          <Property Name="Comision" Type="varchar" MaxLength="50" />
+          <Property Name="Prestamos" Type="varchar" MaxLength="50" />
+          <Property Name="Dias_sinGoce" Type="varchar" MaxLength="50" />
+          <Property Name="Total_sinGoce" Type="varchar" MaxLength="50" />
+          <Property Name="Dias_feriados" Type="varchar" MaxLength="50" />
+          <Property Name="Total_feriados" Type="varchar" MaxLength="50" />
+          <Property Name="Horas_extras" Type="varchar" MaxLength="50" />
+          <Property Name="Total_extras" Type="varchar" MaxLength="50" />
+          <Property Name="Salario_neto" Type="varchar" MaxLength="50" />
+          <Property Name="Porcen_caja" Type="varchar" MaxLength="50" />
+          <Property Name="Impuesto_renta" Type="varchar" MaxLength="50" />
+          <Property Name="Otras_deducc" Type="varchar" MaxLength="50" />
+          <Property Name="Detalle_otras_deduc" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Total_deduc" Type="varchar" MaxLength="50" />
+          <Property Name="Saldo_anterior" Type="varchar" MaxLength="50" />
+          <Property Name="Saldo" Type="varchar" MaxLength="50" />
+          <Property Name="Total_depositado" Type="varchar" MaxLength="50" />
+          <Property Name="Id_banco" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" />
+          <Property Name="Id_centro_costos" Type="varchar" MaxLength="50" />
+          <Property Name="Pdf_compro" Type="varbinary(max)" />
+          <Property Name="Total_caja" Type="varchar" MaxLength="50" />
+          <Property Name="Realname_pdf" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DB_A4DE45_SIGEDOCModelStoreContainer">
+          <EntitySet Name="tb_pago_emple_los_negritos" EntityType="Self.tb_pago_emple_los_negritos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A4DE45_SIGEDOCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_pago_emple_los_negritos">
+          <Key>
+            <PropertyRef Name="Id_comprobante" />
+          </Key>
+          <Property Name="Id_comprobante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quincena" Type="Int32" />
+          <Property Name="Moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_registro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_colaborador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salario_quincenal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prestamos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dias_sinGoce" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_sinGoce" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dias_feriados" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_feriados" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Horas_extras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_extras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Salario_neto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Porcen_caja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Impuesto_renta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Otras_deducc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Detalle_otras_deduc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_deduc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Saldo_anterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Saldo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total_depositado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_banco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_centro_costos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pdf_compro" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Total_caja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Realname_pdf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A4DE45_SIGEDOCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_pago_emple_los_negritos" EntityType="Self.tb_pago_emple_los_negritos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A4DE45_SIGEDOCModelStoreContainer" CdmEntityContainer="DB_A4DE45_SIGEDOCEntities">
+          <EntitySetMapping Name="tb_pago_emple_los_negritos">
+            <EntityTypeMapping TypeName="DB_A4DE45_SIGEDOCModel.tb_pago_emple_los_negritos">
+              <MappingFragment StoreEntitySet="tb_pago_emple_los_negritos">
+                <ScalarProperty Name="Id_comprobante" ColumnName="Id_comprobante" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Quincena" ColumnName="Quincena" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="Fecha_registro" ColumnName="Fecha_registro" />
+                <ScalarProperty Name="Id_colaborador" ColumnName="Id_colaborador" />
+                <ScalarProperty Name="Salario_quincenal" ColumnName="Salario_quincenal" />
+                <ScalarProperty Name="Comision" ColumnName="Comision" />
+                <ScalarProperty Name="Prestamos" ColumnName="Prestamos" />
+                <ScalarProperty Name="Dias_sinGoce" ColumnName="Dias_sinGoce" />
+                <ScalarProperty Name="Total_sinGoce" ColumnName="Total_sinGoce" />
+                <ScalarProperty Name="Dias_feriados" ColumnName="Dias_feriados" />
+                <ScalarProperty Name="Total_feriados" ColumnName="Total_feriados" />
+                <ScalarProperty Name="Horas_extras" ColumnName="Horas_extras" />
+                <ScalarProperty Name="Total_extras" ColumnName="Total_extras" />
+                <ScalarProperty Name="Salario_neto" ColumnName="Salario_neto" />
+                <ScalarProperty Name="Porcen_caja" ColumnName="Porcen_caja" />
+                <ScalarProperty Name="Impuesto_renta" ColumnName="Impuesto_renta" />
+                <ScalarProperty Name="Otras_deducc" ColumnName="Otras_deducc" />
+                <ScalarProperty Name="Detalle_otras_deduc" ColumnName="Detalle_otras_deduc" />
+                <ScalarProperty Name="Total_deduc" ColumnName="Total_deduc" />
+                <ScalarProperty Name="Saldo_anterior" ColumnName="Saldo_anterior" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Total_depositado" ColumnName="Total_depositado" />
+                <ScalarProperty Name="Id_banco" ColumnName="Id_banco" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Id_centro_costos" ColumnName="Id_centro_costos" />
+                <ScalarProperty Name="Pdf_compro" ColumnName="Pdf_compro" />
+                <ScalarProperty Name="Total_caja" ColumnName="Total_caja" />
+                <ScalarProperty Name="Realname_pdf" ColumnName="Realname_pdf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

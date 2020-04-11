@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
     </Reference>
@@ -50,6 +56,8 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -91,7 +99,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="EntipagoEmple\Pago_empleado.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Pago_empleado.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntipagoEmple\Pago_empleado.edmx.diagram">
+      <DependentUpon>Pago_empleado.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="EntipagoEmple\Pago_empleado.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Pago_empleado.Context.cs</LastGenOutput>
+      <DependentUpon>Pago_empleado.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntipagoEmple\Pago_empleado.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Pago_empleado.edmx</DependentUpon>
+      <LastGenOutput>Pago_empleado.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\Focus.js" />
     <Content Include="Scripts\global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -1886,7 +1911,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntipagoEmple\Pago_empleado.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pago_empleado.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntipagoEmple\Pago_empleado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pago_empleado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntipagoEmple\Pago_empleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pago_empleado.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EntipagoEmple\tb_pago_emple_los_negritos.cs">
+      <DependentUpon>Pago_empleado.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Agregar_usuarios.aspx.cs">
       <DependentUpon>Agregar_usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2515,6 +2558,9 @@
       <Project>{c563caa1-2538-4558-bf23-8cf9cc0b38ed}</Project>
       <Name>SIGAPRO.NEGOCIO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

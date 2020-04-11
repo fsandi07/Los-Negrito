@@ -20,49 +20,49 @@
                       <table class="table">
                        
                         <tbody>
-
-                              <asp:GridView runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="Id_comprobante" DataSourceID="SqlDatapagos" EnablePersistedSelection="True" AllowPaging="True" OnSelectedIndexChanged="grid_pagos_empleados_SelectedIndexChanged" ID="grid_pagos_empleados" >
-                                  <Columns>
-                                      <asp:CommandField ShowSelectButton="True" HeaderText="Editar" ></asp:CommandField>
-                                      <asp:BoundField DataField="Id_comprobante" HeaderText="Id" ReadOnly="True" InsertVisible="False" SortExpression="Id_comprobante"></asp:BoundField>
-                                      <asp:BoundField DataField="Mes" HeaderText="Mes" SortExpression="Mes"></asp:BoundField>
-                                      <asp:BoundField DataField="Periodo" HeaderText="Periodo" SortExpression="Periodo"></asp:BoundField>
-                                      <asp:BoundField DataField="Quincena" HeaderText="Quincena" SortExpression="Quincena"></asp:BoundField>
-                                      <asp:BoundField DataField="Moneda" HeaderText="Moneda" SortExpression="Moneda"></asp:BoundField>
-                                      <asp:BoundField DataField="Fecha_registro" HeaderText="Fecha Registro" SortExpression="Fecha_registro"></asp:BoundField>
-                                      <asp:BoundField DataField="Id_colaborador" HeaderText="ID Colaborador" SortExpression="Id_colaborador"></asp:BoundField>
-                                      <asp:BoundField DataField="Salario_quincenal" HeaderText="Salario_quincenal" SortExpression="Salario_quincenal"></asp:BoundField>
-                                      <asp:BoundField DataField="Comision" HeaderText="Comision" SortExpression="Comision"></asp:BoundField>
-                                      <asp:BoundField DataField="Prestamos" HeaderText="Prestamos" SortExpression="Prestamos"></asp:BoundField>
-                                      <asp:BoundField DataField="Dias_sinGoce" HeaderText="Dias_sinGoce" SortExpression="Dias_sinGoce"></asp:BoundField>
-                                      <asp:BoundField DataField="Total_sinGoce" HeaderText="Total_sinGoce" SortExpression="Total_sinGoce"></asp:BoundField>
-                                      <asp:BoundField DataField="Dias_feriados" HeaderText="Dias_feriados" SortExpression="Dias_feriados"></asp:BoundField>
-                                      <asp:BoundField DataField="Total_feriados" HeaderText="Total_feriados" SortExpression="Total_feriados"></asp:BoundField>
-                                      <asp:BoundField DataField="Horas_extras" HeaderText="Horas_extras" SortExpression="Horas_extras"></asp:BoundField>
-                                      <asp:BoundField DataField="Total_extras" HeaderText="Total_extras" SortExpression="Total_extras"></asp:BoundField>
-                                      <asp:BoundField DataField="Salario_neto" HeaderText="Salario_neto" SortExpression="Salario_neto"></asp:BoundField>
-                                      <asp:BoundField DataField="Porcen_caja" HeaderText="Porcen_caja" SortExpression="Porcen_caja"></asp:BoundField>
-                                      <asp:BoundField DataField="Impuesto_renta" HeaderText="Impuesto_renta" SortExpression="Impuesto_renta"></asp:BoundField>
-                                      <asp:BoundField DataField="Otras_deducc" HeaderText="Otras_deducc" SortExpression="Otras_deducc"></asp:BoundField>
-                                      <asp:BoundField DataField="Detalle_otras_deduc" HeaderText="Detalle_otras_deduc" SortExpression="Detalle_otras_deduc"></asp:BoundField>
-                                      <asp:BoundField DataField="Total_deduc" HeaderText="Total_deduc" SortExpression="Total_deduc"></asp:BoundField>
-                                      <asp:BoundField DataField="Saldo_anterior" HeaderText="Saldo_anterior" SortExpression="Saldo_anterior"></asp:BoundField>
-                                      <asp:BoundField DataField="Saldo" HeaderText="Saldo" SortExpression="Saldo"></asp:BoundField>
-                                      <asp:BoundField DataField="Total_depositado" HeaderText="Total_depositado" SortExpression="Total_depositado"></asp:BoundField>
-                                      <asp:BoundField DataField="Id_banco" HeaderText="Id_banco" SortExpression="Id_banco" />
-                                      <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                                      <asp:BoundField DataField="Id_centro_costos" HeaderText="Id_centro_costos" SortExpression="Id_centro_costos" />
-                                      <asp:BoundField DataField="Total_caja" HeaderText="Total_caja" SortExpression="Total_caja" />
-                                      <asp:BoundField DataField="Realname_pdf" HeaderText="Realname_pdf" SortExpression="Realname_pdf" />
-        </Columns>
-<EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                            <asp:GridView ID="grid_pagos_empleados" CssClass="table table-striped table-no-bordered table-hover" runat="server" DataSourceID="SqlDataconsulta" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="N° Comprobante" OnRowCommand="grid_pagos_empleados_RowCommand" OnSelectedIndexChanged="grid_pagos_empleados_SelectedIndexChanged1">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Detalles"></asp:CommandField>
+                                    <asp:BoundField DataField="N&#176; Comprobante" HeaderText="N&#176; Comprobante" ReadOnly="True" InsertVisible="False" SortExpression="N&#176; Comprobante"></asp:BoundField>
+                                     <asp:BoundField DataField="Nombre Empleado" HeaderText="Nombre Empleado" ReadOnly="True" SortExpression="Nombre Empleado"></asp:BoundField>
+                                    <asp:BoundField DataField="Mes" HeaderText="Mes" SortExpression="Mes"></asp:BoundField>
+                                    <asp:BoundField DataField="Periodo" HeaderText="Periodo" SortExpression="Periodo"></asp:BoundField>
+                                    <asp:BoundField DataField="Quincena" HeaderText="Quincena" SortExpression="Quincena"></asp:BoundField>
+                                    <asp:BoundField DataField="Moneda" HeaderText="Moneda" SortExpression="Moneda" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" Visible="False"></asp:BoundField>                                 
+                                    <asp:BoundField DataField="Salario Quincenal" HeaderText="Salario Quincenal" SortExpression="Salario Quincenal"></asp:BoundField>
+                                    <asp:BoundField DataField="Comision" HeaderText="Comision" SortExpression="Comision" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Prestamos" HeaderText="Prestamos" SortExpression="Prestamos" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Dias sin Goce" HeaderText="Dias sin Goce" SortExpression="Dias sin Goce" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Total sin Goce" HeaderText="Total sin Goce" ReadOnly="True" SortExpression="Total sin Goce" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Dias Feriados" HeaderText="Dias Feriados" SortExpression="Dias Feriados" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Total Feriado" HeaderText="Total Feriado" ReadOnly="True" SortExpression="Total Feriado" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Horas Extras" HeaderText="Horas Extras" SortExpression="Horas Extras" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Total Extras" HeaderText="Total Extras" SortExpression="Total Extras" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Salario Neto" HeaderText="Salario Neto" SortExpression="Salario Neto" ></asp:BoundField>
+                                    <asp:BoundField DataField="Porcentaje CCSS" HeaderText="Porcentaje CCSS" SortExpression="Porcentaje CCSS" Visible="False" ></asp:BoundField>
+                                    <asp:BoundField DataField="Total Caja" HeaderText="Total Caja" SortExpression="Total Caja" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Impuesto Renta" HeaderText="Impuesto Renta" SortExpression="Impuesto Renta" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Otras Deducciones" HeaderText="Otras Deducciones" SortExpression="Otras Deducciones" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Detalle Deduducciones" HeaderText="Detalle Deduducciones" SortExpression="Detalle Deduducciones" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Total Deducciones" HeaderText="Total Deducciones" ReadOnly="True" SortExpression="Total Deducciones" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Saldo Anterior" HeaderText="Saldo Anterior" SortExpression="Saldo Anterior" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Total Saldo" HeaderText="Total Saldo" ReadOnly="True" SortExpression="Total Saldo" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="Banco" HeaderText="Banco" SortExpression="Banco"></asp:BoundField>
+                                    <asp:BoundField DataField="Centro Costos" HeaderText="Centro Costos" SortExpression="Centro Costos"></asp:BoundField>
+                                    <asp:BoundField DataField="Nombre PDF" HeaderText="Nombre PDF" SortExpression="Nombre PDF" Visible="False" ></asp:BoundField>
+                                    <asp:ButtonField  Text="<i class='far fa-file-pdf'></i>" CommandName="PDF"  HeaderText="PDF" />
+                                    <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
+                                </Columns>
+                                  <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
                                     <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
-    </asp:gridview>
+                                    <%--<SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />--%>
+                            </asp:GridView>
+                           
 
                         </tbody>
                       </table>
@@ -73,7 +73,41 @@
             </div>
     <asp:SqlDataSource ID="SqlDatapagos" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT * FROM [tb_pago_emple_los_negritos]"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>" SelectCommand="SELECT [cedula_usuario], [nombre_usuario], [apellido1], [nick_name], [correo_electronico] FROM [tb_Usuarios_Los_negritos]"></asp:SqlDataSource>
-    <br />   
+    <asp:SqlDataSource ID="SqlDataconsulta" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado],
+a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10,3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10,3), a.Total_feriados) as [Total Feriado],
+a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja [Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones],CONVERT(numeric(10,0), a.Total_deduc) as [Total Deducciones],
+a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10,0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado
+from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c
+where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco
+"></asp:SqlDataSource>
+    <br />  
+    
+    <%-- Modal para los datos  Creados --%>
+    <div class="modal fade" id="ModalDocumentos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Desea Actualizar Este Documento?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+             <meta charset="utf-8">                       
+                       <img src="assets/img/Negritos2.jpg" /><br /><br />
+                     <asp:Label ID="LblTitulo"  class="col-sm-2 col-form-label" runat="server" Text="Datos:"></asp:Label>                     
+                    <asp:Label ID="Label1"  class="col-sm-2 col-form-label" runat="server" Text="Nombre"></asp:Label><asp:Label ID="Lblnombre"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    <asp:Label ID="Label2"  class="col-sm-2 col-form-label" runat="server" Text="Quincena:"></asp:Label><asp:Label ID="LblQuincena"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                     <asp:Label ID="Label3"  class="col-sm-2 col-form-label" runat="server" Text="Días feriados:"></asp:Label><asp:Label ID="DiasFeriados"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />                   
+                    <div class="modal-footer">
+                        <asp:Button ID="Btnmodificar" class="btn btn-primary col-md-3" runat="server" Text="Modificar Datos" OnClick="Btnmodificar_Click" />                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-- fin de modal  --%>
     
     <script src="assets/js/plugins/jquery.datatables.min.js"></script>
      <script type="text/javascript">
@@ -99,10 +133,35 @@
                   
               //})
               }
-          })
+          })          
+         };
 
-          
-        };
+         function mensajeEspera() {
+             let timerInterval
+             Swal.fire({
+                 title: '¡Abriendo PDF!',
+
+                 timer: 5000,
+                 allowOutsideClick: false,
+                 onBeforeOpen: () => {
+
+                     Swal.showLoading()
+
+                     timerInterval = setInterval(() => {
+                         Swal.getContent().querySelector('strong')
+                             .textContent = (Swal.getTimerLeft() / 100)
+                                 .toFixed(0)
+                     }, 100)
+                 },
+                 onClose: () => {
+                     clearInterval(timerInterval)
+                 }
+
+             })
+
+             //window.setTimeout('location.href="Consultar_Pagos_Empleados.aspx"', 1000)
+
+         }
          </script>
 
 </asp:Content>

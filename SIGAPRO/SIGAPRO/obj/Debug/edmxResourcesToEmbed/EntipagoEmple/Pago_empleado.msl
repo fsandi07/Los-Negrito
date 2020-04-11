@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A4DE45_SIGEDOCModelStoreContainer" CdmEntityContainer="DB_A4DE45_SIGEDOCEntities">
+    <EntitySetMapping Name="tb_pago_emple_los_negritos">
+      <EntityTypeMapping TypeName="DB_A4DE45_SIGEDOCModel.tb_pago_emple_los_negritos">
+        <MappingFragment StoreEntitySet="tb_pago_emple_los_negritos">
+          <ScalarProperty Name="Id_comprobante" ColumnName="Id_comprobante" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Quincena" ColumnName="Quincena" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Fecha_registro" ColumnName="Fecha_registro" />
+          <ScalarProperty Name="Id_colaborador" ColumnName="Id_colaborador" />
+          <ScalarProperty Name="Salario_quincenal" ColumnName="Salario_quincenal" />
+          <ScalarProperty Name="Comision" ColumnName="Comision" />
+          <ScalarProperty Name="Prestamos" ColumnName="Prestamos" />
+          <ScalarProperty Name="Dias_sinGoce" ColumnName="Dias_sinGoce" />
+          <ScalarProperty Name="Total_sinGoce" ColumnName="Total_sinGoce" />
+          <ScalarProperty Name="Dias_feriados" ColumnName="Dias_feriados" />
+          <ScalarProperty Name="Total_feriados" ColumnName="Total_feriados" />
+          <ScalarProperty Name="Horas_extras" ColumnName="Horas_extras" />
+          <ScalarProperty Name="Total_extras" ColumnName="Total_extras" />
+          <ScalarProperty Name="Salario_neto" ColumnName="Salario_neto" />
+          <ScalarProperty Name="Porcen_caja" ColumnName="Porcen_caja" />
+          <ScalarProperty Name="Impuesto_renta" ColumnName="Impuesto_renta" />
+          <ScalarProperty Name="Otras_deducc" ColumnName="Otras_deducc" />
+          <ScalarProperty Name="Detalle_otras_deduc" ColumnName="Detalle_otras_deduc" />
+          <ScalarProperty Name="Total_deduc" ColumnName="Total_deduc" />
+          <ScalarProperty Name="Saldo_anterior" ColumnName="Saldo_anterior" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Total_depositado" ColumnName="Total_depositado" />
+          <ScalarProperty Name="Id_banco" ColumnName="Id_banco" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Id_centro_costos" ColumnName="Id_centro_costos" />
+          <ScalarProperty Name="Pdf_compro" ColumnName="Pdf_compro" />
+          <ScalarProperty Name="Total_caja" ColumnName="Total_caja" />
+          <ScalarProperty Name="Realname_pdf" ColumnName="Realname_pdf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

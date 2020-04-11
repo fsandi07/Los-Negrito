@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A4DE45_SIGEDOCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_pago_emple_los_negritos">
+    <Key>
+      <PropertyRef Name="Id_comprobante" />
+    </Key>
+    <Property Name="Id_comprobante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mes" Type="varchar" MaxLength="50" />
+    <Property Name="Periodo" Type="varchar" MaxLength="50" />
+    <Property Name="Quincena" Type="int" />
+    <Property Name="Moneda" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha_registro" Type="varchar" MaxLength="50" />
+    <Property Name="Id_colaborador" Type="varchar" MaxLength="50" />
+    <Property Name="Salario_quincenal" Type="varchar" MaxLength="50" />
+    <Property Name="Comision" Type="varchar" MaxLength="50" />
+    <Property Name="Prestamos" Type="varchar" MaxLength="50" />
+    <Property Name="Dias_sinGoce" Type="varchar" MaxLength="50" />
+    <Property Name="Total_sinGoce" Type="varchar" MaxLength="50" />
+    <Property Name="Dias_feriados" Type="varchar" MaxLength="50" />
+    <Property Name="Total_feriados" Type="varchar" MaxLength="50" />
+    <Property Name="Horas_extras" Type="varchar" MaxLength="50" />
+    <Property Name="Total_extras" Type="varchar" MaxLength="50" />
+    <Property Name="Salario_neto" Type="varchar" MaxLength="50" />
+    <Property Name="Porcen_caja" Type="varchar" MaxLength="50" />
+    <Property Name="Impuesto_renta" Type="varchar" MaxLength="50" />
+    <Property Name="Otras_deducc" Type="varchar" MaxLength="50" />
+    <Property Name="Detalle_otras_deduc" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Total_deduc" Type="varchar" MaxLength="50" />
+    <Property Name="Saldo_anterior" Type="varchar" MaxLength="50" />
+    <Property Name="Saldo" Type="varchar" MaxLength="50" />
+    <Property Name="Total_depositado" Type="varchar" MaxLength="50" />
+    <Property Name="Id_banco" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+    <Property Name="Id_centro_costos" Type="varchar" MaxLength="50" />
+    <Property Name="Pdf_compro" Type="varbinary(max)" />
+    <Property Name="Total_caja" Type="varchar" MaxLength="50" />
+    <Property Name="Realname_pdf" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DB_A4DE45_SIGEDOCModelStoreContainer">
+    <EntitySet Name="tb_pago_emple_los_negritos" EntityType="Self.tb_pago_emple_los_negritos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
