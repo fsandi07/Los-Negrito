@@ -11,6 +11,7 @@ using System.IO;
 using System.Threading;
 using SIGAPRO.NEGOCIO;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SIGAPRO.Vistas
 {
@@ -25,21 +26,33 @@ namespace SIGAPRO.Vistas
         private bancoHelper bancoshelper;
         private int numcompro;
         private string muestranumcompro;
-        private string idBanco;        
+        private string idBanco;
         private string nombre_banco;
         private string fecha_registro;
+        private byte[] pdf;
+        private string nombrepdf;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Contents.RemoveAll();
-            
+
+
+            if (grid_pagos_empleados.Rows.Count == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+
+
         }
-        
+
         protected void Btnredirije_Click(object sender, EventArgs e)
         {
             Response.Redirect("Registro_pagos.aspx");
-           
+
+
         }
-             
+
 
         protected void Btnmodificar_Click(object sender, EventArgs e)
         {
@@ -48,7 +61,7 @@ namespace SIGAPRO.Vistas
             Session["quincena"] = grid_pagos_empleados.SelectedRow.Cells[5].Text;
             Session["moneda"] = this.LblMoneda.Text;
             Session["fecha_registro"] = fecha_registro;
-            Session["id_colaborador"] = this.LblID_colabo.Text ;
+            Session["id_colaborador"] = this.LblID_colabo.Text;
             Session["salario_quincenal"] = this.LblQuincenal.Text;
             Session["comision"] = this.LblComision.Text;
             Session["prestamos"] = this.LblPretsamo.Text;
@@ -70,23 +83,25 @@ namespace SIGAPRO.Vistas
             Session["saldo"] = this.LblSaldo.Text;
             Session["total_depositado"] = this.LblTotal_depositado.Text;
             Session["total_caja"] = this.LblTotal_ccss.Text;
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Actualizar", "Actualizar('" + "" + "');", true);
+            Response.Redirect("modificar_pago.aspx");
+
+            //ScriptManager.RegisterStartupScript(this, typeof(Page), "Actualizar", "Actualizar('" + "" + "');", true);
         }
 
         protected void grid_pagos_empleados_SelectedIndexChanged1(object sender, EventArgs e)
         {
-           
+
             try
             {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalDocumentos", "$('#ModalDocumentos').modal();", true);
-                
+
                 numcompro = int.Parse(grid_pagos_empleados.SelectedRow.Cells[1].Text);
                 if (numcompro < 100) { muestranumcompro = "00" + numcompro; }
                 else { muestranumcompro = numcompro.ToString(); }
                 this.LblComprobante.Text = muestranumcompro;
                 this.Lblnombre.Text = grid_pagos_empleados.SelectedRow.Cells[2].Text; ;
-                this.LblQuincena.Text = grid_pagos_empleados.SelectedRow.Cells[5].Text +" Quincena "+"de " +grid_pagos_empleados.SelectedRow.Cells[3].Text +" "+"del " + grid_pagos_empleados.SelectedRow.Cells[4].Text; 
-                
+                this.LblQuincena.Text = grid_pagos_empleados.SelectedRow.Cells[5].Text + " Quincena " + "de " + grid_pagos_empleados.SelectedRow.Cells[3].Text + " " + "del " + grid_pagos_empleados.SelectedRow.Cells[4].Text;
+
 
 
                 this.pagoemple = new Pago_Empleados();
@@ -96,18 +111,18 @@ namespace SIGAPRO.Vistas
                 this.pagoempleHelper = new Pago_Empleados_Helper(pagoemple);
                 this.datos = new DataTable();
                 this.datos = this.pagoempleHelper.Consulta_num_pago();
-                
+
                 if (datos.Rows.Count >= 0)
                 {
 
                     DataRow fila = datos.Rows[0];
                     idBanco = fila["Id_banco"].ToString();
                     buscaBanco();
-                    this.LblBanco.Text = "    "+nombre_banco;
+                    this.LblBanco.Text = "    " + nombre_banco;
                     this.LblMoneda.Text = fila["Moneda"].ToString();
-                    this.LblQuincenal.Text= fila["Salario_quincenal"].ToString();
+                    this.LblQuincenal.Text = fila["Salario_quincenal"].ToString();
                     this.Lbldias_sin_goce.Text = fila["Dias_sinGoce"].ToString();
-                    this.Lbl_total_sin_goce.Text= fila["Total_sinGoce"].ToString();
+                    this.Lbl_total_sin_goce.Text = fila["Total_sinGoce"].ToString();
                     this.LblComision.Text = fila["Comision"].ToString();
                     this.LblPretsamo.Text = fila["Prestamos"].ToString();
                     this.LblDiasFeriados.Text = fila["Dias_feriados"].ToString();
@@ -115,7 +130,7 @@ namespace SIGAPRO.Vistas
                     this.LblHoras_extras.Text = fila["Horas_extras"].ToString();
                     this.LblTotal_extras.Text = fila["Total_extras"].ToString();
                     this.LblSalario_neto.Text = fila["Salario_neto"].ToString();
-                    this.LblCCSS.Text= fila["Porcen_caja"].ToString();
+                    this.LblCCSS.Text = fila["Porcen_caja"].ToString();
                     this.LblTotal_ccss.Text = fila["Total_caja"].ToString();
                     this.LblISR.Text = fila["Impuesto_renta"].ToString();
                     this.LblOtras_deduc.Text = fila["Otras_deducc"].ToString();
@@ -128,6 +143,7 @@ namespace SIGAPRO.Vistas
                     this.LblID_colabo.Text = fila["Id_colaborador"].ToString();
 
 
+
                 }
 
             }
@@ -139,24 +155,24 @@ namespace SIGAPRO.Vistas
 
 
 
-        
+
         }
 
         protected void grid_pagos_empleados_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+
             try
             {
                 if (e.CommandName == "PDF")
                 {
-                    
+
                     int index = int.Parse(e.CommandArgument.ToString());
-                    GloID = int.Parse(grid_pagos_empleados.DataKeys[index].Value.ToString());                    
+                    GloID = int.Parse(grid_pagos_empleados.DataKeys[index].Value.ToString());
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeEspera()", "mensajeEspera('" + "" + "');", true);
                     AbrirPdf();
 
                 }
-             
+
             }
             catch (Exception)
             {
@@ -169,11 +185,11 @@ namespace SIGAPRO.Vistas
             try
             {
                 // hacer una entidad antes de hacer este using
-               
-               
+
+
                 using (SIGAPRO.EntipagoEmple.DB_A4DE45_SIGEDOCEntities db = new SIGAPRO.EntipagoEmple.DB_A4DE45_SIGEDOCEntities())
                 {
-                    var oDocument = db.tb_pago_emple_los_negritos.Find(GloID);                  
+                    var oDocument = db.tb_pago_emple_los_negritos.Find(GloID);
                     string path = AppDomain.CurrentDomain.BaseDirectory;
                     string folder = path + "/temp/";
                     string fullFilePath = folder + oDocument.Realname_pdf;
@@ -182,8 +198,8 @@ namespace SIGAPRO.Vistas
                         Directory.CreateDirectory(folder);
                     }
                     File.WriteAllBytes(fullFilePath, oDocument.Pdf_compro);
-                    Byte[] bytes = oDocument.Pdf_compro;                    
-                   
+                    Byte[] bytes = oDocument.Pdf_compro;
+
                     Process.Start(fullFilePath);
                     //Response.Buffer = true;
                     //Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
@@ -226,6 +242,199 @@ namespace SIGAPRO.Vistas
             }
         }
 
+        protected void txt_id_Colaborador_TextChanged(object sender, EventArgs e)
+        {
+
+            if (this.txt_id_Colaborador.Text != "")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco and nombre like '%" + txt_id_Colaborador.Text + "%'";
+                    SqlDataconsulta.DataBind();
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+            else if (this.txt_id_Colaborador.Text == "")
+            {
+               
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco nombre like '%" + txt_id_Colaborador.Text + "%'";
+                    SqlDataconsulta.DataBind();
+
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+        }
+
+        protected void DptMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            if (this.DptMes.SelectedValue != "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco and mes like '%" + DptMes.SelectedValue + "%'";
+                    SqlDataconsulta.DataBind();
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+            else if (this.DptMes.SelectedValue == "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco";
+                    SqlDataconsulta.DataBind();
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+        }
+
+        protected void Dpquincena_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            if (this.Dpquincena.SelectedValue != "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco and mes like '%" + this.Dpquincena.SelectedValue + "%'";
+                    SqlDataconsulta.DataBind();
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+                this.txt_id_Colaborador.Text = null;
+                this.Dpquincena.SelectedValue = "Seleccionar";
+                this.Dptyear.SelectedValue = "Seleccionar";
+            }
+
+            else if (this.Dpquincena.SelectedValue == "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco";
+                    SqlDataconsulta.DataBind();
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+        }
+
+         protected void Dptyear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.Dptyear.SelectedValue != "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco and mes like '%" + this.Dptyear.SelectedValue + "%'";
+                    SqlDataconsulta.DataBind();
+
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+            else if (this.Dptyear.SelectedValue == "Seleccionar")
+            {
+                try
+                {
+                    SqlDataconsulta.SelectCommand = "select a.Id_comprobante as [N° Comprobante], a.Mes,a.Periodo,a.Quincena,a.Moneda,a.Fecha_registro as [Fecha],b.nombre +' '+b.apellido1 +' '+b.apellido2 as [Nombre Empleado]," +
+                        "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
+                        "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
+                        "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco";
+                    SqlDataconsulta.DataBind();
+                }
+                catch (Exception)
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+                }
+            }
+
+        }
+
+        protected void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            this.pagoemple = new Pago_Empleados();
+            this.pagoemple.Opc = 6;
+            this.pagoemple.Estado = "Desactivado";
+            this.pagoemple.Id_comprobante = int.Parse(grid_pagos_empleados.SelectedRow.Cells[1].Text);
+            this.pagoempleHelper = new Pago_Empleados_Helper(pagoemple);
+            this.pagoempleHelper.Desactiva_pago();
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmDelete", "mensajeDeconfirmDelete('" + "" + "');", true);
+            Response.Redirect("modificar_pago.aspx");
+
+        }
+
+        protected void grid_pagos_empleados_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string estado;
+                estado = (string)DataBinder.Eval(e.Row.DataItem, "Estado");
+                if (estado == "Desactivado")
+                {
+                    //e.Row.BackColor = System.Drawing.Color.Red;
+                    e.Row.Font.Bold = true;
+                    e.Row.ForeColor = System.Drawing.Color.Red;
+                }
+               
+            }
+        }
     }
-    
 }
