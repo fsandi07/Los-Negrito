@@ -117,7 +117,7 @@ namespace SIGAPRO.Vistas
 
                 numcomprobante = 1;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);

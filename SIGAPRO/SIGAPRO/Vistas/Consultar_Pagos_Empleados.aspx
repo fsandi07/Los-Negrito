@@ -61,8 +61,7 @@
                                     <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <%--<SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />--%>
-                            </asp:GridView>
-                           
+                            </asp:GridView>                          
 
                         </tbody>
                       </table>
@@ -87,21 +86,51 @@ where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">¿Desea Actualizar Este Documento?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Información del Pago</h5>
+                    <br />                   
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
              <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-             <meta charset="utf-8">                       
-                       <img src="assets/img/Negritos2.jpg" /><br /><br />
-                     <asp:Label ID="LblTitulo"  class="col-sm-2 col-form-label" runat="server" Text="Datos:"></asp:Label>                     
-                    <asp:Label ID="Label1"  class="col-sm-2 col-form-label" runat="server" Text="Nombre"></asp:Label><asp:Label ID="Lblnombre"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
-                    <asp:Label ID="Label2"  class="col-sm-2 col-form-label" runat="server" Text="Quincena:"></asp:Label><asp:Label ID="LblQuincena"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
-                     <asp:Label ID="Label3"  class="col-sm-2 col-form-label" runat="server" Text="Días feriados:"></asp:Label><asp:Label ID="DiasFeriados"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />                   
+             <meta charset="utf-8">  
+                     <p align="right">Comprobante N°:<asp:Label  ID="LblComprobante" Text="" class="col-sm-2 col-form-label" runat="server" ForeColor="Red" Font-Bold="True" /></p>
+                    <div align="center"><img src="assets/img/default-avatar.png" width="150" height="150"></div>                                                           
+                    <p align="center">Nombre :<asp:Label ID="Lblnombre"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label></p> 
+                    <p align="center">ID:<asp:Label ID="LblID_colabo"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label></p>
+                    Periodo.......................: <asp:Label ID="LblQuincena"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Banco.........................: <asp:Label ID="LblBanco"  class="col-sm-2 col-form-label" runat="server"    Text="">  </asp:Label><br /> 
+                    Moneda........................: <asp:Label ID="LblMoneda"  class="col-sm-2 col-form-label" runat="server"   Text=""></asp:Label><br /> 
+                    <asp:Label ID="Label5"  class="col-sm-2 col-form-label" runat="server" Text="-----------------------------------------------------------------------------------------"></asp:Label><br />
+                    Salario Quincenal.............:<asp:Label ID="LblQuincenal"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Dias sin goce.................:<asp:Label ID="Lbldias_sin_goce"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Total sin goce................:<asp:Label ID="Lbl_total_sin_goce"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Comision Produc...............:<asp:Label ID="LblComision"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Préstamo......................:<asp:Label ID="LblPretsamo"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Dias Feriados:<asp:Label ID="LblDiasFeriados"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Total Feriados:<asp:Label ID="LblTotal_feriado"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Horas Extras:<asp:Label ID="LblHoras_extras"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Total Extras:<asp:Label ID="LblTotal_extras"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br /> 
+                    Salario Neto:<asp:Label ID="LblSalario_neto"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    <br /> 
+                    <asp:Label ID="Ltitulodeduc"  class="col-sm-2 col-form-label" runat="server" Text="" Font-Bold="True" ForeColor="#0000CC">Deducciones</asp:Label><br /> 
+                    % CCSS:<asp:Label ID="LblCCSS"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Total CCSS:<asp:Label ID="LblTotal_ccss"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    ISR:<asp:Label ID="LblISR"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Otras Deducciones:<asp:Label ID="LblOtras_deduc"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Cocepto de:<asp:Label ID="LblConcepto"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Total Deducciones:<asp:Label ID="LblTotal_Deduc"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    <br />
+                    <asp:Label ID="Label7"  class="col-sm-2 col-form-label" runat="server" Text="" Font-Bold="True" ForeColor="#0000CC">Totales</asp:Label><br /> 
+                    Total Depositado:<asp:Label ID="LblTotal_depositado"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Saldo Anterior:<asp:Label ID="LblSaldo_anterior"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                    Saldo:<asp:Label ID="LblSaldo"  class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label><br />
+                       
+                    
+                    
                     <div class="modal-footer">
-                        <asp:Button ID="Btnmodificar" class="btn btn-primary col-md-3" runat="server" Text="Modificar Datos" OnClick="Btnmodificar_Click" />                       
+                        <asp:Button ID="Btnmodificar" class="btn btn-primary " runat="server" Text="Modificar Datos" OnClick="Btnmodificar_Click" />                       
                     </div>
                 </div>
             </div>

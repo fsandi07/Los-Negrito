@@ -132,9 +132,11 @@
                           <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fecha</label><br />
-                          <input type="date" id="start" name="trip-start" onblur="registrofecha()"
+
+                         <%-- <input type="date" id="start" name="trip-start" onblur="registrofecha()"
                             value="date.now();" <%--value=" <%=(string)Session["fecha_registro"]%>--%>
-                            min="2017-01-01" max="2030-12-31">
+                           <%-- min="2017-01-01" max="2030-12-31">--%>
+                             <input id="txtfecha"  type="text" class="form-control" value ="<%=(string)Session["fecha_registro"]%>"/>
                         </div>
                       </div>
                     </div>
@@ -356,7 +358,7 @@
          }
 
         function registrofecha() {
-            var Fecha_registro = document.getElementById("start").value;
+            var Fecha_registro = document.getElementById("txtfecha").value;
             document.getElementById('<%=fecha.ClientID%>').value = Fecha_registro ;
 
         }
