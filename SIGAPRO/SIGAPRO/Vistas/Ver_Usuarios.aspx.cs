@@ -59,5 +59,43 @@ namespace SIGAPRO.Vistas
             Response.Redirect("Agregar_usuarios.aspx");
         }
 
+        protected void Grid_usuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalUsuarios", "$('#ModalUsuarios').modal();", true);
+            this.txt_cedula.Text =this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[1].Text;
+            this.txt_nombre.Text = this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[2].Text;
+            this.txt_apellido1.Text = this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[3].Text;
+            this.txt_apellido2.Text = this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[4].Text;
+            this.txt_nickname.Text = this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[5].Text;
+            this.txt_correo.Text = this.Grid_usuarios.Rows[Grid_usuarios.SelectedIndex].Cells[6].Text;
+        }
+
+        protected void btn_modificar_usuarios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                this.usuarios = new Usuarios();
+                this.usuarios.Cedula_usuario = this.txt_cedula.Text;
+                this.usuarios.Nombre_usuario = this.txt_nombre.Text;
+                this.usuarios.Apellido1 = this.txt_apellido1.Text;
+                this.usuarios.Apellido2 = this.txt_apellido2.Text;
+                this.usuarios.Nick_name = this.txt_nickname.Text;
+                this.usuarios.Correo_electronico = this.txt_correo.Text;
+                this.usuarios.Rol = "Administrador";
+                this.usuarios.Estado = dptestado.SelectedValue;
+                this.usuarios.Opc = 3;
+                this.usuarioshelper = new UsuariosHelper(usuarios);
+                this.usuarioshelper.Modificar_usuarios();
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeDeconfirmacion", "mensajeDeconfirmacion('" + "" + "');", true);
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+        }
     }
 }

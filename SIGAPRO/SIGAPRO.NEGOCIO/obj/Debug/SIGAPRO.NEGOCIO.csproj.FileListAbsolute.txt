@@ -188,3 +188,8 @@ C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIG
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.xml
 C:\Users\fabio\Escritorio\Proyecto de Jorge los Negritos\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\SIGAPRO.NEGOCIO.dll.config
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\Documents\Los-Negrito\SIGAPRO\SIGAPRO.NEGOCIO\bin\Debug\EntityFramework.SqlServer.xml

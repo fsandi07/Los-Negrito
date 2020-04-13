@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-        <asp:HiddenField ID="fechainicio" runat="server" />
+     <asp:HiddenField ID="fechainicio" runat="server" />
     <asp:HiddenField ID="fechafinal" runat="server" />
     <script type="text/javascript"> 
        
