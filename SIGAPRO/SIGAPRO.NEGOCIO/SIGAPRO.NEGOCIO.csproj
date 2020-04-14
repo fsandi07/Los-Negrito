@@ -73,6 +73,8 @@
   <ItemGroup>
     <Compile Include="bancoHelper.cs" />
     <Compile Include="Banco.cs" />
+    <Compile Include="Caja_Chica.cs" />
+    <Compile Include="Caja_Chica_Helper.cs" />
     <Compile Include="centro_de_costos.cs" />
     <Compile Include="Centro_de_costos_Helper.cs" />
     <Compile Include="Clasificacion_Factura_Helper.cs" />

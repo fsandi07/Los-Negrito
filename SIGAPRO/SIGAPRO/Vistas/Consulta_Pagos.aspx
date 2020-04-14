@@ -28,7 +28,7 @@
                             <asp:GridView ID="GridVegreso" runat="server" CssClass="table table-striped table-no-bordered" DataSourceID="SqlDataEgreso2" AllowPaging="True" AllowSorting="True" OnRowDataBound="GridVegreso_RowDataBound">
                                 <AlternatingRowStyle HorizontalAlign="Center" VerticalAlign="Top" />
                                 <Columns>
-                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" />
+                                    <asp:CommandField ShowSelectButton="True" HeaderText="Editar" SelectText="&lt;i style=&#39;color:orange&#39;class=&#39;fas fa-pen-square fa-2x&#39;&gt;&lt;/i&gt;" />
     <asp:BoundField HeaderText="Advertencia"></asp:BoundField>
 </Columns>
                                 <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />

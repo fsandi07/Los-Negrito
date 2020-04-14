@@ -97,8 +97,7 @@
               </div>
             </div>
           </div>
-        </div>
-   
+       
 
      <script src="bower_components/chartist/dist/chartist.min.js"></script>
     <script>

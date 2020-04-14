@@ -153,6 +153,7 @@
     <Content Include="Vistas\assets\img\faces\marc.jpg" />
     <Content Include="Vistas\assets\img\faces\Negritos.jpg" />
     <Content Include="Vistas\assets\img\faces\Negritos2.jpg" />
+    <Content Include="Vistas\assets\img\faces\usuario.png" />
     <Content Include="Vistas\assets\img\favicon.png" />
     <Content Include="Vistas\assets\img\flags\AU.png" />
     <Content Include="Vistas\assets\img\flags\BR.png" />
@@ -170,6 +171,8 @@
     <Content Include="Vistas\assets\img\new_logo.png" />
     <Content Include="Vistas\assets\img\pdf.jpg" />
     <Content Include="Vistas\assets\img\placeholder.jpg" />
+    <Content Include="Vistas\assets\img\pollo.jpg" />
+    <Content Include="Vistas\assets\img\pollos.jpg" />
     <Content Include="Vistas\assets\img\product1.jpg" />
     <Content Include="Vistas\assets\img\product2.jpg" />
     <Content Include="Vistas\assets\img\product3.jpg" />
@@ -202,6 +205,7 @@
     <Content Include="Vistas\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Vistas\assets\js\plugins\sweetalert2.js" />
     <Content Include="Vistas\Bancos.aspx" />
+    <Content Include="Vistas\Caja_chica.aspx" />
     <Content Include="Vistas\Centro_de_Costos.aspx" />
     <Content Include="Vistas\Consultar_centro_costos.aspx" />
     <Content Include="Vistas\Consultar_detalle_factura.aspx" />
@@ -209,7 +213,9 @@
     <Content Include="Vistas\Consultar_Ingresos.aspx" />
     <Content Include="Vistas\Consultar_Pagos_Empleados.aspx" />
     <Content Include="Vistas\Consulta_bancos.aspx" />
+    <Content Include="Vistas\Consulta_Caja_chica.aspx" />
     <Content Include="Vistas\Consulta_metodo_pago.aspx" />
+    <Content Include="Vistas\Consulta_movi_caja.aspx" />
     <Content Include="Vistas\Consulta_Pagos.aspx" />
     <Content Include="Vistas\Conusltar_partidas.aspx" />
     <Content Include="Vistas\Datos_del_XML.aspx" />
@@ -1944,6 +1950,13 @@
     <Compile Include="Vistas\Bancos.aspx.designer.cs">
       <DependentUpon>Bancos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Caja_chica.aspx.cs">
+      <DependentUpon>Caja_chica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Caja_chica.aspx.designer.cs">
+      <DependentUpon>Caja_chica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Centro_de_Costos.aspx.cs">
       <DependentUpon>Centro_de_Costos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1993,12 +2006,26 @@
     <Compile Include="Vistas\Consulta_bancos.aspx.designer.cs">
       <DependentUpon>Consulta_bancos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Consulta_Caja_chica.aspx.cs">
+      <DependentUpon>Consulta_Caja_chica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consulta_Caja_chica.aspx.designer.cs">
+      <DependentUpon>Consulta_Caja_chica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Consulta_metodo_pago.aspx.cs">
       <DependentUpon>Consulta_metodo_pago.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Consulta_metodo_pago.aspx.designer.cs">
       <DependentUpon>Consulta_metodo_pago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consulta_movi_caja.aspx.cs">
+      <DependentUpon>Consulta_movi_caja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consulta_movi_caja.aspx.designer.cs">
+      <DependentUpon>Consulta_movi_caja.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Consulta_Pagos.aspx.cs">
       <DependentUpon>Consulta_Pagos.aspx</DependentUpon>
