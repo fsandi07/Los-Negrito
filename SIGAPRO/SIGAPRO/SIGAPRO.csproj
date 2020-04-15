@@ -215,6 +215,7 @@
     <Content Include="Vistas\Consulta_bancos.aspx" />
     <Content Include="Vistas\Consulta_Caja_chica.aspx" />
     <Content Include="Vistas\Consulta_metodo_pago.aspx" />
+    <Content Include="Vistas\Consulta_movi_banc.aspx" />
     <Content Include="Vistas\Consulta_movi_caja.aspx" />
     <Content Include="Vistas\Consulta_Pagos.aspx" />
     <Content Include="Vistas\Conusltar_partidas.aspx" />
@@ -309,6 +310,7 @@
     <Content Include="Vistas\Registro_Empleados.aspx" />
     <Content Include="Vistas\Registro_Ingresos_aves.aspx" />
     <Content Include="Vistas\Registro_ingreso_pollinaza.aspx" />
+    <Content Include="Vistas\Registro_movi_banc.aspx" />
     <Content Include="Vistas\Registro_pagos.aspx" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.js" />
     <Content Include="Vistas\sweetalert\sweetalert2.all.min.js" />
@@ -1913,6 +1915,7 @@
     <Content Include="Vistas\vendor\jquery\jquery.min.js" />
     <Content Include="Vistas\vendor\jquery\jquery.slim.js" />
     <Content Include="Vistas\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Vistas\Ver_movi_banc.aspx" />
     <Content Include="Vistas\Ver_Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -2019,6 +2022,13 @@
     </Compile>
     <Compile Include="Vistas\Consulta_metodo_pago.aspx.designer.cs">
       <DependentUpon>Consulta_metodo_pago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consulta_movi_banc.aspx.cs">
+      <DependentUpon>Consulta_movi_banc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consulta_movi_banc.aspx.designer.cs">
+      <DependentUpon>Consulta_movi_banc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Consulta_movi_caja.aspx.cs">
       <DependentUpon>Consulta_movi_caja.aspx</DependentUpon>
@@ -2132,12 +2142,26 @@
     <Compile Include="Vistas\Registro_ingreso_pollinaza.aspx.designer.cs">
       <DependentUpon>Registro_ingreso_pollinaza.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Registro_movi_banc.aspx.cs">
+      <DependentUpon>Registro_movi_banc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Registro_movi_banc.aspx.designer.cs">
+      <DependentUpon>Registro_movi_banc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Registro_pagos.aspx.cs">
       <DependentUpon>Registro_pagos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Registro_pagos.aspx.designer.cs">
       <DependentUpon>Registro_pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ver_movi_banc.aspx.cs">
+      <DependentUpon>Ver_movi_banc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ver_movi_banc.aspx.designer.cs">
+      <DependentUpon>Ver_movi_banc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Ver_Usuarios.aspx.cs">
       <DependentUpon>Ver_Usuarios.aspx</DependentUpon>

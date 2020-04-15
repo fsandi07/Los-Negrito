@@ -28,7 +28,7 @@
 <body class="" >
     <form id="form1" runat="server" >
          <div class="wrapper ">
-        <div class="sidebar" data-color="rose" data-background-color="black" style="background-image: url('assets/img/sidebar-4.jpg')" >
+        <div class="sidebar" data-color="rose" data-background-color="black" <%--style="background-image: url('assets/img/sidebar-4.jpg')"--%> >
   
       <div class="logo">
         <a href="Inicio.aspx" class="simple-text logo-normal">
@@ -91,7 +91,7 @@
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Consulta_Pagos.aspx">
                                             <span class="sidebar-mini">CP</span>
-                                            <span class="sidebar-normal">Consulta</span>
+                                            <span class="sidebar-normal">Consulta Gastos</span>
                                         </a>
                                     </li>                                                                   
                                 </ul>
@@ -111,7 +111,7 @@
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Consultar_Ingresos.aspx">
                                             <span class="sidebar-mini">CI</span>
-                                            <span class="sidebar-normal">Consulta</span>
+                                            <span class="sidebar-normal">Consulta Ingresos</span>
                                         </a>
                                     </li>                                                                    
                                 </ul>
@@ -165,9 +165,14 @@
                                             <span class="sidebar-normal">Método</span>
                                         </a>
                                     </li> 
+                                      <li class="nav-item ">
+                                        <a class="nav-link" href="Consulta_movi_banc.aspx">
+                                            <span class="sidebar-mini"> B </span>
+                                            <span class="sidebar-normal">Movimientos Bancarios</span>
+                                        </a>
+                                    </li> 
                                 </ul>
                             </div>
-                            
                         </li>
                          <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#formsExamples12">
@@ -188,20 +193,16 @@
                                 </ul>
                             </div>
                         </li>
-                      
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" href="#tablesExamples">
                                 <i class="material-icons">settings</i>
                                 <p>
                                     Mantenimiento
-               
                                     <b class="caret"></b>
                                 </p>
                             </a>
-
                             <div class="collapse" id="tablesExamples">
                                 <ul class="nav">
-                                   
                                     <li class="nav-item ">
                                         <a class="nav-link" href="Ver_Usuarios.aspx">
                                             <span class="sidebar-mini">CU </span>
@@ -257,7 +258,6 @@
                                         <i class="material-icons">dashboard</i>
                                         <p class="d-lg-none d-md-block">
                                             Stats
-                 
                                         </p>
                                     </a>
                                 </li>
@@ -267,7 +267,6 @@
                                         <span class="notification">5</span>
                                         <p class="d-lg-none d-md-block">
                                             Some Actions
-                 
                                         </p>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -283,7 +282,6 @@
                                         <i class="material-icons">person</i>
                                         <p class="d-lg-none d-md-block">
                                             Account
-                 
                                         </p>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
@@ -298,8 +296,6 @@
                     </div>
                 </nav>
                 <br /> 
-                
-
                <%--  <div class="card-avatar">
                   <a href="#pablo">
                      <img alt="" width="200"  height="100" src="assets/img/faces/Negritos.jpg"/>

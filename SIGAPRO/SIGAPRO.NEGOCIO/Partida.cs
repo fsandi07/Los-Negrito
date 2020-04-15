@@ -8,7 +8,7 @@ namespace SIGAPRO.NEGOCIO
 {
     public class Partida
     {
-        private int opc;
+        private int opc,perido;
         private string numero_partida;
         private string descripcion;
         private string fecha_inicio;
@@ -23,17 +23,21 @@ namespace SIGAPRO.NEGOCIO
         public string Numero_factura { get => numero_factura; set => numero_factura = value; }
         public int Opc { get => opc; set => opc = value; }
         public string Estado { get => estado; set => estado = value; }
+        public int Perido { get => perido; set => perido = value; }
 
-        public Partida(int opc, string numero_partida, string descripcion, string fecha_inicio, string fecha_final, string estado, string numero_factura)
+        public Partida(int opc, int perido, string numero_partida, string descripcion, string fecha_inicio, string fecha_final, string numero_factura, string estado)
         {
-            this.Opc = opc;
-            this.Numero_partida = numero_partida;
-            this.Descripcion = descripcion;
-            this.Fecha_inicio = fecha_inicio;
-            this.Fecha_final = fecha_final;
-            this.Numero_factura = numero_factura;
+            this.opc = opc;
+            this.perido = perido;
+            this.numero_partida = numero_partida;
+            this.descripcion = descripcion;
+            this.fecha_inicio = fecha_inicio;
+            this.fecha_final = fecha_final;
+            this.numero_factura = numero_factura;
             this.estado = estado;
         }
+
+
         public Partida()
         {
             this.Opc = 0;
@@ -43,8 +47,10 @@ namespace SIGAPRO.NEGOCIO
             this.Fecha_final = "";
             this.Numero_factura = "";
             this.estado = "";
+            this.perido = 0;
+
         }
 
-        
+    
     }
 }

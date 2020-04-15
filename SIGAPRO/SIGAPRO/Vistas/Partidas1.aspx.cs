@@ -32,6 +32,7 @@ namespace SIGAPRO.Vistas
                 this.partidaIn.Descripcion = this.txt_descripcion.Text;
                 this.partidaIn.Fecha_inicio = fechainicio.Value;
                 this.partidaIn.Fecha_final = fechafinal.Value;
+                this.partidaIn.Perido = int.Parse(this.Dptyear.SelectedValue);
                 this.partidaIn.Estado = "Activo";
 
                 this.partidahelperIn = new Partida_Helper(partidaIn);

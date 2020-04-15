@@ -12,16 +12,14 @@ namespace SIGAPRO.Vistas
 {
     public partial class Consulta_Caja_chica : System.Web.UI.Page
     {
-        private static int GloID;
-        private static string Nombre;
+        private static int GloID;    
         private Caja_Chica caja;
         private Caja_Chica_Helper cajaHelper;
         private DataTable datos;
-        private float saldo;
-        private int tipo_movimiento;       
+        private float saldo;          
         private float saldo_final;
         private float movimiento_dinero;
-        private string tipomovimiento;
+ 
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +30,7 @@ namespace SIGAPRO.Vistas
         {
             try
             {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ModalDocumentos", "$('#ModalDocumentos').modal();", true);
+                
                 Session["Id_Caja"] = int.Parse(this.Gridcaja.SelectedRow.Cells[2].Text); 
                 Response.Redirect("Consulta_movi_caja.aspx");               
 

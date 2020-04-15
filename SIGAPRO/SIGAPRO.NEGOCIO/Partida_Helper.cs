@@ -25,7 +25,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[6];
+                SqlParameter[] parParameter = new SqlParameter[7];
 
 
                 parParameter[0] = new SqlParameter();
@@ -63,6 +63,11 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[5].Size = 50;
                 parParameter[5].SqlValue = OBJpartidas.Estado;
 
+                parParameter[6] = new SqlParameter();
+                parParameter[6].ParameterName = "@periodo";
+                parParameter[6].SqlDbType = SqlDbType.VarChar;              
+                parParameter[6].SqlValue = OBJpartidas.Perido;
+
                 cnGeneral.EjecutarSP(parParameter, "SPpartidas_los_negrito");
             }
             catch (Exception ex)
@@ -76,7 +81,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[6];
+                SqlParameter[] parParameter = new SqlParameter[7];
 
 
                 parParameter[0] = new SqlParameter();
@@ -114,6 +119,10 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[5].Size = 50;
                 parParameter[5].SqlValue = OBJpartidas.Estado;
 
+                parParameter[6] = new SqlParameter();
+                parParameter[6].ParameterName = "@periodo";
+                parParameter[6].SqlDbType = SqlDbType.VarChar;
+                parParameter[6].SqlValue = OBJpartidas.Perido;
                 cnGeneral.EjecutarSP(parParameter, "SPpartidas_los_negrito");
             }
             catch (Exception ex)
@@ -121,7 +130,37 @@ namespace SIGAPRO.NEGOCIO
                 throw new Exception(ex.Message);
             }
         }
+        public DataTable Consulta_Partidas()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
 
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJpartidas.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@numero_partida";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
+                parParameter[1].SqlValue = OBJpartidas.Numero_partida;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPpartidas_los_negrito");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
 
     }
 }

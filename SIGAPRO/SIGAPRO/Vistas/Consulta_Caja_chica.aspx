@@ -55,54 +55,6 @@
         </div>
     </div>
     <asp:SqlDataSource ID="SqlDataCaja" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT * FROM [tb_Caja_chica_los_negritos]"></asp:SqlDataSource>
-    <%-- Modal para los datos  Creados --%>
-    <div class="modal fade" id="ModalDocumentos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Información del Pago</h5>
-                    <br />
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                    <meta charset="utf-8">
-                    <div align="center">
-                        <img src="assets/img/default-avatar.png" width="150" height="150">
-                    </div>
-                    <p align="center">Nombre :<asp:Label ID="Lblnombre" class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label></p>
-                    <p align="center">ID:<asp:Label ID="LblID_colabo" class="col-sm-2 col-form-label" runat="server" Text=""></asp:Label></p>
-                    <asp:GridView ID="GridMovimientos" CssClass="table table-striped table-no-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_movimiento" DataSourceID="SqlDataMovimiento" AllowPaging="True" AllowSorting="True">
-                        <Columns>
-                            <asp:CommandField ShowSelectButton="True"></asp:CommandField>
-                            <asp:BoundField DataField="Id_movimiento" HeaderText="Id_movimiento" ReadOnly="True" InsertVisible="False" SortExpression="Id_movimiento"></asp:BoundField>
-                            <asp:BoundField DataField="Detalle" HeaderText="Detalle" SortExpression="Detalle"></asp:BoundField>
-                            <asp:BoundField DataField="Fecha_movi" HeaderText="Fecha_movi" SortExpression="Fecha_movi"></asp:BoundField>
-                            <asp:BoundField DataField="Movimiento" HeaderText="Movimiento" SortExpression="Movimiento"></asp:BoundField>
-                            <asp:BoundField DataField="Saldo" HeaderText="Saldo" SortExpression="Saldo"></asp:BoundField>
-                            <asp:BoundField DataField="Tipo_movi" HeaderText="Tipo_movi" SortExpression="Tipo_movi"></asp:BoundField>
-                            <asp:BoundField DataField="Id_caja" HeaderText="Id_caja" SortExpression="Id_caja"></asp:BoundField>
-                        </Columns>
-                        <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
-                                    <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <PagerStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                    <SelectedRowStyle BackColor="#CC6699" HorizontalAlign="Center" VerticalAlign="Middle" />
-                    </asp:GridView>
-
-                    <div class="modal-footer">
-                        <asp:Button ID="Btnmodificar" class="btn btn-primary " runat="server" Text="Modificar Datos" />
-                        <asp:Button ID="BtnBorrar" class="btn btn-danger " runat="server" Text="Eliminar" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <%-- fin de modal  --%>
     <%-- Modal para los Movimientos Creados --%>
     <div class="modal fade" id="ModalMovimientos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe2" aria-hidden="true">
         <div class="modal-dialog" role="document">

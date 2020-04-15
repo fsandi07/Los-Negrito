@@ -79,6 +79,8 @@
     <Compile Include="Centro_de_costos_Helper.cs" />
     <Compile Include="Clasificacion_Factura_Helper.cs" />
     <Compile Include="Clasificacion_Factura.cs" />
+    <Compile Include="Control_gasto.cs" />
+    <Compile Include="Control_gasto_Helper.cs" />
     <Compile Include="Egreso_manual.cs" />
     <Compile Include="Egreso_Manual_Helper.cs" />
     <Compile Include="Empleados.cs" />
@@ -90,6 +92,8 @@
     <Compile Include="Ingreso_Pollinaza.cs" />
     <Compile Include="Metodo_pagos.cs" />
     <Compile Include="Metodo_pago_Helper.cs" />
+    <Compile Include="Movimientos_bancarios_Helper.cs" />
+    <Compile Include="Movimientos_Bancarios.cs" />
     <Compile Include="Pago_Empleados.cs" />
     <Compile Include="Pago_Empleados_Helper.cs" />
     <Compile Include="Partida.cs" />

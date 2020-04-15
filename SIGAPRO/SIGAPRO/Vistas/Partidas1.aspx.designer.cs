@@ -33,6 +33,15 @@ namespace SIGAPRO.Vistas
         protected global::System.Web.UI.WebControls.TextBox txt_descripcion;
 
         /// <summary>
+        /// Control Dptyear.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Dptyear;
+
+        /// <summary>
         /// Control btn_Pago_Cola.
         /// </summary>
         /// <remarks>

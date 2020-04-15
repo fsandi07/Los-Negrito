@@ -13,7 +13,17 @@ namespace SIGAPRO.Vistas
     {
       
         private Egreso_manual EgresoM;
-        private Egreso_Manual_Helper EgrsoHelper;        
+        private Egreso_Manual_Helper EgrsoHelper;
+        private Partida Partidas;
+        private Partida_Helper PartidasHelper;
+        private Control_gasto Control;
+        private Control_gasto_Helper ControlHelper;
+        private string id_partida;
+        private DataTable datos;
+        private int periodo;
+        private float monto_total;
+        private string id_centroCostos;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -56,8 +66,8 @@ namespace SIGAPRO.Vistas
                     this.EgresoM.Cedula_juridica = this.TxtCedula_juridica.Text;
                 }
                 this.EgresoM.Id_detalle = this.DptClasificacion.SelectedValue;
-                this.EgresoM.Id_partida = this.DptPartida.SelectedValue;
-                this.EgresoM.Monto_factura = this.TxtMontoTotal.Text;
+                this.EgresoM.Id_partida = this.DptPartida.SelectedValue;               
+                this.EgresoM.Monto_factura = this.TxtMontoTotal.Text;              
                 if (this.Radiopagada_si.Checked)
                 {
                     this.EgresoM.Estado_pago = "Si";
@@ -105,6 +115,12 @@ namespace SIGAPRO.Vistas
                 this.EgresoM.TotalIva = this.TxtTotalIva.Text;
                 this.EgresoM.Estado = "Activo";
 
+
+                monto_total = float.Parse(TxtMontoTotal.Text);
+                id_partida = this.DptPartida.SelectedValue;
+                id_centroCostos = this.DptCCostos_EXML.SelectedValue;
+                buscaperiodo();
+                Ingresar_movi_consulta();
                 this.EgrsoHelper = new Egreso_Manual_Helper(EgresoM);
                 this.EgrsoHelper.Agrergar_Egreso_manual();
 
@@ -135,7 +151,72 @@ namespace SIGAPRO.Vistas
                 else { }
             }
         }
+        public void IngresaControl()
+        {
+            if (this.Radiopagada_si.Checked)
+            {
+                if (this.DptBanco.SelectedValue == "" || this.DptMetodoPago.SelectedValue == "")
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion1()", "mensajevalidacion1()('" + "" + "');", true);
+                }
+                else { }
 
+            }
+            else if (this.Radiopagada_no.Checked)
+            {
+                if (this.Dpt_plazo_pago.SelectedValue == "0")
+                {
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion3()", "mensajevalidacion3()('" + "" + "');", true);
+                }
+                else { }
+            }
+        }
+
+        public void buscaperiodo()
+        {
+            try
+            {
+                this.Partidas = new Partida();
+                this.Partidas.Opc = 4;
+                this.Partidas.Numero_partida = id_partida;
+
+                this.PartidasHelper = new Partida_Helper(Partidas);               
+                this.datos = new DataTable();
+                this.datos = this.PartidasHelper.Consulta_Partidas();              
+                if (datos.Rows.Count >= 0)
+                {
+                    DataRow fila = datos.Rows[0];
+                    periodo = int.Parse(fila["periodo"].ToString());
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+        }
+
+        public void Ingresar_movi_consulta()
+        {
+            try
+            {
+                this.Control = new Control_gasto();
+                this.Control.Opc = 1;
+                this.Control.Id_partidas = id_partida;
+                this.Control.Id_centro_costos = id_centroCostos;
+                this.Control.Periodo = periodo;
+                this.Control.Total = monto_total;
+
+                this.ControlHelper = new Control_gasto_Helper(Control);
+                this.ControlHelper.Agregar_Control();        
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+
+        }
 
     }
 }
