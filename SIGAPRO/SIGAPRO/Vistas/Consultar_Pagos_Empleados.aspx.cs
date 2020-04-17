@@ -272,7 +272,7 @@ namespace SIGAPRO.Vistas
                         "a.Salario_quincenal as [Salario Quincenal],a.Comision,a.Prestamos,a.Dias_sinGoce as [Dias sin Goce],CONVERT(numeric(10, 3), a.Total_sinGoce) as [Total sin Goce],a.Dias_feriados as [Dias Feriados],CONVERT(numeric(10, 3), a.Total_feriados) as [Total Feriado]," +
                         "a.Horas_extras as [Horas Extras],a.Total_extras as [Total Extras],a.Salario_neto as [Salario Neto],a.Porcen_caja[Porcentaje CCSS],a.Total_caja as [Total Caja],a.Impuesto_renta as [Impuesto Renta],a.Otras_deducc as [Otras Deducciones],a.Detalle_otras_deduc as [Detalle Deduducciones]," +
                         "CONVERT(numeric(10, 0), a.Total_deduc) as [Total Deducciones]," + "a.Saldo_anterior as [Saldo Anterior],CONVERT(numeric(10, 0), a.Saldo) as [Total Saldo],c.nombre_banco as [Banco],a.Id_centro_costos as [Centro Costos],a.Realname_pdf as [Nombre PDF],a.Estado" +
-                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco nombre like '%" + txt_id_Colaborador.Text + "%'";
+                        " from tb_pago_emple_los_negritos a, tb_empleado_los_negritos b, tb_bancos_los_negritos c where a.Id_colaborador = b.numero_cedula and a.Id_banco = c.id_banco ";
                     SqlDataconsulta.DataBind();
 
 

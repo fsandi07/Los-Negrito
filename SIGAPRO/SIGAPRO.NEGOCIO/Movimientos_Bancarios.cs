@@ -13,9 +13,9 @@ namespace SIGAPRO.NEGOCIO
         string id_banco, detalle_movi, fecha_registro, nombre_movi, moneda;
 
         //estos para hacer un registro transaccion
-        string fecha_movi_regis, detalle_registro, tipo_registro, item, numero;
+        string fecha_movi_regis, detalle_registro, tipo_registro, item, numero, centro_costos;
         float cantidad_dinero, saldo;
-        int id_trans_banc;
+        int id_trans_banc,financia;
 
         public int Opc { get => opc; set => opc = value; }
         public string Id_banco { get => id_banco; set => id_banco = value; }
@@ -30,12 +30,15 @@ namespace SIGAPRO.NEGOCIO
         public string Numero { get => numero; set => numero = value; }
         public float Cantidad_dinero { get => cantidad_dinero; set => cantidad_dinero = value; }
         public float Saldo { get => saldo; set => saldo = value; }
-        public int Id_trans_banc { get => id_trans_banc; set => id_trans_banc = value; }
+        public int Id_trans_banc { get => Id_trans_banc1; set => Id_trans_banc1 = value; }
         public int Id_registro_banco { get => id_registro_banco; set => id_registro_banco = value; }
+        public string Centro_costos { get => centro_costos; set => centro_costos = value; }
+        public int Id_trans_banc1 { get => id_trans_banc; set => id_trans_banc = value; }
+        public int Financia { get => financia; set => financia = value; }
 
         public Movimientos_Bancarios(int opc, string id_banco, string detalle_movi, string fecha_registro,
             string nombre_movi, string moneda, string fecha_movi_regis, string detalle_registro, string tipo_registro, string item,
-            string numero, float cantidad_dinero, float saldo, int id_trans_banc,int id_registro_banco)
+            string numero, float cantidad_dinero, float saldo, int id_trans_banc,int id_registro_banco, int financia,string centro_costos )
         {
             this.opc = opc;
             this.id_banco = id_banco;
@@ -50,8 +53,10 @@ namespace SIGAPRO.NEGOCIO
             this.numero = numero;
             this.cantidad_dinero = cantidad_dinero;
             this.saldo = saldo;
-            this.id_trans_banc = id_trans_banc;
+            this.Id_trans_banc1 = id_trans_banc;
             this.id_registro_banco = id_registro_banco;
+            this.financia = financia;
+            this.centro_costos = centro_costos;
         }
 
 
@@ -70,8 +75,10 @@ namespace SIGAPRO.NEGOCIO
             this.numero = "";
             this.cantidad_dinero = 0;
             this.saldo = 0;
-            this.id_trans_banc = 0;
+            this.Id_trans_banc1 = 0;
             this.id_registro_banco = 0;
+            this.financia = 0;
+            this.centro_costos = "";
         }
 
 

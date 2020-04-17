@@ -17,7 +17,7 @@
                     <h4 class="card-title ">Consulta de Movimientos Caja</h4>
                 </div>
                 <br />
-                <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="Regresar" OnClick="Button1_Click"  />
+                <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="Regresar" O OnClick="Button1_Click1"  />
                 <br />
                 <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">

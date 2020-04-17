@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A4DE45_SIGEDOCModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Egreso_Manual_los_negritos">
+          <Key>
+            <PropertyRef Name="Id_egreso" />
+          </Key>
+          <Property Name="Id_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Digital" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Fecha_ingreso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero_factura" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cedula_Juridica" Type="varchar" MaxLength="50" />
+          <Property Name="Existe_fisica" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GTI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre_comercio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_detalle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_partida" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Monto_factura" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado_pago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Plazo_pago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pdf_factura" Type="varbinary(max)" />
+          <Property Name="Nombre_pdf" Type="varchar" MaxLength="100" />
+          <Property Name="Id_Centro_costos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_metodo_pago" Type="varchar" MaxLength="50" />
+          <Property Name="Id_banco" Type="varchar" MaxLength="50" />
+          <Property Name="Moneda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo_cambio" Type="varchar" MaxLength="50" />
+          <Property Name="Mes" Type="varchar" MaxLength="50" />
+          <Property Name="TotalIva" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A4DE45_SIGEDOCModel1StoreContainer">
+          <EntitySet Name="tb_Egreso_Manual_los_negritos" EntityType="Self.tb_Egreso_Manual_los_negritos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A4DE45_SIGEDOCModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Egreso_Manual_los_negritos">
+          <Key>
+            <PropertyRef Name="Id_egreso" />
+          </Key>
+          <Property Name="Id_egreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Digital" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fecha_ingreso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero_factura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula_Juridica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Existe_fisica" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GTI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_comercio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_partida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Monto_factura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Plazo_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pdf_factura" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Nombre_pdf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Centro_costos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_metodo_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_banco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo_cambio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalIva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_A4DE45_SIGEDOCEgreso" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Egreso_Manual_los_negritos" EntityType="Self.tb_Egreso_Manual_los_negritos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A4DE45_SIGEDOCModel1StoreContainer" CdmEntityContainer="DB_A4DE45_SIGEDOCEgreso">
+          <EntitySetMapping Name="tb_Egreso_Manual_los_negritos">
+            <EntityTypeMapping TypeName="DB_A4DE45_SIGEDOCModel1.tb_Egreso_Manual_los_negritos">
+              <MappingFragment StoreEntitySet="tb_Egreso_Manual_los_negritos">
+                <ScalarProperty Name="Id_egreso" ColumnName="Id_egreso" />
+                <ScalarProperty Name="Digital" ColumnName="Digital" />
+                <ScalarProperty Name="Fecha_ingreso" ColumnName="Fecha_ingreso" />
+                <ScalarProperty Name="Numero_factura" ColumnName="Numero_factura" />
+                <ScalarProperty Name="Cedula_Juridica" ColumnName="Cedula_Juridica" />
+                <ScalarProperty Name="Existe_fisica" ColumnName="Existe_fisica" />
+                <ScalarProperty Name="GTI" ColumnName="GTI" />
+                <ScalarProperty Name="Nombre_comercio" ColumnName="Nombre_comercio" />
+                <ScalarProperty Name="Id_detalle" ColumnName="Id_detalle" />
+                <ScalarProperty Name="Id_partida" ColumnName="Id_partida" />
+                <ScalarProperty Name="Monto_factura" ColumnName="Monto_factura" />
+                <ScalarProperty Name="Estado_pago" ColumnName="Estado_pago" />
+                <ScalarProperty Name="Plazo_pago" ColumnName="Plazo_pago" />
+                <ScalarProperty Name="Pdf_factura" ColumnName="Pdf_factura" />
+                <ScalarProperty Name="Nombre_pdf" ColumnName="Nombre_pdf" />
+                <ScalarProperty Name="Id_Centro_costos" ColumnName="Id_Centro_costos" />
+                <ScalarProperty Name="Id_metodo_pago" ColumnName="Id_metodo_pago" />
+                <ScalarProperty Name="Id_banco" ColumnName="Id_banco" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="Tipo_cambio" ColumnName="Tipo_cambio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="TotalIva" ColumnName="TotalIva" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

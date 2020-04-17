@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A4DE45_SIGEDOCModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_Egreso_Manual_los_negritos">
+    <Key>
+      <PropertyRef Name="Id_egreso" />
+    </Key>
+    <Property Name="Id_egreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Digital" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_ingreso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Numero_factura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cedula_Juridica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Existe_fisica" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GTI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre_comercio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_partida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Monto_factura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Plazo_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pdf_factura" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Nombre_pdf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Centro_costos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_metodo_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id_banco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo_cambio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalIva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_A4DE45_SIGEDOCEgreso" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_Egreso_Manual_los_negritos" EntityType="Self.tb_Egreso_Manual_los_negritos" />
+  </EntityContainer>
+</Schema>

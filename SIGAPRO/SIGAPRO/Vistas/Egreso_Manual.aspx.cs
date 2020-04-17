@@ -23,6 +23,7 @@ namespace SIGAPRO.Vistas
         private int periodo;
         private float monto_total;
         private string id_centroCostos;
+        private string num_factu;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,7 +49,7 @@ namespace SIGAPRO.Vistas
                 this.EgresoM.Digital = "No";
                 this.EgresoM.Fecha_registro = fecha.Value;
                 this.EgresoM.Numero_factura = this.txt_num_factura.Text;
-
+                num_factu = this.txt_num_factura.Text;
                 if (this.Radioaprobada1.Checked)
                 {
                     this.EgresoM.Gti = "Si";
@@ -151,26 +152,7 @@ namespace SIGAPRO.Vistas
                 else { }
             }
         }
-        public void IngresaControl()
-        {
-            if (this.Radiopagada_si.Checked)
-            {
-                if (this.DptBanco.SelectedValue == "" || this.DptMetodoPago.SelectedValue == "")
-                {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion1()", "mensajevalidacion1()('" + "" + "');", true);
-                }
-                else { }
 
-            }
-            else if (this.Radiopagada_no.Checked)
-            {
-                if (this.Dpt_plazo_pago.SelectedValue == "0")
-                {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajevalidacion3()", "mensajevalidacion3()('" + "" + "');", true);
-                }
-                else { }
-            }
-        }
 
         public void buscaperiodo()
         {
@@ -207,6 +189,7 @@ namespace SIGAPRO.Vistas
                 this.Control.Id_centro_costos = id_centroCostos;
                 this.Control.Periodo = periodo;
                 this.Control.Total = monto_total;
+                this.Control.Num_factura = num_factu;
 
                 this.ControlHelper = new Control_gasto_Helper(Control);
                 this.ControlHelper.Agregar_Control();        

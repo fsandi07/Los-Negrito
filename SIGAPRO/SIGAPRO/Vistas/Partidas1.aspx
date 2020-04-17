@@ -35,7 +35,7 @@
                     </div>
                      <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Año</label>
+                          <label class="bmd-label-floating">Periodo</label>
                           <asp:DropDownList ID="Dptyear" runat="server" class="selectpicker" data-style="select-with-transition">
                                                 <asp:ListItem Value="2025">2025</asp:ListItem>
                                                 <asp:ListItem Value="2024">2024</asp:ListItem>

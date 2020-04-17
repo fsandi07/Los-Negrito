@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" CodeBehind="Consulta_movi_banc.aspx.cs" Inherits="SIGAPRO.Vistas.Consulta_movi_banc" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/MasterPrincipal.Master" AutoEventWireup="true" EnableEventValidation="false"  CodeBehind="Consulta_movi_banc.aspx.cs" Inherits="SIGAPRO.Vistas.Consulta_movi_banc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
@@ -102,6 +102,23 @@ where a.id_banco = b.id_banco "></asp:SqlDataSource>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Préstamo:</label><br />
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <asp:DropDownList ID="DptFinanciamiento" runat="server" class="selectpicker" data-style="select-with-transition">
+                                    <asp:ListItem Value="0">No</asp:ListItem>
+                                    <asp:ListItem Value="1">Sí</asp:ListItem>
+                                </asp:DropDownList>
+                                <br />
+                                <asp:DropDownList ID="DptCostos" runat="server" class="selectpicker" data-style="select-with-transition" title="Asociar Partida" DataSourceID="SqlDataSource1" DataTextField="numero_partida" DataValueField="numero_partida">
+                                    <asp:ListItem Value="0">No</asp:ListItem>
+                                    <asp:ListItem Value="1">Sí</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                    </div>
+
                      <div class="row">
                         <label class="col-sm-2 col-form-label">Fecha:</label>
                         <div class="col-sm-10">
@@ -140,9 +157,7 @@ where a.id_banco = b.id_banco "></asp:SqlDataSource>
                             </div>
                         </div>
                     </div>
-                   
-
-
+                
 
                     <%-- final del forumlario--%>
                     <div class="modal-footer">
@@ -154,6 +169,11 @@ where a.id_banco = b.id_banco "></asp:SqlDataSource>
         </div>
     </div>
     <%-- fin de modal  --%>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:DB_A4DE45_SIGEDOCConnectionString2 %>' SelectCommand="SELECT [numero_partida], [descripcion] FROM [tb_Partidas_Los_Negritos] WHERE ([estado] = @estado)">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="Activo" Name="estado" Type="String"></asp:Parameter>
+        </SelectParameters>
+    </asp:SqlDataSource>
 
     <asp:HiddenField ID="fecha" runat="server" />
     <asp:HiddenField ID="tipo_movi" runat="server" />
@@ -256,6 +276,14 @@ where a.id_banco = b.id_banco "></asp:SqlDataSource>
                 allowOutsideClick: false,
                 timer: 5000,
 
+            })
+        }
+        function mensajeDeconfirmacion() {
+            swal.fire({
+                title: "¡EXITO!",
+                text: "¡" + "Los Datos se Guardaron Con Exito" + "!",
+                type: 'success',
+                allowOutsideClick: false,
             })
         }
 

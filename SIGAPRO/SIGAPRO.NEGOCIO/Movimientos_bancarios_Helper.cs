@@ -73,7 +73,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[10];
+                SqlParameter[] parParameter = new SqlParameter[12];
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opcion";
                 parParameter[0].SqlDbType = SqlDbType.Int;
@@ -129,6 +129,16 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[9].Size = 50;
                 parParameter[9].SqlValue = OBJMovimientos.Tipo_registro;
 
+                parParameter[10] = new SqlParameter();
+                parParameter[10].ParameterName = "@centroCostos";
+                parParameter[10].SqlDbType = SqlDbType.VarChar;
+                parParameter[10].Size = 50;
+                parParameter[10].SqlValue = OBJMovimientos.Centro_costos;
+
+                parParameter[11] = new SqlParameter();
+                parParameter[11].ParameterName = "@financia";
+                parParameter[11].SqlDbType = SqlDbType.Int;
+                parParameter[11].SqlValue = OBJMovimientos.Financia;
 
                 cnGeneral.EjecutarSP(parParameter, "SPRegistro_Movi_banc_los_negritos");
             }

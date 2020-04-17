@@ -34,10 +34,7 @@ namespace SIGAPRO.Vistas
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Consulta_Caja_chica.aspx");
-        }
+      
 
         protected void GridMovimientos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -82,6 +79,9 @@ namespace SIGAPRO.Vistas
             }
         }
 
-
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Consulta_Caja_chica.aspx");
+        }
     }
 }

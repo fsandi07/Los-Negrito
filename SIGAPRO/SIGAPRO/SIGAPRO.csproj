@@ -103,8 +103,25 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Pago_empleado.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Entidadengres\Egresos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Egresos.edmx</DependentUpon>
+      <LastGenOutput>Egresos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entidadengres\Egresos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Egresos.edmx</DependentUpon>
+      <LastGenOutput>Egresos.cs</LastGenOutput>
+    </Content>
     <Content Include="EntipagoEmple\Pago_empleado.edmx.diagram">
       <DependentUpon>Pago_empleado.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Entidadengres\Egresos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Egresos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entidadengres\Egresos.edmx.diagram">
+      <DependentUpon>Egresos.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="EntipagoEmple\Pago_empleado.Context.tt">
@@ -166,6 +183,7 @@
     <Content Include="Vistas\assets\img\lock.jpg" />
     <Content Include="Vistas\assets\img\login.jpg" />
     <Content Include="Vistas\assets\img\mask.png" />
+    <Content Include="Vistas\assets\img\MovBanc.JPG" />
     <Content Include="Vistas\assets\img\Negritos.jpg" />
     <Content Include="Vistas\assets\img\Negritos2.jpg" />
     <Content Include="Vistas\assets\img\new_logo.png" />
@@ -222,6 +240,7 @@
     <Content Include="Vistas\Datos_del_XML.aspx" />
     <Content Include="Vistas\docs\documentation.html" />
     <Content Include="Vistas\Egreso_Manual.aspx" />
+    <Content Include="Vistas\Estadistica_resumen.aspx" />
     <Content Include="Vistas\estilos\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Vistas\estilos\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Vistas\estilos\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -1920,6 +1939,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidadengres\Egresos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Egresos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidadengres\Egresos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Egresos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidadengres\Egresos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Egresos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidadengres\tb_Egreso_Manual_los_negritos.cs">
+      <DependentUpon>Egresos.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntipagoEmple\Pago_empleado.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2064,6 +2101,13 @@
     </Compile>
     <Compile Include="Vistas\Egreso_Manual.aspx.designer.cs">
       <DependentUpon>Egreso_Manual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Estadistica_resumen.aspx.cs">
+      <DependentUpon>Estadistica_resumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Estadistica_resumen.aspx.designer.cs">
+      <DependentUpon>Estadistica_resumen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Extracion_de_XML.aspx.cs">
       <DependentUpon>Extracion_de_XML.aspx</DependentUpon>

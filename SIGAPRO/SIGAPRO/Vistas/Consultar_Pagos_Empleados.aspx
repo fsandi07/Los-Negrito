@@ -92,7 +92,7 @@
                                         <asp:BoundField DataField="Periodo" HeaderText="Periodo" SortExpression="Periodo"></asp:BoundField>
                                         <asp:BoundField DataField="Quincena" HeaderText="Quincena" SortExpression="Quincena"></asp:BoundField>
                                         <asp:BoundField DataField="Moneda" HeaderText="Moneda" SortExpression="Moneda" Visible="False"></asp:BoundField>
-                                        <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" Visible="False"></asp:BoundField>
+                                        <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" ></asp:BoundField>
                                         <asp:BoundField DataField="Salario Quincenal" HeaderText="Salario Quincenal" SortExpression="Salario Quincenal"></asp:BoundField>
                                         <asp:BoundField DataField="Comision" HeaderText="Comision" SortExpression="Comision" Visible="False"></asp:BoundField>
                                         <asp:BoundField DataField="Prestamos" HeaderText="Prestamos" SortExpression="Prestamos" Visible="False"></asp:BoundField>

@@ -12,14 +12,14 @@
                     <h4 class="card-title ">Consulta de Movimientos Caja</h4>
                 </div>
                 <br />
-                <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="Regresar"   />
+                <asp:Button class="btn btn-primary col-md-3 ml-auto" ID="Button1" runat="server" alling="Center" Text="Regresar" OnClick="Button1_Click"   />
                 <br />
                 <div class="card-body table-full-width table-hover">
                     <div class="table-responsive">
                         <table class="table">
                            
                             <tbody>
-                                <asp:GridView ID="GridMovi" CssClass="table table-striped table-no-bordered table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDatamovibanc" AllowPaging="True" AllowSorting="True">
+                                <asp:GridView ID="GridMovi" runat="server" CssClass="table table-striped table-no-bordered table-hover" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDatamovibanc" AllowPaging="True" AllowSorting="True" OnRowDataBound="GridMovi_RowDataBound">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" InsertVisible="False" SortExpression="ID"></asp:BoundField>
                                         <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha"></asp:BoundField>
@@ -29,8 +29,9 @@
                                         <asp:BoundField DataField="Item" HeaderText="Item" SortExpression="Item"></asp:BoundField>
                                         <asp:BoundField DataField="N&#176; Factura" HeaderText="N&#176; Factura" SortExpression="N&#176; Factura"></asp:BoundField>
                                         <asp:BoundField DataField="Nombre Movimiento" HeaderText="Nombre Movimiento" SortExpression="Nombre Movimiento"></asp:BoundField>
+                                        <asp:BoundField DataField="Tipo" HeaderText="Tipo" SortExpression="Tipo"></asp:BoundField>
                                     </Columns>
-                                      <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
+                                     <EditRowStyle BorderStyle="None" HorizontalAlign="Center" VerticalAlign="Middle"></EditRowStyle>
                                     <EmptyDataRowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <FooterStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />

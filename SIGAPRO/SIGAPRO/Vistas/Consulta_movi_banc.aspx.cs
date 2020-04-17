@@ -22,6 +22,7 @@ namespace SIGAPRO.Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Contents.RemoveAll();
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -111,6 +112,16 @@ namespace SIGAPRO.Vistas
                 this.movibanck.Opc = 1;
                 this.movibanck.Fecha_movi_regis = fecha.Value;
                 this.movibanck.Detalle_registro = this.txt_detalle.Text;
+                    this.movibanck.Financia = int.Parse(this.DptFinanciamiento.SelectedValue);
+                    if (int.Parse(this.DptFinanciamiento.SelectedValue) == 0)
+                    {
+                        this.movibanck.Centro_costos = "N/A";
+                    }
+                    else {
+                        this.movibanck.Centro_costos = this.DptCostos.SelectedValue;
+                    
+                    }
+
                 this.movibanck.Cantidad_dinero = float.Parse(this.txtMontito.Text);
                 this.movibanck.Tipo_registro = this.Dptmovi.SelectedValue;
                 tipomovi = this.Dptmovi.SelectedValue;

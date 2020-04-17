@@ -57,7 +57,7 @@
                                     Seleccione el Centro de Costos.
                                      <br />
                                     <br />
-                                    <asp:DropDownList ID="DptCCostos_EXML" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos" DataSourceID="SqlDatacentoC" DataTextField="descripcion" DataValueField="numero_centro_costos">
+                                    <asp:DropDownList ID="DptCCostos_EXML" runat="server" class="selectpicker" data-style="btn btn-primary btn-round" title="Seleccionar C. Costos" DataSourceID="SqlDatacentoC" DataTextField="numero_centro_costos" DataValueField="numero_centro_costos">
                                         
                                     </asp:DropDownList>
                                     <br />

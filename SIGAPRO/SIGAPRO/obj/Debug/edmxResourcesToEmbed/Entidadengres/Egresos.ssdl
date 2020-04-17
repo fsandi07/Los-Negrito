@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A4DE45_SIGEDOCModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_Egreso_Manual_los_negritos">
+    <Key>
+      <PropertyRef Name="Id_egreso" />
+    </Key>
+    <Property Name="Id_egreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Digital" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Fecha_ingreso" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Numero_factura" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cedula_Juridica" Type="varchar" MaxLength="50" />
+    <Property Name="Existe_fisica" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="GTI" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre_comercio" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id_detalle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id_partida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Monto_factura" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado_pago" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Plazo_pago" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pdf_factura" Type="varbinary(max)" />
+    <Property Name="Nombre_pdf" Type="varchar" MaxLength="100" />
+    <Property Name="Id_Centro_costos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id_metodo_pago" Type="varchar" MaxLength="50" />
+    <Property Name="Id_banco" Type="varchar" MaxLength="50" />
+    <Property Name="Moneda" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tipo_cambio" Type="varchar" MaxLength="50" />
+    <Property Name="Mes" Type="varchar" MaxLength="50" />
+    <Property Name="TotalIva" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_A4DE45_SIGEDOCModel1StoreContainer">
+    <EntitySet Name="tb_Egreso_Manual_los_negritos" EntityType="Self.tb_Egreso_Manual_los_negritos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A4DE45_SIGEDOCModel1StoreContainer" CdmEntityContainer="DB_A4DE45_SIGEDOCEgreso">
+    <EntitySetMapping Name="tb_Egreso_Manual_los_negritos">
+      <EntityTypeMapping TypeName="DB_A4DE45_SIGEDOCModel1.tb_Egreso_Manual_los_negritos">
+        <MappingFragment StoreEntitySet="tb_Egreso_Manual_los_negritos">
+          <ScalarProperty Name="Id_egreso" ColumnName="Id_egreso" />
+          <ScalarProperty Name="Digital" ColumnName="Digital" />
+          <ScalarProperty Name="Fecha_ingreso" ColumnName="Fecha_ingreso" />
+          <ScalarProperty Name="Numero_factura" ColumnName="Numero_factura" />
+          <ScalarProperty Name="Cedula_Juridica" ColumnName="Cedula_Juridica" />
+          <ScalarProperty Name="Existe_fisica" ColumnName="Existe_fisica" />
+          <ScalarProperty Name="GTI" ColumnName="GTI" />
+          <ScalarProperty Name="Nombre_comercio" ColumnName="Nombre_comercio" />
+          <ScalarProperty Name="Id_detalle" ColumnName="Id_detalle" />
+          <ScalarProperty Name="Id_partida" ColumnName="Id_partida" />
+          <ScalarProperty Name="Monto_factura" ColumnName="Monto_factura" />
+          <ScalarProperty Name="Estado_pago" ColumnName="Estado_pago" />
+          <ScalarProperty Name="Plazo_pago" ColumnName="Plazo_pago" />
+          <ScalarProperty Name="Pdf_factura" ColumnName="Pdf_factura" />
+          <ScalarProperty Name="Nombre_pdf" ColumnName="Nombre_pdf" />
+          <ScalarProperty Name="Id_Centro_costos" ColumnName="Id_Centro_costos" />
+          <ScalarProperty Name="Id_metodo_pago" ColumnName="Id_metodo_pago" />
+          <ScalarProperty Name="Id_banco" ColumnName="Id_banco" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Tipo_cambio" ColumnName="Tipo_cambio" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="TotalIva" ColumnName="TotalIva" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

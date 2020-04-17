@@ -17,6 +17,17 @@ namespace SIGAPRO.Vistas
         private XMLHELPER XMLHELPER;
         private Egreso_manual EgresoM;
         private Egreso_Manual_Helper EgrsoHelper;
+        private Control_gasto Control;
+        private Control_gasto_Helper ControlHelper;
+        private Partida Partidas;
+        private Partida_Helper PartidasHelper;
+        private string id_partida;
+        private int periodo;
+        private float monto_total;
+        private string id_centroCostos;
+        private string num_factu;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
                       listarXML();
@@ -200,7 +211,12 @@ namespace SIGAPRO.Vistas
                 this.EgresoM.Mes = this.txt_fecha_emision.Text;
                 this.EgresoM.TotalIva = this.txt_total_iva.Text;
                 this.EgresoM.Estado = "Activo";
-
+                num_factu = this.txt_numero_factura.Text;
+                monto_total = float.Parse(this.txt_total_pagar.Text);
+                id_partida = this.DptPartida.SelectedValue;
+                id_centroCostos = this.DptCCostos_EXML.SelectedValue;
+                buscaperiodo();
+                Ingresar_movi_consulta();
                 this.EgrsoHelper = new Egreso_Manual_Helper(EgresoM);
                 this.EgrsoHelper.Agrergar_Egreso_manual();
 
@@ -212,6 +228,54 @@ namespace SIGAPRO.Vistas
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
         }
+        public void buscaperiodo()
+        {
+            try
+            {
+                this.Partidas = new Partida();
+                this.Partidas.Opc = 4;
+                this.Partidas.Numero_partida = id_partida;
+
+                this.PartidasHelper = new Partida_Helper(Partidas);
+                this.datos = new DataTable();
+                this.datos = this.PartidasHelper.Consulta_Partidas();
+                if (datos.Rows.Count >= 0)
+                {
+                    DataRow fila = datos.Rows[0];
+                    periodo = int.Parse(fila["periodo"].ToString());
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+        }
+
+
+        public void Ingresar_movi_consulta()
+        {
+            try
+            {
+                this.Control = new Control_gasto();
+                this.Control.Opc = 1;
+                this.Control.Id_partidas = id_partida;
+                this.Control.Id_centro_costos = id_centroCostos;
+                this.Control.Periodo = periodo;
+                this.Control.Total = monto_total;
+                this.Control.Num_factura = num_factu;
+
+                this.ControlHelper = new Control_gasto_Helper(Control);
+                this.ControlHelper.Agregar_Control();
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
+            }
+
+        }
+
 
     }
 }

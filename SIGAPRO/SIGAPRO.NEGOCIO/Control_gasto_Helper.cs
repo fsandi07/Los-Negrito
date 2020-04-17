@@ -27,7 +27,7 @@ namespace SIGAPRO.NEGOCIO
             try
             {
                 cnGeneral = new Datos();
-                SqlParameter[] parParameter = new SqlParameter[6];
+                SqlParameter[] parParameter = new SqlParameter[7];
 
 
                 parParameter[0] = new SqlParameter();
@@ -61,6 +61,12 @@ namespace SIGAPRO.NEGOCIO
                 parParameter[5].ParameterName = "@monto_total";
                 parParameter[5].SqlDbType = SqlDbType.Float;
                 parParameter[5].SqlValue = OBJControl.Total;
+
+                parParameter[6] = new SqlParameter();
+                parParameter[6].ParameterName = "@numero_factura";
+                parParameter[6].SqlDbType = SqlDbType.VarChar;
+                parParameter[6].Size = 50;
+                parParameter[6].SqlValue = OBJControl.Num_factura;
 
                 cnGeneral.EjecutarSP(parParameter, "SP_los_negritos_Controles");
             }

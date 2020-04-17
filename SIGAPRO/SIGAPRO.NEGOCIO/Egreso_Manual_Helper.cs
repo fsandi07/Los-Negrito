@@ -181,5 +181,38 @@ namespace SIGAPRO.NEGOCIO
                 throw new Exception(ex.Message);
             }
         }
+
+
+        public DataTable Consulta_Egreso()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJEgresoM.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@id_egreso";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = OBJEgresoM.Id_egreso;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SP_egreso_manual_los_Negritos");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
+
     }
 }

@@ -63,5 +63,27 @@ namespace SIGAPRO.Vistas
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "mensajeError", "mensajeError('" + "" + "');", true);
             }
         }
+
+        protected void GridMovi_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string estado;
+                estado = (string)DataBinder.Eval(e.Row.DataItem, "Tipo");
+                if (estado == "Egreso")
+                {
+                    //e.Row.BackColor = System.Drawing.Color.Red;
+                    //e.Row.Font.Bold = true;
+                    e.Row.ForeColor = System.Drawing.Color.Red;
+                }
+
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+                 Response.Redirect("Consulta_movi_banc.aspx");
+        }
     }
 }

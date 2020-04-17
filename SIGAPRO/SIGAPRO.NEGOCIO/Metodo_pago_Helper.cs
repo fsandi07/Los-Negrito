@@ -103,26 +103,32 @@ namespace SIGAPRO.NEGOCIO
             }
         }
 
-    //    public DataTable Listar_Usuarios()
-    //    {
-    //        tblDatos = new DataTable();
-    //        try
-    //        {
-    //            cnGeneral = new Datos();
-    //            SqlParameter[] parParameter = new SqlParameter[1];
-    //            parParameter[0] = new SqlParameter();
-    //            parParameter[0].ParameterName = "@opcion";
-    //            parParameter[0].SqlDbType = SqlDbType.Int;
-    //            parParameter[0].SqlValue = OBJusuarios.Opc;
+        public DataTable Buscar_metodo()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
+                SqlParameter[] parParameter = new SqlParameter[2];
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJumetodo.Opc;
 
-    //            tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario_los_negritos");
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            throw new Exception(ex.Message);
-    //        }
-    //        return tblDatos;
-    //    }
+               
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@id_metodo";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = OBJumetodo.Id_metodo;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario_metodo_pago");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
 
 
     }

@@ -12,7 +12,7 @@ namespace SIGAPRO.NEGOCIO
         private string nombre_banco, Descripcion, cuenta_iban,estado;
 
      
-        public Banco()
+         public Banco()
         {
             this.opc = 0;
             this.nombre_banco = "";

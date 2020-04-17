@@ -108,6 +108,33 @@ namespace SIGAPRO.NEGOCIO
                 throw new Exception(ex.Message);
             }
         }
+        public DataTable Buscar_detalle()
+        {
+            tblDatos = new DataTable();
+            try
+            {
+                cnGeneral = new Datos();
+                SqlParameter[] parParameter = new SqlParameter[2];
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opcion";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = OBJclasificacion.Opc;
+
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@id_detalle";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = OBJclasificacion.Id_detalle;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SP_los_negritos_detalle_factura");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
+
 
     }
 }
